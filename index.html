@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>تحضير Open Doors – اللغة الروسية والثقافة</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0f1729;--card:#18233d;--card2:#1f2c4b;--line:#2c3c62;--tx:#eef2fb;--mut:#9fb0d3;--acc:#4f8cff;--acc2:#ffcf4a;--ok:#2fc98a;--bad:#ff5f6d;--ru:#ff8a3d}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;background:var(--bg);color:var(--tx);font-family:Cairo,Inter,system-ui,sans-serif;font-size:16px;line-height:1.55}
+body{padding:env(safe-area-inset-top) 0 calc(80px + env(safe-area-inset-bottom))}
+header{position:sticky;top:0;z-index:20;background:rgba(15,23,41,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding:10px 14px;display:flex;align-items:center;gap:8px}
+header h1{font-size:16px;margin:0;flex:1;font-weight:800}
+.pill{background:var(--card2);border:1px solid var(--line);border-radius:999px;padding:4px 10px;font-size:13px;white-space:nowrap}
+.tbtn{background:var(--card2);color:var(--tx);border:1px solid var(--line);border-radius:10px;padding:6px 10px;font-family:inherit;font-size:13px;font-weight:700;cursor:pointer}
+.tbtn.on{background:var(--acc);border-color:var(--acc)}
+main{max-width:720px;margin:0 auto;padding:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px;margin-bottom:12px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.tile{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px 12px;cursor:pointer;text-align:right;color:var(--tx);font-family:inherit}
+.tile .ic{font-size:26px}
+.tile b{display:block;font-size:15px;margin-top:4px}
+.tile small{color:var(--mut);font-size:12px}
+.tile:active{transform:scale(.98)}
+h2{font-size:18px;margin:4px 0 10px}
+h3{font-size:15px;margin:0 0 6px;color:var(--acc2)}
+.mut{color:var(--mut);font-size:13px}
+.en{direction:ltr;text-align:left;font-family:Inter,system-ui,sans-serif}
+.ar{direction:rtl;text-align:right;color:#cfe0ff;background:#13203a;border-right:3px solid var(--acc);padding:6px 10px;border-radius:8px;margin-top:6px;font-size:15px;display:none}
+body.tr .ar,.ar.show{display:block}
+.w{cursor:pointer;border-radius:4px;transition:background .15s}
+.w:hover{background:rgba(79,140,255,.18)}
+.w.say{background:var(--acc2);color:#111}
+.ruw{color:var(--ru);font-weight:700}
+.btn{display:inline-block;background:var(--acc);color:#fff;border:0;border-radius:12px;padding:11px 16px;font-family:inherit;font-weight:700;font-size:15px;cursor:pointer}
+.btn.sec{background:var(--card2);border:1px solid var(--line)}
+.btn.ok{background:var(--ok)}
+.btn:disabled{opacity:.45}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.opt{display:block;width:100%;background:var(--card2);border:2px solid var(--line);border-radius:12px;padding:10px 12px;margin:8px 0;cursor:pointer;color:var(--tx);font-family:inherit;text-align:left}
+.opt.sel{border-color:var(--acc);background:#1d3466}
+.opt.good{border-color:var(--ok);background:#123d33}
+.opt.badx{border-color:var(--bad);background:#43202a}
+.opt .ar{margin-top:4px;font-size:14px}
+.tag{display:inline-block;font-size:11px;padding:2px 8px;border-radius:999px;background:#273a66;color:#bcd0ff;margin-left:4px}
+.tag.m{background:#5a3b10;color:#ffd99a}
+.fb{border-radius:12px;padding:10px 12px;margin-top:10px;font-size:15px}
+.fb.good{background:#123d33;border:1px solid var(--ok)}
+.fb.bad{background:#43202a;border:1px solid var(--bad)}
+.bar{height:8px;background:var(--card2);border-radius:99px;overflow:hidden;margin:6px 0}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--acc),var(--ok))}
+nav.bot{position:fixed;bottom:0;left:0;right:0;background:rgba(15,23,41,.97);border-top:1px solid var(--line);display:flex;justify-content:space-around;padding:6px 4px calc(6px + env(safe-area-inset-bottom));z-index:30}
+nav.bot button{background:none;border:0;color:var(--mut);font-family:inherit;font-size:11px;display:flex;flex-direction:column;align-items:center;gap:1px;cursor:pointer;padding:4px 6px}
+nav.bot button span{font-size:20px}
+nav.bot button.on{color:var(--acc2)}
+.chips{display:flex;gap:6px;overflow-x:auto;padding-bottom:4px;margin-bottom:8px}
+.chip{flex:none;background:var(--card2);border:1px solid var(--line);color:var(--tx);border-radius:999px;padding:6px 12px;font-family:inherit;font-size:13px;cursor:pointer}
+.chip.on{background:var(--acc);border-color:var(--acc)}
+.fact{border-bottom:1px dashed var(--line);padding:9px 0}
+.fact:last-child{border-bottom:0}
+.flip{min-height:190px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;cursor:pointer}
+.big{font-size:34px;font-weight:800;color:var(--ru)}
+.mcol{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.mi{background:var(--card2);border:2px solid var(--line);border-radius:10px;padding:9px;font-size:14px;cursor:pointer;color:var(--tx);font-family:inherit;text-align:left;direction:ltr}
+.mi.sel{border-color:var(--acc2)}
+.mi.done{border-color:var(--ok);opacity:.55}
+.mi.wrong{border-color:var(--bad)}
+textarea{width:100%;min-height:150px;background:#0c1426;color:var(--tx);border:1px solid var(--line);border-radius:12px;padding:10px;font-family:Inter,sans-serif;font-size:15px;direction:ltr}
+.chk label{display:flex;gap:8px;align-items:flex-start;padding:5px 0;font-size:14px}
+.frag{background:var(--card2);border:2px solid var(--line);border-radius:10px;padding:9px;margin:6px 0;cursor:pointer;direction:ltr;text-align:left;font-size:14px}
+.frag.used{opacity:.35}
+.frag b.n{color:var(--acc2);margin-right:6px}
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:90px;background:#000c;padding:8px 14px;border-radius:10px;font-size:14px;z-index:50;pointer-events:none;opacity:0;transition:opacity .2s}
+.toast.show{opacity:1}
+.score{font-size:40px;font-weight:800;text-align:center;color:var(--acc2)}
+.hint{background:#2a2410;border:1px solid #6b5a1e;border-radius:12px;padding:10px;font-size:14px;margin-bottom:10px}
+</style>
+</head>
+<body>
+<header>
+  <h1>🇷🇺 Open Doors · روسي وثقافة</h1>
+  <span class="pill" id="xp">⭐ 0</span>
+  <button class="tbtn" id="trBtn" onclick="toggleTr()">🌐 ترجمة</button>
+</header>
+<main id="app"></main>
+<nav class="bot">
+  <button data-v="home" onclick="go('home')"><span>🏠</span>الرئيسية</button>
+  <button data-v="learn" onclick="go('learn')"><span>📚</span>ادرس</button>
+  <button data-v="quiz" onclick="go('quiz')"><span>🎯</span>اختبر</button>
+  <button data-v="games" onclick="go('games')"><span>🧩</span>ألعاب</button>
+  <button data-v="exam" onclick="go('exam')"><span>📝</span>امتحان</button>
+</nav>
+<div class="toast" id="toast"></div>
+
+<script>
+/* ================= DATA ================= */
+const FIELDS={
+1:{n:"Russian Language",a:"اللغة الروسية (النظام، الوظائف، القواميس)",i:"🔤"},
+2:{n:"Linguistics & Styles",a:"علم اللغة والأساليب",i:"🧠"},
+3:{n:"Communication & Media",a:"التواصل والإعلام",i:"📡"},
+4:{n:"Literary Theory",a:"نظرية الأدب",i:"✒️"},
+5:{n:"Russian Literature",a:"الأدب الروسي",i:"📖"},
+6:{n:"Russian Culture",a:"الثقافة الروسية",i:"🎭"}
+};
+
+/* Study notes: [en, ar] */
+const NOTES={
+1:[
+["Russian is an East Slavic language of the Indo-European family. It uses the Cyrillic alphabet (кириллица) with 33 letters: 10 vowels, 21 consonants and 2 signs (ъ hard sign, ь soft sign).","الروسية لغة سلافية شرقية من العائلة الهندوأوروبية، تُكتب بالأبجدية الكيريلية وفيها 33 حرفاً: 10 حروف علّة، و21 حرفاً ساكناً، وعلامتان (ъ علامة القسوة وь علامة اللين)."],
+["Russian is one of the six official languages of the UN and the most widely spoken Slavic language. It is the state language (государственный язык) of the Russian Federation, where more than 190 peoples live and many languages are spoken (Tatar, Bashkir, Chechen, Chuvash…).","الروسية وحدة من 6 لغات رسمية بالأمم المتحدة، وأكثر لغة سلافية انتشاراً. هي لغة الدولة بروسيا، وبروسيا عايشين أكتر من 190 شعب بلغات كتير (تترية، بشكيرية، شيشانية، تشوفاشية...)."],
+["Parts of speech (части речи): independent – noun, adjective, numeral, pronoun, verb, adverb; auxiliary – preposition, conjunction, particle; plus interjection. Russian has NO articles (no a / the).","أقسام الكلام: المستقلة – الاسم، الصفة، العدد، الضمير، الفعل، الظرف. المساعدة – حرف الجر، حرف العطف، الأداة (частица). وفي كمان أداة التعجب. الروسية ما فيها أدوات تعريف ولا تنكير (ما في a ولا the)."],
+["Noun (существительное): 3 genders – masculine, feminine, neuter (мужской, женский, средний); 2 numbers – singular and plural; 6 cases (падежи).","الاسم: إله 3 أجناس (مذكر، مؤنث، محايد)، وعددين (مفرد وجمع)، و6 حالات إعرابية."],
+["The 6 cases: Nominative (кто? что?), Genitive (кого? чего?), Dative (кому? чему?), Accusative (кого? что?), Instrumental (кем? чем?), Prepositional (о ком? о чём?).","الحالات الست: الرفع/الفاعل (مين؟ شو؟)، الإضافة/الملكية (لمين؟ من شو؟)، المفعول غير المباشر (لمين؟)، المفعول به (مين؟ شو؟)، الأداة (بمين؟ بشو؟)، حالة حرف الجر (عن مين؟ عن شو؟)."],
+["Verb (глагол): ASPECT (вид) shows how an action unfolds or is completed in time: imperfective (делать – to be doing) vs perfective (сделать – to get done). Verbs have 3 tenses: present, past, future. There is no Past Perfect.","الفعل: الصيغة (вид) بتبيّن كيف الحدث بصير أو بيكتمل مع الزمن: غير تام (делать = عم يعمل) وتام (сделать = عمل وخلّص). الأفعال إلها 3 أزمنة بس: حاضر، ماضي، مستقبل. ما في Past Perfect."],
+["Other verb categories: mood (наклонение) – indicative, imperative, conditional; voice (залог) – active/passive; transitivity (переходность); person; number; conjugation I and II.","تصنيفات تانية للفعل: الصيغة الشرطية/الأمرية/الإخبارية (наклонение)، المبني للمعلوم والمجهول (залог)، التعدي واللزوم، الشخص، العدد، والتصريف الأول والتاني."],
+["Functions of language: COMMUNICATIVE – passing information; APPELLATIVE (conative) – addressing someone, urging action (\"rise, my beauty!\"); PHATIC – making contact (\"Hello! How are you?\"); METALINGUISTIC – talking about language itself (dictionary definitions); POETIC (aesthetic) – focus on beauty of form; EMOTIVE – expressing feelings.","وظائف اللغة: التواصلية – نقل المعلومة. الندائية (appellative) – مخاطبة شخص وحثه على فعل (\"قومي يا حلوة!\"). التواصل الاجتماعي (phatic) – فتح تواصل (\"مرحبا، كيفك؟\"). الماوراء لغوية (metalinguistic) – الحديث عن اللغة نفسها (تعريفات القاموس). الشعرية/الجمالية – التركيز على جمال الشكل. التعبيرية – التعبير عن المشاعر."],
+["EXAM TIP: a poem that calls to someone (\"My dear friend… rise!\" – Pushkin) → appellative. A poem that just paints beauty (Yesenin's gold stars) → poetic.","نصيحة للامتحان: قصيدة بتنادي حدا (\"صديقتي العزيزة... قومي!\" – بوشكين) ← ندائية. قصيدة بترسم جمال بس (نجوم يسينين الذهبية) ← شعرية."],
+["Explanatory dictionaries (толковые словари) explain the meaning of words: Vladimir Dahl's dictionary, Ozhegov, Ushakov, BAS (Large Academic Dictionary), MAS (Small Academic Dictionary).","القواميس التفسيرية بتشرح معنى الكلمات: قاموس فلاديمير دال، أوجيغوف، أوشاكوف، القاموس الأكاديمي الكبير BAS، والصغير MAS."],
+["Other dictionaries: Orthoepic (орфоэпический) – pronunciation and stress; Orthographic – spelling; Phraseological – idioms; Dictionary of Difficulties (словарь трудностей) – hard cases of grammar & pronunciation (NOT explanatory); Etymological (Vasmer) – word origins; dictionaries of synonyms/antonyms.","قواميس تانية: قاموس اللفظ (орфоэпический) – النطق والنبرة. قاموس الإملاء. قاموس التعابير الاصطلاحية. قاموس الصعوبات – الحالات الصعبة بالقواعد واللفظ (مش تفسيري!). القاموس التأصيلي (فاسمر) – أصل الكلمات. وقواميس المترادفات والأضداد."],
+["Phonetics: stress (ударение) is free and mobile; unstressed O sounds like A (akanye): молоко → [malakó].","الصوتيات: النبرة بالروسي حرة ومتحركة. حرف O بدون نبرة بنلفظ متل A: молоко بتنقال [malakó]."]
+],
+2:[
+["Language (язык) is a system of signs; speech (речь) is the use of that system in real communication (Ferdinand de Saussure).","اللغة نظام من الإشارات، والكلام هو استعمال هاد النظام بالتواصل الحقيقي (فرديناند دي سوسير)."],
+["Levels of language (уровни языка): phonetic (sounds/phonemes) → morphemic (morphemes) → lexical (words) → morphological (word forms) → syntactic (sentences). Textology is NOT a language level.","مستويات اللغة: الصوتي (الأصوات) ← الصرفي/المورفيمات ← المعجمي (الكلمات) ← المورفولوجي (أشكال الكلمات) ← النحوي (الجمل). علم النصوص (textology) مش مستوى من مستويات اللغة."],
+["Branches: PHONETICS – sound side of language; MORPHOLOGY – word forms and parts of speech; LEXICOLOGY – vocabulary; SYNTAX – sentences and phrases; SEMANTICS – meaning; ORTHOEPY – pronunciation norms; STYLISTICS – styles.","الفروع: الصوتيات – الجانب الصوتي. المورفولوجيا – أشكال الكلمات وأقسام الكلام. علم المفردات. النحو – الجمل والتراكيب. علم الدلالة – المعنى. علم اللفظ الصحيح. علم الأسلوب."],
+["5 functional styles: SCIENTIFIC, OFFICIAL-BUSINESS, JOURNALISTIC (publicistic), COLLOQUIAL (conversational), LITERARY-ARTISTIC.","الأساليب الوظيفية الخمسة: العلمي، الرسمي/الإداري، الصحفي، العامي/المحادثة، الأدبي/الفني."],
+["Scientific style: terms, unambiguous wording, logic, arguments, NO emotional words. Simple words, abbreviations and incomplete sentences belong to COLLOQUIAL style.","الأسلوب العلمي: مصطلحات، صياغة واضحة بمعنى واحد، منطق وحجج، وما فيه كلمات عاطفية. الكلمات البسيطة والاختصارات والجمل الناقصة هي من الأسلوب العامي."],
+["Official-business style: fixed formulas and clichés, precision, no emotion (laws, contracts, applications). Journalistic style: informs AND persuades, uses evaluation. Artistic style: images, tropes, emotions.","الأسلوب الرسمي: عبارات ثابتة وقوالب جاهزة، دقة، بدون عاطفة (قوانين، عقود، طلبات). الصحفي: بيخبّر وبيقنع، وفيه تقييم. الفني: صور، مجازات، ومشاعر."],
+["Forms of existence of a language: LITERARY language (the standard norm); territorial DIALECTS – different pronunciation & words in various regions; SOCIOLECTS – speech of social groups; COLLOQUIAL speech; VERNACULAR (просторечие) – non-standard speech.","أشكال وجود اللغة: اللغة الأدبية (المعيار الرسمي). اللهجات المناطقية – لفظ وكلمات مختلفة حسب المنطقة. اللهجات الاجتماعية (sociolects) – كلام فئات اجتماعية. الكلام العامي. والكلام الشعبي غير المعياري (просторечие)."],
+["Sociolects: JARGON (жаргон) – speech of a group; ARGOT (арго) – secret language of closed groups; SLANG (сленг) – youth speech; professional speech (профессионализмы). A dialect is territorial, NOT social.","اللهجات الاجتماعية: الجارغون – كلام جماعة معينة. الأرغو – لغة سرية لجماعات مغلقة. السلانغ – كلام الشباب. ولغة المهن. أما اللهجة (dialect) فهي جغرافية مش اجتماعية."],
+["Language norms (нормы): orthoepic (pronunciation), lexical (word choice), grammatical, spelling, punctuation, stylistic.","معايير اللغة: معيار اللفظ، معيار اختيار الكلمات، القواعد، الإملاء، الترقيم، والأسلوب."]
+],
+3:[
+["Mass media (СМИ) functions: informational, educational, entertaining, persuasive/regulatory, integrating society.","وظائف وسائل الإعلام: الإخبار، التثقيف، الترفيه، الإقناع والتوجيه، وتوحيد المجتمع."],
+["Types of media: press (newspapers, magazines), radio, television, Internet. New media features: ACCESSIBILITY (anytime, anywhere), interactivity, multimediality, hypertext, speed.","أنواع الإعلام: الصحافة المطبوعة، الراديو، التلفزيون، الإنترنت. ميزات الإعلام الجديد: سهولة الوصول (بأي وقت وأي مكان)، التفاعل، تعدد الوسائط، الروابط، والسرعة."],
+["Media genres: informational – news item (заметка), report (репортаж), interview; analytical – article, commentary, review; artistic-journalistic – essay/sketch (очерк), feuilleton (satire).","أنواع المواد الإعلامية: إخبارية – خبر قصير، ريبورتاج، مقابلة. تحليلية – مقال، تعليق، مراجعة. فنية صحفية – مقالة وصفية (очерк)، ومقالة ساخرة (فيلتون)."],
+["Russian media: Channel One (Первый канал) – leading news source; Russia-1; NTV; news agencies TASS and RIA Novosti; newspapers Rossiyskaya Gazeta, Kommersant, Izvestia. Entertainment: STS, TNT, Pyatnitsa!; sport: Match TV.","الإعلام الروسي: القناة الأولى – المصدر الرئيسي للأخبار. روسيا-1، NTV، وكالات الأنباء تاس وريا نوفوستي. صحف: روسيسكايا غازيتا، كوميرسانت، إزفستيا. ترفيه: STS، TNT، بياتنيتسا. رياضة: ماتش تي في."],
+["Runet (Russian Internet) platforms: VKontakte (VK), Odnoklassniki, Telegram, Yandex, Dzen, Rutube. Trends of online language: rapid updating, variability, predominance of colloquial style, abbreviations, emojis.","منصات الإنترنت الروسي (رونت): فكونتاكتي، أودنوكلاسنيكي، تيليغرام، ياندكس، دزن، روتيوب. خصائص لغة الإنترنت: تتجدد بسرعة، متغيرة، يغلب عليها الأسلوب العامي، اختصارات وإيموجي."],
+["Means of communication: VERBAL – words; NON-VERBAL – gestures, facial expressions, emojis, pictures; PARAVERBAL – intonation, tempo, volume, and online: CAPS, \"!!!\". Internet communication can use ALL three.","وسائل التواصل: لفظية – الكلمات. غير لفظية – الإشارات، تعابير الوجه، الإيموجي، الصور. شبه لفظية – نبرة الصوت، السرعة، العلو، وأونلاين: الحروف الكبيرة و\"!!!\". التواصل على الإنترنت بيستعمل التلاتة."],
+["Netiquette (сетевой этикет): rules of polite behavior online. Virtual communication is mostly textual; the circle of addressees (senders and recipients) is known.","آداب الإنترنت: قواعد التصرف المهذب أونلاين. التواصل الافتراضي غالباً نصي، ودائرة المرسلين والمستقبلين بتكون معروفة."],
+["Speech etiquette: ты (informal) vs Вы (polite). Respect = first name + patronymic: \"Ivan Anatolyevich\". Professional forms: \"Dear Alexandra Sergeevna!\", \"Respected Ivan Anatolyevich!\" (Уважаемый), \"Good afternoon, colleagues!\" — but NOT \"Dear friend!\".","آداب الكلام: ты للمقربين وВы للاحترام. الاحترام = الاسم + اسم الأب: \"إيفان أناتوليفيتش\". بالمراسلات الرسمية: \"عزيزتي ألكسندرا سيرغييفنا\"، \"المحترم إيفان أناتوليفيتش\"، \"مساء الخير يا زملاء\" – بس مش \"صديقي العزيز\"."],
+["Conference etiquette: come on time, keep the time limit, thank the audience; listeners may ask clarifying questions afterwards. Being LATE violates etiquette.","آداب المؤتمرات: تيجي عالوقت، تلتزم بالوقت المحدد، تشكر الجمهور، والحضور بيقدروا يسألوا بعد العرض. التأخير مخالف للآداب."]
+],
+4:[
+["Three literary kinds (роды литературы): EPIC (эпос) – narrative prose; LYRIC (лирика) – feelings; DRAMA (драма) – for the stage. Melodrama is NOT one of them.","الأجناس الأدبية التلاتة: الملحمي/السردي (эпос) – النثر القصصي. الغنائي (лирика) – المشاعر. الدرامي – للمسرح. الميلودراما مش وحدة منهم."],
+["Epic genres: epic novel (роман-эпопея: War and Peace), novel (роман: Anna Karenina), novella/story (повесть), short story (рассказ), fairy tale, bylina. Lyric: poem, ode, elegy. Drama: tragedy, comedy, drama.","أنواع السرد: الرواية الملحمية (الحرب والسلم)، الرواية (آنا كارينينا)، القصة الطويلة (повесть)، القصة القصيرة (рассказ)، الحكاية الشعبية، البيلينا. الغنائي: قصيدة، أنشودة، رثائية. الدراما: مأساة، كوميديا، دراما."],
+["Types of lyric poetry: LANDSCAPE (nature – Fet's \"The Steppe at Evening\"), LOVE (Pushkin's \"I loved you\"), PHILOSOPHICAL, CIVIC, RELIGIOUS.","أنواع الشعر الغنائي: شعر الطبيعة (\"السهوب في المساء\" لفيت)، شعر الحب (\"أحببتك\" لبوشكين)، الفلسفي، الوطني/المدني، الديني."],
+["Tropes (тропы): METAPHOR – hidden comparison (\"glass of empty sky\"); SIMILE – comparison with like/as (как, словно, будто): \"like a flock of butterflies\"; EPITHET – artistic adjective (\"golden grove\"); PERSONIFICATION – nature acts like a person (\"the stars are sleeping\").","المجازات: الاستعارة – تشبيه مخفي (\"زجاج السماء الفارغة\"). التشبيه – مع \"مثل/كأن\" (как، словно، будто): \"مثل سرب فراشات\". النعت الفني (\"البستان الذهبي\"). التشخيص – الطبيعة بتتصرف متل إنسان (\"النجوم نايمة\")."],
+["More tropes: HYPERBOLE – exaggeration; LITOTES – understatement; METONYMY – name transfer by closeness (\"I read Pushkin\" = his books); IRONY; ALLEGORY (fables: fox = cunning); OXYMORON – \"living corpse\".","مجازات تانية: المبالغة. التقليل. الكناية/المجاز المرسل (\"قرأت بوشكين\" = كتبه). السخرية. الرمز/الأليغوريا (الحكايات: الثعلب = المكر). الجمع بين الأضداد (\"جثة حية\")."],
+["Figures of speech: ANAPHORA – repeating the beginning of lines; EPIPHORA – repeating the end; GRADATION – ascending or descending strengthening of homogeneous words (\"No regrets, no cries, no pain\"); ANTITHESIS – contrast; INVERSION – unusual word order; PARALLELISM; RHETORICAL QUESTION.","الصور البلاغية: التكرار بالبداية (anaphora). التكرار بالنهاية (epiphora). التدرج (gradation) – تقوية أو تخفيف تدريجي لكلمات متتالية، صاعد أو نازل. الطباق/المقابلة. التقديم والتأخير (inversion). التوازي. السؤال البلاغي."],
+["Plot (сюжет): exposition → beginning of conflict (завязка) → rising action → CLIMAX (кульминация) → denouement (развязка). Also: theme, idea, hero, narrator, composition.","الحبكة: التمهيد ← بداية الصراع ← تصاعد الأحداث ← الذروة ← الحل. وكمان: الموضوع، الفكرة، البطل، الراوي، والبناء."],
+["Russian verse meters: IAMB (ямб – Pushkin's favorite, da-DUM), TROCHEE (хорей, DUM-da), dactyl, amphibrach, anapest. Rhyme and stanza.","أوزان الشعر الروسي: الإيامب (المفضل عند بوشكين)، التروكي، الداكتيل، الأمفيبراخ، الأنابيست. وكمان القافية والمقطع."]
+],
+5:[
+["19th century = GOLDEN AGE of Russian poetry: Pushkin, Lermontov, Tyutchev, Fet, Zhukovsky. Movements: sentimentalism (Karamzin, \"Poor Liza\") → romanticism → REALISM.","القرن 19 = العصر الذهبي للشعر الروسي: بوشكين، ليرمونتوف، تيوتشيف، فيت، جوكوفسكي. التيارات: العاطفية (كرامزين، \"ليزا المسكينة\") ← الرومانسية ← الواقعية."],
+["Alexander PUSHKIN (1799–1837): founder of the modern Russian literary language. Studied at the Tsarskoye Selo Lyceum; \"Ruslan and Lyudmila\" (1820) made him famous; exiled to the south; died after a duel with d'Anthès. Works: \"Eugene Onegin\" (novel in verse, \"encyclopedia of Russian life\"), \"The Captain's Daughter\", \"Boris Godunov\", \"The Bronze Horseman\", \"I loved you\", \"Winter Morning\", fairy tales (\"The Tale of the Fisherman and the Fish\", \"Tsar Saltan\").","ألكسندر بوشكين (1799–1837): مؤسس اللغة الأدبية الروسية الحديثة. درس بليسيه تسارسكويه سيلو. \"روسلان ولودميلا\" (1820) شهّرته. انُفي للجنوب. مات بعد مبارزة مع دانتيس. أعماله: \"يفغيني أونيغين\" (رواية شعرية، \"موسوعة الحياة الروسية\")، \"ابنة الضابط\"، \"بوريس غودونوف\"، \"الفارس النحاسي\"، \"أحببتك\"، \"صباح شتوي\"، والحكايات (\"الصياد والسمكة\"، \"القيصر سلطان\")."],
+["Mikhail LERMONTOV (1814–1841): \"A Hero of Our Time\" (Pechorin), \"The Death of the Poet\" (about Pushkin), \"The Sail\", \"Borodino\", \"Mtsyri\", \"The Demon\", \"The Prayer\". Also died in a duel.","ميخائيل ليرمونتوف (1814–1841): \"بطل من هذا الزمان\" (بيتشورين)، \"موت الشاعر\" (عن بوشكين)، \"الشراع\"، \"بورودينو\"، \"متسيري\"، \"الشيطان\"، \"الصلاة\". كمان مات بمبارزة."],
+["Nikolai GOGOL (1809–1852): \"Dead Souls\" (Chichikov), \"The Government Inspector\" (comedy), \"The Overcoat\", \"The Nose\", \"Taras Bulba\", \"Evenings on a Farm near Dikanka\".","نيكولاي غوغول: \"الأرواح الميتة\" (تشيتشيكوف)، \"المفتش العام\" (كوميديا)، \"المعطف\"، \"الأنف\"، \"تاراس بولبا\"، \"أمسيات في قرية قرب ديكانكا\"."],
+["Ivan TURGENEV: \"Fathers and Sons\" (Bazarov, nihilism), \"A Hunter's Sketches\", \"Mumu\", \"First Love\", \"Asya\".","إيفان تورغينيف: \"آباء وأبناء\" (بازاروف والعدمية)، \"مذكرات صياد\"، \"مومو\"، \"الحب الأول\"، \"آسيا\"."],
+["Fyodor DOSTOEVSKY: \"Crime and Punishment\" (Raskolnikov), \"The Idiot\", \"The Brothers Karamazov\", \"Demons\", \"Poor Folk\", \"White Nights\".","فيودور دوستويفسكي: \"الجريمة والعقاب\" (راسكولنيكوف)، \"الأبله\"، \"الإخوة كارامازوف\"، \"الشياطين\"، \"المساكين\"، \"الليالي البيضاء\"."],
+["Leo TOLSTOY (1828–1910): \"War and Peace\" (EPIC NOVEL, war of 1812), \"Anna Karenina\" (NOVEL), \"Resurrection\", \"Childhood\", \"Sevastopol Sketches\", \"The Death of Ivan Ilyich\". Estate: Yasnaya Polyana.","ليف تولستوي: \"الحرب والسلم\" (رواية ملحمية، حرب 1812)، \"آنا كارينينا\" (رواية)، \"البعث\"، \"الطفولة\"، \"حكايات سيفاستوبول\"، \"موت إيفان إيليتش\". مزرعته: ياسنايا بوليانا."],
+["Anton CHEKHOV (1860–1904): doctor and master of the short story and drama. Stories: \"The Lady with the Dog\", \"Chameleon\", \"The Man in a Case\", \"Ward No. 6\". Plays: \"The Seagull\", \"Uncle Vanya\", \"Three Sisters\", \"The Cherry Orchard\". \"Brevity is the sister of talent.\"","أنطون تشيخوف: طبيب ومعلّم القصة القصيرة والمسرح. قصص: \"السيدة صاحبة الكلب\"، \"الحرباء\"، \"الرجل في العلبة\"، \"العنبر رقم 6\". مسرحيات: \"النورس\"، \"الخال فانيا\"، \"الشقيقات الثلاث\"، \"بستان الكرز\". \"الإيجاز أخو الموهبة\"."],
+["Others of the 19th c.: Krylov (fables), Griboyedov (\"Woe from Wit\"), Ostrovsky (\"The Storm\"), Tyutchev (\"Russia cannot be understood with the mind\"), Fet (landscape lyrics), Nekrasov.","كتّاب تانيين من القرن 19: كريلوف (حكايات على لسان الحيوانات)، غريبويدوف (\"ذو العقل يشقى\")، أوستروفسكي (\"العاصفة\")، تيوتشيف (\"روسيا ما بتنفهم بالعقل\")، فيت (شعر الطبيعة)، نيكراسوف."],
+["SILVER AGE (~1890s–1920s) movements: SYMBOLISM – Blok (\"The Twelve\"), Bryusov, Balmont; ACMEISM – Akhmatova, Gumilyov, Mandelstam; FUTURISM – Mayakovsky, Khlebnikov; IMAGINISM – Sergei Yesenin.","تيارات العصر الفضي (تقريباً 1890–1920): الرمزية – بلوك (\"الاثنا عشر\")، بريوسوف، بالمونت. الأكميزم – أخماتوفا، غوميليوف، ماندلشتام. المستقبلية – ماياكوفسكي، خليبنيكوف. الإيماجينيزم (الصورية) – سيرغي يسينين."],
+["Sergei YESENIN (1895–1925): Imaginism, poet of the village, nature and Russia; \"The Birch Tree\", \"Letter to Mother\", \"No regrets, no cries, no pain…\", \"Persian Motifs\", \"Anna Snegina\".","سيرغي يسينين: الإيماجينيزم، شاعر القرية والطبيعة وروسيا. \"شجرة البتولا\"، \"رسالة إلى أمي\"، \"لا أندم ولا أنادي ولا أبكي\"، \"زخارف فارسية\"، \"آنا سنيغينا\"."],
+["Vladimir MAYAKOVSKY (1893–1930): Futurism; themes – LOVE, REVOLUTION, the POET and his role in society; \"Lilichka!\", \"A Cloud in Trousers\", \"Listen!\", \"Left March\"; famous \"ladder\" line (лесенка).","فلاديمير ماياكوفسكي: المستقبلية. مواضيعه – الحب، الثورة، الشاعر ودوره بالمجتمع. \"ليليتشكا!\"، \"غيمة في بنطال\"، \"اسمعوا!\"، \"المسيرة اليسارية\". مشهور بالسطر على شكل درج."],
+["Anna AKHMATOVA (Acmeism): \"Requiem\", \"Evening\", \"Rosary\". Marina TSVETAEVA: \"I like that you are not sick for me\", \"Homesickness\". Boris PASTERNAK: \"Doctor Zhivago\" (Nobel 1958).","آنا أخماتوفا (الأكميزم): \"قداس جنائزي\"، \"المساء\"، \"المسبحة\". مارينا تسفيتايفا: \"يعجبني أنك لست مريضاً بي\"، \"الحنين للوطن\". بوريس باسترناك: \"دكتور جيفاغو\" (نوبل 1958)."],
+["20th c. prose: Ivan BUNIN – first Russian Nobel Prize in literature (1933), \"Dark Avenues\", \"The Gentleman from San Francisco\"; Alexander KUPRIN – \"The Garnet Bracelet\", \"The Duel\", \"Olesya\"; Maxim GORKY – \"The Lower Depths\", \"Mother\", \"Childhood\"; Mikhail SHOLOKHOV – \"And Quiet Flows the Don\" (Nobel 1965), \"The Fate of a Man\".","نثر القرن 20: إيفان بونين – أول روسي ياخد نوبل بالأدب (1933)، \"الدروب المظلمة\"، \"السيد من سان فرانسيسكو\". ألكسندر كوبرين – \"السوار العقيقي\"، \"المبارزة\"، \"أوليسيا\". مكسيم غوركي – \"الحضيض\"، \"الأم\"، \"الطفولة\". ميخائيل شولوخوف – \"الدون الهادئ\" (نوبل 1965)، \"مصير إنسان\"."],
+["FOLKLORE (фольклор): fairy tales (сказки) – \"The Turnip\" (Репка), \"Kolobok\", \"Teremok\", Baba Yaga, Koschei the Deathless; BYLINY – epic songs about bogatyrs (Ilya Muromets, Dobrynya Nikitich, Alyosha Popovich); proverbs, sayings, riddles, chastushki, lullabies.","الفولكلور: الحكايات الشعبية – \"اللفتة\" (Репка)، \"كولوبوك\"، \"تيريموك\"، بابا ياغا، كوششي الخالد. البيلينات – أغاني ملحمية عن الأبطال (البوغاتير): إيليا موروميتس، دوبرينيا نيكيتيتش، أليوشا بوبوفيتش. والأمثال، الأقوال، الألغاز، التشاستوشكي، وأغاني النوم."]
+],
+6:[
+["Culture: MATERIAL (tools, buildings, clothes, technology) and SPIRITUAL (customs, traditions, religion, values, language, art, science).","الثقافة: مادية (أدوات، مباني، ملابس، تكنولوجيا) وروحية/معنوية (عادات، تقاليد، دين، قيم، لغة، فن، علم)."],
+["Symbols of Russia: BIRCH tree (берёза), bear, matryoshka, samovar, balalaika, troika, double-headed eagle (coat of arms), white-blue-red flag, Kremlin & Red Square, St. Basil's Cathedral, ushanka hat, valenki.","رموز روسيا: شجرة البتولا (берёза)، الدب، الماتريوشكا، السماور، البالالايكا، الترويكا، النسر ذو الرأسين (شعار الدولة)، العلم أبيض-أزرق-أحمر، الكرملين والساحة الحمراء، كاتدرائية القديس باسيل، قبعة الأوشانكا، الفالينكي."],
+["Folk crafts: GZHEL – blue-and-white ceramics; KHOKHLOMA – red-black-gold painting on wood; PALEKH – lacquer miniatures; DYMKOVO toy – clay toys; Pavlovo Posad shawls. Opera and ballet are NOT folk culture (they are classical art).","الحرف الشعبية: غجيل – خزف أزرق وأبيض. خوخلوما – رسم أحمر وأسود وذهبي على الخشب. باليخ – منمنمات مطلية. ألعاب ديمكوفو الطينية. شالات بافلوفو بوساد. الأوبرا والباليه مش ثقافة شعبية (هي فن كلاسيكي)."],
+["Holidays: NEW YEAR – fir tree (ёлка), Ded Moroz & Snegurochka; Orthodox CHRISTMAS – January 7; MASLENITSA – BLINI (pancakes), burning a straw effigy, farewell to winter; EASTER – KULICH, paskha, painted eggs; IVAN KUPALA – summer solstice, wreaths, jumping over fire.","الأعياد: رأس السنة – شجرة الصنوبر، ديد موروز وسنيغوروتشكا. الميلاد الأرثوذكسي – 7 يناير. ماسلينيتسا – البليني (فطائر)، حرق دمية القش، وداع الشتاء. عيد الفصح – الكوليتش، الباسخا، البيض الملون. إيفان كوبالا – أطول يوم بالسنة، أكاليل الورد، القفز فوق النار."],
+["Other dates: Victory Day – May 9 (St. George ribbon); Day of Russia – June 12; Cosmonautics Day – April 12 (Gagarin, 1961); Women's Day – March 8; Defender of the Fatherland – February 23; Knowledge Day – September 1; Unity Day – November 4.","مناسبات تانية: يوم النصر – 9 مايو (شريط القديس جورج). يوم روسيا – 12 يونيو. يوم الفضاء – 12 أبريل (غاغارين 1961). يوم المرأة – 8 مارس. يوم حماة الوطن – 23 فبراير. يوم المعرفة – 1 سبتمبر. يوم الوحدة – 4 نوفمبر."],
+["Painters: Viktor VASNETSOV – \"Bogatyrs\", \"Alyonushka\", \"Knight at the Crossroads\" (fairy tales & epics); Ilya REPIN – \"Barge Haulers on the Volga\"; Ivan AIVAZOVSKY – seascapes, \"The Ninth Wave\"; Ivan SHISHKIN – \"Morning in a Pine Forest\" (bears); Isaac LEVITAN – landscapes, \"Golden Autumn\"; Karl BRYULLOV – \"The Last Day of Pompeii\".","الرسامين: فيكتور فاسنيتسوف – \"الأبطال الثلاثة\"، \"أليونوشكا\"، \"الفارس عند مفترق الطرق\" (حكايات وملاحم). إيليا ريبين – \"جرّارو المراكب على الفولغا\". إيفان أيفازوفسكي – رسام البحر، \"الموجة التاسعة\". إيفان شيشكين – \"صباح في غابة الصنوبر\" (الدببة). إسحاق ليفيتان – مناظر طبيعية، \"الخريف الذهبي\". كارل بريولوف – \"اليوم الأخير لبومبي\"."],
+["More art: Surikov – \"Boyarynya Morozova\"; Savrasov – \"The Rooks Have Come Back\"; Kramskoi – \"Unknown Woman\"; Andrei Rublev – icon \"Trinity\"; Malevich – \"Black Square\"; Kandinsky – abstraction. The Peredvizhniki (Wanderers) – realist painters. Museums: Tretyakov Gallery (Moscow), Hermitage & Russian Museum (St. Petersburg).","فن كمان: سوريكوف – \"النبيلة موروزوفا\". سافراسوف – \"عادت الغربان\". كرامسكوي – \"امرأة مجهولة\". أندريه روبليوف – أيقونة \"الثالوث\". ماليفيتش – \"المربع الأسود\". كاندينسكي – التجريد. جماعة \"المتجولين\" – رسامين واقعيين. المتاحف: غاليري تريتياكوف (موسكو)، الإرميتاج والمتحف الروسي (سانت بطرسبرغ)."],
+["Composers: Mikhail GLINKA – founder of Russian classical music (\"Ivan Susanin\", \"Ruslan and Lyudmila\"); Pyotr TCHAIKOVSKY – ballets \"Swan Lake\", \"The Nutcracker\", \"Sleeping Beauty\", opera \"Eugene Onegin\"; The Mighty Handful – Mussorgsky (\"Boris Godunov\"), Rimsky-Korsakov (\"Scheherazade\", \"Flight of the Bumblebee\"), Borodin (\"Prince Igor\").","الملحنين: ميخائيل غلينكا – مؤسس الموسيقى الكلاسيكية الروسية (\"إيفان سوسانين\"، \"روسلان ولودميلا\"). بيوتر تشايكوفسكي – باليهات \"بحيرة البجع\"، \"كسارة البندق\"، \"الجميلة النائمة\"، وأوبرا \"يفغيني أونيغين\". \"الخمسة العظماء\": موسورغسكي (\"بوريس غودونوف\")، ريمسكي-كورساكوف (\"شهرزاد\"، \"طيران النحلة\")، بورودين (\"الأمير إيغور\")."],
+["20th c. composers: Sergei PROKOFIEV – ballet \"Romeo and Juliet\", \"Peter and the Wolf\", \"Cinderella\"; Sergei RACHMANINOFF – Piano Concerto No. 2; Igor STRAVINSKY – \"The Firebird\", \"The Rite of Spring\"; Dmitri SHOSTAKOVICH – Symphony No. 7 \"Leningrad\".","ملحنين القرن 20: سيرغي بروكوفييف – باليه \"روميو وجولييت\"، \"بيتيا والذئب\"، \"سندريلا\". سيرغي رحمانينوف – كونشيرتو البيانو رقم 2. إيغور سترافينسكي – \"طائر النار\"، \"طقوس الربيع\". ديمتري شوستاكوفيتش – السيمفونية السابعة \"لينينغراد\"."],
+["BALLET is a form of performing art, a musical-theatrical performance where artistic images are expressed through dance, pantomime and music. Famous theaters: Bolshoi (Moscow), Mariinsky (St. Petersburg). Dancers: Anna Pavlova, Galina Ulanova, Maya Plisetskaya, Rudolf Nureyev. Choreographer Marius Petipa; Diaghilev's \"Russian Seasons\".","الباليه: فن أدائي، عرض موسيقي مسرحي بتتجسد فيه الصور الفنية عن طريق الرقص والإيماء والموسيقى. أشهر المسارح: البولشوي (موسكو) والمارينسكي (سانت بطرسبرغ). راقصين: آنا بافلوفا، غالينا أولانوفا، مايا بليسيتسكايا، رودولف نورييف. مصمم الرقص ماريوس بيتيبا، و\"المواسم الروسية\" لدياغيليف."],
+["Who is who (trap names): Ivan Aivazovsky – PAINTER; Maya Plisetskaya – BALLERINA; Lyudmila Gurchenko – ACTRESS; Fyodor Chaliapin – opera SINGER (bass); Yuri Gagarin – first man in space.","مين مين (أسماء بتلخبط): إيفان أيفازوفسكي – رسام. مايا بليسيتسكايا – راقصة باليه. لودميلا غورتشينكو – ممثلة. فيودور شاليابين – مغني أوبرا. يوري غاغارين – أول إنسان بالفضاء."]
+]
+};
+
+/* Questions: [field, multi, en, ar, [[optEn,optAr]...], [correct], explanationAr] */
+const Q=[
+// ---- Field 1 ----
+[1,0,"Which grammatical category of the Russian verb indicates how an action unfolds or is completed in time?","أي تصنيف قواعدي للفعل الروسي بيبيّن كيف الحدث بصير أو بيكتمل مع الزمن؟",[["aspect","الصيغة/الوجه (вид)"],["transitivity","التعدي"],["mood","الصيغة الشرطية/الأمرية"],["voice","المبني للمعلوم/المجهول"]],[0],"الـ aspect (вид): غير تام делать / تام сделать."],
+[1,0,"How many basic grammatical genders are there in the Russian language?","كم جنس قواعدي أساسي في اللغة الروسية؟",[["2","2"],["3","3"],["4","4"],["1","1"]],[0+1],"3: مذكر، مؤنث، محايد."],
+[1,0,"Determine the main function of language: \"Frost and the sun; a splendid morning! My dear friend, you still lie dormant… It's time, my beauty, rise!\" (Pushkin)","حدد الوظيفة الأساسية للغة: \"صقيع وشمس، يا له من صباح رائع! يا صديقتي العزيزة ما زلتِ نائمة... حان الوقت يا جميلتي، انهضي!\" (بوشكين)",[["metalinguistic","ماوراء لغوية"],["appellative","ندائية"],["phatic","تواصل اجتماعي"],["communicative","تواصلية"]],[1],"الشاعر بينادي ويطلب منها تقوم ← ندائية (appellative)."],
+[1,0,"Determine the main function of language: \"The gold stars are sleeping, the mirror-pond trembles…\" (Yesenin)","حدد الوظيفة الأساسية للغة: \"النجوم الذهبية نائمة، ومرآة البركة ترتجف...\" (يسينين)",[["poetic","شعرية"],["metalinguistic","ماوراء لغوية"],["appellative","ندائية"],["phatic","تواصل اجتماعي"]],[0],"وصف جمالي بدون مخاطبة ← شعرية."],
+[1,0,"Which dictionary is NOT an explanatory dictionary of the Russian language?","أي قاموس مش قاموس تفسيري للغة الروسية؟",[["The Large Academic Dictionary (BAS)","القاموس الأكاديمي الكبير"],["The Small Academic Dictionary (MAS)","القاموس الأكاديمي الصغير"],["The Dictionary of Vladimir Dahl","قاموس فلاديمير دال"],["The Dictionary of Difficulties","قاموس الصعوبات"]],[3],"قاموس الصعوبات بيشرح الحالات الصعبة بالقواعد واللفظ، مش المعنى."],
+[1,0,"Which part of speech does NOT exist in Russian?","أي قسم من أقسام الكلام مش موجود بالروسي؟",[["article","أداة التعريف/التنكير"],["preposition","حرف الجر"],["particle","الأداة (частица)"],["interjection","أداة التعجب"]],[0],"الروسية ما فيها a / the."],
+[1,0,"How many cases does a Russian noun have?","كم حالة إعرابية للاسم الروسي؟",[["4","4"],["5","5"],["6","6"],["8","8"]],[2],"6 حالات: Именительный, Родительный, Дательный, Винительный, Творительный, Предложный."],
+[1,0,"How many letters are there in the modern Russian alphabet?","كم حرف بالأبجدية الروسية الحديثة؟",[["26","26"],["30","30"],["33","33"],["36","36"]],[2],"33 حرف."],
+[1,0,"Which case answers the questions \"кем? чем?\" (by whom? with what?)","أي حالة بتجاوب على سؤال \"بمين؟ بشو؟\" (кем? чем?)",[["Genitive","الإضافة"],["Instrumental","الأداة"],["Dative","المفعول غير المباشر"],["Prepositional","حالة حرف الجر"]],[1],"Творительный падеж = Instrumental."],
+[1,0,"Which pair shows imperfective and perfective aspect?","أي زوج بيبيّن الفعل غير التام والتام؟",[["делать – сделать","делать – сделать (يعمل – عمل)"],["дом – дома","дом – дома (بيت – بيوت)"],["я – ты","я – ты (أنا – أنت)"],["красный – красивый","красный – красивый (أحمر – جميل)"]],[0],"делать (غير تام) / сделать (تام)."],
+[1,0,"Which function of language is used when we talk about language itself (e.g., dictionary definitions)?","أي وظيفة للغة بنستعملها لما نحكي عن اللغة نفسها (متل تعريفات القاموس)؟",[["phatic","تواصل اجتماعي"],["metalinguistic","ماوراء لغوية"],["poetic","شعرية"],["appellative","ندائية"]],[1],"metalinguistic = الحديث عن اللغة باللغة."],
+[1,0,"\"Hello! How are you?\" said only to start contact is an example of the … function.","\"مرحبا! كيفك؟\" لما نحكيها بس لنفتح تواصل هي مثال على الوظيفة...",[["phatic","تواصل اجتماعي (phatic)"],["metalinguistic","ماوراء لغوية"],["poetic","شعرية"],["cognitive","معرفية"]],[0],"Phatic = فتح التواصل والحفاظ عليه."],
+[1,0,"Which dictionary shows the correct pronunciation and stress of words?","أي قاموس بيبيّن اللفظ الصحيح ومكان النبرة؟",[["Orthoepic dictionary","قاموس اللفظ"],["Etymological dictionary","القاموس التأصيلي"],["Phraseological dictionary","قاموس التعابير"],["Dictionary of synonyms","قاموس المترادفات"]],[0],"Орфоэпический словарь = النطق والنبرة."],
+[1,0,"Which dictionary explains the origin of words?","أي قاموس بيشرح أصل الكلمات؟",[["Etymological","التأصيلي"],["Orthographic","الإملائي"],["Explanatory","التفسيري"],["Orthoepic","اللفظي"]],[0],"Этимологический словарь (متل قاموس فاسمر)."],
+[1,0,"Russian belongs to which group of languages?","الروسية بتنتمي لأي مجموعة لغات؟",[["East Slavic","السلافية الشرقية"],["West Slavic","السلافية الغربية"],["Germanic","الجرمانية"],["Turkic","التركية"]],[0],"الروسية والأوكرانية والبيلاروسية = سلافية شرقية."],
+[1,0,"Russian is one of how many official languages of the United Nations?","الروسية وحدة من كم لغة رسمية بالأمم المتحدة؟",[["4","4"],["5","5"],["6","6"],["10","10"]],[2],"6: العربية، الصينية، الإنجليزية، الفرنسية، الروسية، الإسبانية."],
+[1,1,"Which tense forms do Russian verbs have? (3 correct)","شو الأزمنة الموجودة بالأفعال الروسية؟ (3 إجابات صحيحة)",[["Present","الحاضر"],["Past","الماضي"],["Future","المستقبل"],["Past Perfect","الماضي التام"]],[0,1,2],"3 أزمنة بس، ما في Past Perfect."],
+[1,1,"Which language functions are used in Tsvetaeva's poem \"I'd like to say: thank you with heart and hand for loving me without even knowing!\"? (3 correct)","شو وظائف اللغة المستعملة بقصيدة تسفيتايفا \"بدي أقول: شكراً من القلب واليد لأنك حبيتني بدون ما تعرف\"؟ (3 صحيحة)",[["metalinguistic","ماوراء لغوية"],["communicative","تواصلية"],["appellative","ندائية"],["poetic","شعرية"]],[1,2,3],"فيها رسالة (تواصلية)، مخاطبة (ندائية)، وشعر (شعرية). ما فيها حديث عن اللغة."],
+[1,1,"Which dictionaries clarify the meaning of a word, its pronunciation and grammatical formation? (3 correct)","أي قواميس بتوضح معنى الكلمة ولفظها وتصريفها القواعدي؟ (3 صحيحة)",[["Explanatory Dictionary","القاموس التفسيري"],["Phraseological Dictionary","قاموس التعابير"],["Dictionary of Difficulties","قاموس الصعوبات"],["Orthoepic Dictionary","قاموس اللفظ"]],[0,2,3],"قاموس التعابير للعبارات الاصطلاحية مش للكلمة المفردة."],
+[1,1,"Mark the correct statements about nouns in Russian AND English. (3 correct)","اختار العبارات الصحيحة عن الأسماء بالروسي والإنجليزي. (3 صحيحة)",[["A noun is an independent part of speech denoting an object, person or concept, answering \"who?\" or \"what?\"","الاسم قسم مستقل بيدل على شيء أو شخص أو مفهوم، وبيجاوب على مين؟ شو؟"],["A noun changes according to number.","الاسم بيتغير حسب العدد."],["A noun can be concrete and abstract.","الاسم ممكن يكون محسوس أو مجرد."],["A noun can only be material.","الاسم لازم يكون مادي بس."]],[0,1,2],"الأسماء ممكن تكون مجردة (حب، حرية)."],
+[1,1,"Which are grammatical categories of the Russian NOUN? (3 correct)","شو التصنيفات القواعدية للاسم الروسي؟ (3 صحيحة)",[["gender","الجنس"],["number","العدد"],["case","الحالة الإعرابية"],["aspect","صيغة الفعل (вид)"]],[0,1,2],"الـ aspect للفعل بس."],
+[1,1,"Which are independent (notional) parts of speech? (3 correct)","شو أقسام الكلام المستقلة؟ (3 صحيحة)",[["noun","الاسم"],["verb","الفعل"],["adjective","الصفة"],["preposition","حرف الجر"]],[0,1,2],"حرف الجر قسم مساعد."],
+[1,1,"Which are explanatory dictionaries? (3 correct)","شو القواميس التفسيرية؟ (3 صحيحة)",[["Dahl's dictionary","قاموس دال"],["Ozhegov's dictionary","قاموس أوجيغوف"],["Ushakov's dictionary","قاموس أوشاكوف"],["Vasmer's etymological dictionary","قاموس فاسمر التأصيلي"]],[0,1,2],"فاسمر تأصيلي (أصل الكلمات)."],
+// ---- Field 2 ----
+[2,0,"Which branch of linguistics studies the general laws of the sound side of language?","أي فرع من علم اللغة بيدرس قوانين الجانب الصوتي للغة؟",[["phonetics","الصوتيات"],["morphology","المورفولوجيا"],["lexicology","علم المفردات"],["syntax","النحو"]],[0],"Фонетика = الأصوات."],
+[2,0,"Which feature is NOT characteristic of the scientific style?","أي ميزة مش من ميزات الأسلوب العلمي؟",[["terminology and unambiguous formulations","مصطلحات وصياغة واضحة"],["absence of emotional vocabulary","غياب الكلمات العاطفية"],["logic and argumentation","المنطق والحجج"],["simple vocabulary, abbreviations, incomplete sentences","كلمات بسيطة، اختصارات، جمل ناقصة"]],[3],"هاي ميزات الأسلوب العامي."],
+[2,0,"The different pronunciation of a word in various regions of the country is characteristic of…","اللفظ المختلف لنفس الكلمة بمناطق مختلفة من البلد من ميزات...",[["argot","الأرغو"],["professional speech","لغة المهن"],["dialect (vernacular)","اللهجة المناطقية"],["slang","السلانغ"]],[2],"اللهجة = جغرافية."],
+[2,0,"Which branch of linguistics studies the structure of sentences?","أي فرع بيدرس تركيب الجمل؟",[["syntax","النحو (синтаксис)"],["phonetics","الصوتيات"],["lexicology","علم المفردات"],["orthoepy","علم اللفظ"]],[0],"Синтаксис = الجملة."],
+[2,0,"Which branch of linguistics studies the vocabulary of a language?","أي فرع بيدرس مفردات اللغة؟",[["lexicology","علم المفردات"],["morphology","المورفولوجيا"],["syntax","النحو"],["phonetics","الصوتيات"]],[0],"Лексикология = المفردات."],
+[2,0,"Laws, contracts and official applications are written in the … style.","القوانين والعقود والطلبات الرسمية بتنكتب بالأسلوب...",[["official-business","الرسمي/الإداري"],["colloquial","العامي"],["artistic","الفني"],["journalistic","الصحفي"]],[0],"Официально-деловой стиль."],
+[2,0,"Which style both informs and persuades and is used in newspapers?","أي أسلوب بيخبّر وبيقنع بنفس الوقت ومستعمل بالجرايد؟",[["journalistic (publicistic)","الصحفي"],["scientific","العلمي"],["official-business","الرسمي"],["colloquial","العامي"]],[0],"Публицистический стиль."],
+[2,0,"A secret language of a closed social group is called…","اللغة السرية لجماعة اجتماعية مغلقة اسمها...",[["argot","الأرغو"],["dialect","اللهجة"],["literary language","اللغة الأدبية"],["terminology","المصطلحات"]],[0],"Арго."],
+[2,0,"The standard, codified form of the national language is…","الشكل المعياري الموحّد للغة الوطنية هو...",[["literary language","اللغة الأدبية"],["dialect","اللهجة"],["slang","السلانغ"],["jargon","الجارغون"]],[0],"Литературный язык."],
+[2,0,"\"Language is a system, speech is its use\" – this distinction is associated with…","\"اللغة نظام والكلام استعماله\" – هالتفرقة مرتبطة بـ...",[["Ferdinand de Saussure","فرديناند دي سوسير"],["Vladimir Dahl","فلاديمير دال"],["Leo Tolstoy","ليف تولستوي"],["Mikhail Lomonosov","ميخائيل لومونوسوف"]],[0],"دي سوسير مؤسس علم اللغة البنيوي."],
+[2,1,"Which of the following are levels of language? (3 correct)","شو منها مستويات اللغة؟ (3 صحيحة)",[["phonetics","الصوتي"],["morphology","الصرفي"],["textology","علم النصوص"],["syntax","النحوي"]],[0,1,3],"Textology مش مستوى لغة."],
+[2,1,"Which of the following refer to a sociolect? (3 correct)","شو منها لهجات اجتماعية؟ (3 صحيحة)",[["jargon","الجارغون"],["argot","الأرغو"],["slang","السلانغ"],["territorial dialect","اللهجة المناطقية"]],[0,1,2],"اللهجة المناطقية جغرافية مش اجتماعية."],
+[2,1,"Which are functional styles of the Russian language? (3 correct)","شو منها أساليب وظيفية باللغة الروسية؟ (3 صحيحة)",[["scientific","العلمي"],["official-business","الرسمي"],["colloquial","العامي"],["phonetic","الصوتي"]],[0,1,2],"\"صوتي\" مستوى لغة مش أسلوب."],
+[2,1,"Which features belong to colloquial (conversational) style? (3 correct)","شو ميزات الأسلوب العامي؟ (3 صحيحة)",[["incomplete sentences","جمل ناقصة"],["emotional words","كلمات عاطفية"],["simple vocabulary","مفردات بسيطة"],["strict terminology","مصطلحات صارمة"]],[0,1,2],"المصطلحات للعلمي."],
+// ---- Field 3 ----
+[3,0,"Internet technologies let audiences access new media anytime and anywhere. Thus, another key feature of new media is their ___.","تكنولوجيا الإنترنت سمحت للجمهور يوصل للإعلام الجديد بأي وقت ومكان. إذن ميزة أساسية تانية للإعلام الجديد هي ___.",[["multimediality","تعدد الوسائط"],["accessibility","سهولة الوصول"],["free-of-charge basis","المجانية"],["hyperactivity","فرط النشاط"]],[1],"anytime, anywhere = accessibility."],
+[3,0,"Which television channel in Russia is the leading source of news?","أي قناة تلفزيونية روسية هي المصدر الرئيسي للأخبار؟",[["Channel One","القناة الأولى"],["Match TV","ماتش تي في"],["STS","STS"],["Pyatnitsa!","بياتنيتسا"]],[0],"Первый канал. الباقي رياضة وترفيه."],
+[3,0,"What is the main feature of Internet communication?","شو الميزة الأساسية للتواصل عبر الإنترنت؟",[["It allows verbal, non-verbal and paraverbal means of communication.","بيسمح بالوسائل اللفظية وغير اللفظية وشبه اللفظية."],["Only verbal means can be used.","بس الوسائل اللفظية."],["Only non-verbal means can be used.","بس غير اللفظية."],["Only paraverbal means can be used.","بس شبه اللفظية."]],[0],"كلمات + إيموجي + CAPS/علامات."],
+[3,0,"What violates etiquette during a conference presentation?","شو اللي بيخالف الآداب خلال عرض بمؤتمر؟",[["The speaker being late.","تأخر المتحدث."],["Keeping the time limit.","الالتزام بالوقت."],["Thanking the audience at the end.","شكر الجمهور بالآخر."],["Asking clarifying questions after the talk.","أسئلة توضيحية بعد العرض."]],[0],"التأخير."],
+[3,0,"Which of these is a Russian social network?","أي وحدة من هدول شبكة تواصل روسية؟",[["VKontakte","فكونتاكتي"],["Pinterest","بينتريست"],["Snapchat","سناب شات"],["LinkedIn","لينكدإن"]],[0],"VK و Odnoklassniki روس."],
+[3,0,"Which of these is a Russian news agency?","أي وحدة وكالة أنباء روسية؟",[["TASS","تاس"],["Reuters","رويترز"],["BBC","بي بي سي"],["CNN","سي إن إن"]],[0],"ТАСС و РИА Новости."],
+[3,0,"Which media genre is ANALYTICAL?","أي نوع إعلامي تحليلي؟",[["article / commentary","مقال / تعليق"],["news item","خبر قصير"],["chronicle","سجل أحداث"],["announcement","إعلان"]],[0],"الخبر والإعلان إخباريين."],
+[3,0,"Intonation, tempo and volume of the voice are … means of communication.","نبرة الصوت وسرعته وعلوه وسائل تواصل...",[["paraverbal","شبه لفظية"],["verbal","لفظية"],["written","مكتوبة"],["visual","بصرية"]],[0],"Paraverbal."],
+[3,0,"Gestures and facial expressions are … means of communication.","الإشارات وتعابير الوجه وسائل تواصل...",[["non-verbal","غير لفظية"],["verbal","لفظية"],["paraverbal","شبه لفظية"],["metalinguistic","ماوراء لغوية"]],[0],"Non-verbal."],
+[3,0,"How do Russians politely address a teacher named Ivan, whose father is Anatoly?","كيف الروس بيخاطبوا باحترام أستاذ اسمه إيفان وأبوه اسمه أناتولي؟",[["Ivan Anatolyevich","إيفان أناتوليفيتش"],["Vanya","فانيا"],["Mister Ivan","مستر إيفان"],["Anatoly","أناتولي"]],[0],"الاسم + اسم الأب (отчество)."],
+[3,0,"The set of rules of polite behavior on the Internet is called…","مجموعة قواعد التصرف المهذب على الإنترنت اسمها...",[["netiquette","آداب الإنترنت"],["argot","الأرغو"],["hypertext","النص التشعبي"],["spam","السبام"]],[0],"Сетевой этикет."],
+[3,1,"Which professions are solely related to mass media? (3 correct)","شو المهن المرتبطة بالإعلام فقط؟ (3 صحيحة)",[["correspondent","مراسل"],["journalist","صحفي"],["TV presenter","مقدم تلفزيوني"],["politician","سياسي"]],[0,1,2],"السياسي مش مهنة إعلامية."],
+[3,1,"Which trends are relevant to the language of online communication on VKontakte? (3 correct)","شو الخصائص المرتبطة بلغة التواصل على فكونتاكتي؟ (3 صحيحة)",[["rapid updating","التجدد السريع"],["variability","التغيّر"],["predominance of colloquial style","غلبة الأسلوب العامي"],["increasing complexity of the language system","زيادة تعقيد نظام اللغة"]],[0,1,2],"لغة الإنترنت بتصير أبسط مش أعقد."],
+[3,1,"Which forms of address are acceptable in professional correspondence? (3 correct)","شو صيغ المخاطبة المقبولة بالمراسلات الرسمية؟ (3 صحيحة)",[["Good afternoon, colleagues!","مساء الخير يا زملاء!"],["Dear Alexandra Sergeevna!","عزيزتي ألكسندرا سيرغييفنا!"],["Respected Ivan Anatolyevich!","المحترم إيفان أناتوليفيتش!"],["Dear friend!","صديقي العزيز!"]],[0,1,2],"\"صديقي العزيز\" مش رسمي."],
+[3,1,"Which are functions of mass media? (3 correct)","شو وظائف وسائل الإعلام؟ (3 صحيحة)",[["informational","الإخبار"],["educational","التثقيف"],["entertaining","الترفيه"],["phonetic","الصوتية"]],[0,1,2],"\"صوتية\" مش وظيفة إعلام."],
+[3,1,"Which are features of NEW media? (3 correct)","شو ميزات الإعلام الجديد؟ (3 صحيحة)",[["interactivity","التفاعل"],["multimediality","تعدد الوسائط"],["accessibility","سهولة الوصول"],["only printed form","شكل مطبوع فقط"]],[0,1,2],"الإعلام الجديد رقمي."],
+// ---- Field 4 ----
+[4,0,"The genre (kind) of literary fiction is NOT:","مش من أجناس الأدب:",[["epos","الملحمي/السردي"],["lyric","الغنائي"],["drama","الدرامي"],["melodrama","الميلودراما"]],[3],"التلاتة: эпос، лирика، драма."],
+[4,0,"___ is a device used to strengthen or weaken the meaning of homogeneous parts of a sentence. It can be ascending or descending.","___ أسلوب بيستعمل لتقوية أو تخفيف معنى أجزاء متجانسة بالجملة، وممكن يكون صاعد أو نازل.",[["Fronting","التقديم"],["Parallelism","التوازي"],["Anaphora","التكرار بالبداية"],["Gradation","التدرج"]],[3],"Градация."],
+[4,0,"Fet's poem \"The Steppe at Evening\" (clouds, fields, boundless steppe like the sea) is a…","قصيدة فيت \"السهوب في المساء\" (غيوم، حقول، سهوب بلا حدود متل البحر) هي...",[["philosophical lyric poem","شعر فلسفي"],["love lyric poem","شعر حب"],["landscape lyric poem","شعر طبيعة/مناظر"],["religious lyric poem","شعر ديني"]],[2],"وصف طبيعة = landscape."],
+[4,0,"A comparison using \"like\" or \"as\" (как, словно, будто) is called…","التشبيه باستعمال \"مثل\" أو \"كأن\" اسمه...",[["simile","تشبيه"],["metaphor","استعارة"],["hyperbole","مبالغة"],["epithet","نعت فني"]],[0],"Сравнение."],
+[4,0,"A hidden comparison without \"like\" (\"glass of empty sky\") is a…","تشبيه مخفي بدون \"مثل\" (\"زجاج السماء الفارغة\") هو...",[["metaphor","استعارة"],["simile","تشبيه"],["litotes","تقليل"],["anaphora","تكرار بالبداية"]],[0],"Метафора."],
+[4,0,"Repeating the same word at the beginning of several lines is…","تكرار نفس الكلمة ببداية كذا سطر اسمه...",[["anaphora","تكرار بالبداية (anaphora)"],["epiphora","تكرار بالنهاية"],["inversion","تقديم وتأخير"],["oxymoron","جمع الأضداد"]],[0],"Анафора."],
+[4,0,"\"The stars are sleeping\" – giving human qualities to nature is…","\"النجوم نايمة\" – إعطاء صفات بشرية للطبيعة اسمه...",[["personification","التشخيص"],["hyperbole","المبالغة"],["metonymy","الكناية"],["gradation","التدرج"]],[0],"Олицетворение."],
+[4,0,"Strong exaggeration (\"I told you a hundred times\") is…","المبالغة القوية (\"قلتلك مية مرة\") اسمها...",[["hyperbole","مبالغة"],["litotes","تقليل"],["simile","تشبيه"],["irony","سخرية"]],[0],"Гипербола."],
+[4,0,"A combination of opposite words (\"living corpse\", \"hot snow\") is…","الجمع بين كلمات متضادة (\"جثة حية\"، \"ثلج حار\") اسمه...",[["oxymoron","أوكسيمورون"],["epithet","نعت"],["anaphora","تكرار"],["allegory","رمز"]],[0],"Оксюморон."],
+[4,0,"The highest point of tension in a plot is the…","أعلى نقطة توتر بالحبكة هي...",[["climax","الذروة"],["exposition","التمهيد"],["denouement","الحل"],["epilogue","الخاتمة"]],[0],"Кульминация."],
+[4,0,"A colorful artistic adjective (\"golden grove\") is an…","الصفة الفنية الملونة (\"البستان الذهبي\") اسمها...",[["epithet","نعت فني"],["antithesis","طباق"],["inversion","تقديم وتأخير"],["anaphora","تكرار"]],[0],"Эпитет."],
+[4,0,"Which genre belongs to DRAMA?","أي نوع بينتمي للدراما؟",[["comedy","كوميديا"],["novel","رواية"],["elegy","رثائية"],["short story","قصة قصيرة"]],[0],"الدراما: مأساة، كوميديا، دراما."],
+[4,0,"A strong contrast of opposite ideas (\"They came together: wave and stone, poetry and prose, ice and flame\") is…","المقابلة القوية بين أفكار متضادة (\"اجتمعوا: الموجة والحجر، الشعر والنثر، الجليد واللهب\") هي...",[["antithesis","الطباق/المقابلة"],["gradation","التدرج"],["simile","التشبيه"],["metonymy","الكناية"]],[0],"Антитеза – من \"يفغيني أونيغين\"."],
+[4,1,"Which works belong to POETRY? (3 correct)","شو الأعمال اللي هي شعر؟ (3 صحيحة)",[["\"The Prayer\" by Lermontov","\"الصلاة\" ليرمونتوف"],["\"I Loved You\" by Pushkin","\"أحببتك\" لبوشكين"],["\"Lilichka!\" by Mayakovsky","\"ليليتشكا!\" لماياكوفسكي"],["\"Crime and Punishment\" by Dostoevsky","\"الجريمة والعقاب\" لدوستويفسكي"]],[0,1,2],"الجريمة والعقاب رواية نثر."],
+[4,1,"Which examples employ SIMILE? (3 correct)","شو الأمثلة اللي فيها تشبيه (simile)؟ (3 صحيحة)",[["Transparent glass of empty sky (Akhmatova)","زجاج شفاف للسماء الفارغة (أخماتوفا)"],["Anchar, like a formidable sentry (Pushkin)","الأنتشار مثل حارس مهيب (بوشكين)"],["Like a flock of butterflies (Yesenin)","مثل سرب فراشات (يسينين)"],["Crystal-like, like day at a distance (Tyutchev)","كالبلور، مثل النهار من بعيد (تيوتشيف)"]],[1,2,3],"الأولى استعارة (ما فيها like)."],
+[4,1,"Which are TROPES? (3 correct)","شو منها مجازات (tropes)؟ (3 صحيحة)",[["metaphor","استعارة"],["epithet","نعت فني"],["metonymy","كناية"],["rhyme","قافية"]],[0,1,2],"القافية مش مجاز."],
+[4,1,"Which are genres of the EPIC (narrative) kind? (3 correct)","شو أنواع الجنس الملحمي/السردي؟ (3 صحيحة)",[["novel","رواية"],["short story","قصة قصيرة"],["epic novel","رواية ملحمية"],["ode","أنشودة/قصيدة مدح"]],[0,1,2],"الأود (ode) غنائي."],
+[4,1,"Which are types of LYRIC poetry? (3 correct)","شو أنواع الشعر الغنائي؟ (3 صحيحة)",[["landscape","طبيعة"],["love","حب"],["philosophical","فلسفي"],["detective","بوليسي"]],[0,1,2],"البوليسي نوع روائي."],
+// ---- Field 5 ----
+[5,0,"What is the genre of Leo Tolstoy's \"Anna Karenina\"?","شو نوع رواية تولستوي \"آنا كارينينا\"؟",[["novel","رواية"],["story","قصة"],["epic novel","رواية ملحمية"],["epic","ملحمة"]],[0],"\"الحرب والسلم\" هي الرواية الملحمية، أما آنا كارينينا = رواية."],
+[5,0,"Who wrote the story \"The Lady with the Dog\"?","مين كتب قصة \"السيدة صاحبة الكلب\"؟",[["Pushkin","بوشكين"],["Gogol","غوغول"],["Turgenev","تورغينيف"],["Chekhov","تشيخوف"]],[3],"تشيخوف."],
+[5,0,"The literary movement \"Imaginism\" is associated with…","تيار \"الإيماجينيزم\" مرتبط بـ...",[["Pushkin","بوشكين"],["Tsvetaeva","تسفيتايفا"],["Yesenin","يسينين"],["Lermontov","ليرمونتوف"]],[2],"يسينين."],
+[5,0,"Who wrote \"No regrets, no cries, no pain will ever…\"?","مين كتب \"لا أندم، ولا أنادي، ولا أبكي...\"؟",[["Tsvetaeva","تسفيتايفا"],["Bunin","بونين"],["Yesenin","يسينين"],["Akhmatova","أخماتوفا"]],[2],"«Не жалею, не зову, не плачу» – يسينين."],
+[5,0,"To which genre does \"The Turnip\" belong?","لأي نوع بتنتمي \"اللفتة\" (Репка)؟",[["fairy tale","حكاية شعبية"],["short story","قصة قصيرة"],["bylina","بيلينا"],["ode","أنشودة"]],[0],"Сказка."],
+[5,0,"Who is considered the founder of the modern Russian literary language?","مين بيعتبر مؤسس اللغة الأدبية الروسية الحديثة؟",[["Alexander Pushkin","ألكسندر بوشكين"],["Leo Tolstoy","ليف تولستوي"],["Anton Chekhov","أنطون تشيخوف"],["Maxim Gorky","مكسيم غوركي"]],[0],"بوشكين."],
+[5,0,"\"Eugene Onegin\" is a…","\"يفغيني أونيغين\" هي...",[["novel in verse","رواية شعرية"],["comedy","كوميديا"],["fairy tale","حكاية"],["short story","قصة قصيرة"]],[0],"Роман в стихах – \"موسوعة الحياة الروسية\"."],
+[5,0,"Who wrote \"A Hero of Our Time\"?","مين كتب \"بطل من هذا الزمان\"؟",[["Lermontov","ليرمونتوف"],["Gogol","غوغول"],["Dostoevsky","دوستويفسكي"],["Bunin","بونين"]],[0],"بطلها بيتشورين."],
+[5,0,"Who wrote \"Dead Souls\" and \"The Government Inspector\"?","مين كتب \"الأرواح الميتة\" و\"المفتش العام\"؟",[["Gogol","غوغول"],["Turgenev","تورغينيف"],["Chekhov","تشيخوف"],["Kuprin","كوبرين"]],[0],"غوغول."],
+[5,0,"Who wrote \"Crime and Punishment\"?","مين كتب \"الجريمة والعقاب\"؟",[["Dostoevsky","دوستويفسكي"],["Tolstoy","تولستوي"],["Turgenev","تورغينيف"],["Sholokhov","شولوخوف"]],[0],"بطلها راسكولنيكوف."],
+[5,0,"Who wrote \"Fathers and Sons\" (hero Bazarov, the nihilist)?","مين كتب \"آباء وأبناء\" (البطل بازاروف العدمي)؟",[["Turgenev","تورغينيف"],["Gogol","غوغول"],["Pushkin","بوشكين"],["Gorky","غوركي"]],[0],"تورغينيف."],
+[5,0,"\"War and Peace\" is an example of an…","\"الحرب والسلم\" مثال على...",[["epic novel","رواية ملحمية"],["short story","قصة قصيرة"],["comedy","كوميديا"],["poem","قصيدة"]],[0],"Роман-эпопея."],
+[5,0,"Which play was written by Chekhov?","أي مسرحية كتبها تشيخوف؟",[["The Cherry Orchard","بستان الكرز"],["Woe from Wit","ذو العقل يشقى"],["The Storm","العاصفة"],["The Lower Depths","الحضيض"]],[0],"الباقي: غريبويدوف، أوستروفسكي، غوركي."],
+[5,0,"Who was the first Russian writer to receive the Nobel Prize in Literature (1933)?","مين أول كاتب روسي أخد نوبل بالأدب (1933)؟",[["Ivan Bunin","إيفان بونين"],["Boris Pasternak","بوريس باسترناك"],["Mikhail Sholokhov","ميخائيل شولوخوف"],["Leo Tolstoy","ليف تولستوي"]],[0],"بونين 1933."],
+[5,0,"Who wrote \"The Garnet Bracelet\"?","مين كتب \"السوار العقيقي\"؟",[["Kuprin","كوبرين"],["Bunin","بونين"],["Gorky","غوركي"],["Chekhov","تشيخوف"]],[0],"كوبرين."],
+[5,0,"Who wrote \"And Quiet Flows the Don\"?","مين كتب \"الدون الهادئ\"؟",[["Sholokhov","شولوخوف"],["Pasternak","باسترناك"],["Gorky","غوركي"],["Kuprin","كوبرين"]],[0],"شولوخوف – نوبل 1965."],
+[5,0,"Who wrote \"Doctor Zhivago\"?","مين كتب \"دكتور جيفاغو\"؟",[["Boris Pasternak","بوريس باسترناك"],["Ivan Bunin","إيفان بونين"],["Maxim Gorky","مكسيم غوركي"],["Sergei Yesenin","سيرغي يسينين"]],[0],"باسترناك – نوبل 1958."],
+[5,0,"Who wrote the play \"The Lower Depths\" and the novel \"Mother\"?","مين كتب مسرحية \"الحضيض\" ورواية \"الأم\"؟",[["Maxim Gorky","مكسيم غوركي"],["Anton Chekhov","أنطون تشيخوف"],["Alexander Kuprin","ألكسندر كوبرين"],["Ivan Turgenev","إيفان تورغينيف"]],[0],"غوركي."],
+[5,0,"Anna Akhmatova belonged to which literary movement?","آنا أخماتوفا كانت من أي تيار أدبي؟",[["Acmeism","الأكميزم"],["Futurism","المستقبلية"],["Imaginism","الإيماجينيزم"],["Classicism","الكلاسيكية"]],[0],"Акмеизм. وكتبت \"قداس جنائزي\"."],
+[5,0,"Vladimir Mayakovsky belonged to which movement?","فلاديمير ماياكوفسكي كان من أي تيار؟",[["Futurism","المستقبلية"],["Symbolism","الرمزية"],["Acmeism","الأكميزم"],["Sentimentalism","العاطفية"]],[0],"Футуризм."],
+[5,0,"Alexander Blok (\"The Twelve\") is a poet of…","ألكسندر بلوك (\"الاثنا عشر\") شاعر من...",[["Symbolism","الرمزية"],["Futurism","المستقبلية"],["Imaginism","الإيماجينيزم"],["Realism","الواقعية"]],[0],"Символизм."],
+[5,0,"Epic folk songs about heroes (bogatyrs) like Ilya Muromets are called…","الأغاني الشعبية الملحمية عن الأبطال متل إيليا موروميتس اسمها...",[["byliny","بيلينات"],["chastushki","تشاستوشكي"],["odes","أناشيد"],["fables","حكايات رمزية"]],[0],"Былины."],
+[5,0,"Who is famous for FABLES (басни) in Russian literature?","مين مشهور بالحكايات الرمزية (басни) بالأدب الروسي؟",[["Ivan Krylov","إيفان كريلوف"],["Ivan Bunin","إيفان بونين"],["Boris Pasternak","بوريس باسترناك"],["Anton Chekhov","أنطون تشيخوف"]],[0],"كريلوف."],
+[5,0,"In 1820 Pushkin wrote a poem that brought him fame:","سنة 1820 بوشكين كتب قصيدة شهّرته:",[["\"Ruslan and Lyudmila\"","\"روسلان ولودميلا\""],["\"Mtsyri\"","\"متسيري\""],["\"The Twelve\"","\"الاثنا عشر\""],["\"Requiem\"","\"قداس جنائزي\""]],[0],"Руслан и Людмила."],
+[5,0,"How did Pushkin die?","كيف مات بوشكين؟",[["after a duel","بعد مبارزة"],["in a war","بحرب"],["of old age","من الكبر"],["in exile in Siberia","بالمنفى بسيبيريا"]],[0],"مبارزة مع دانتيس سنة 1837."],
+[5,1,"Which poets represent the Golden Age of Russian poetry? (3 correct)","مين الشعراء اللي بيمثلوا العصر الذهبي للشعر الروسي؟ (3 صحيحة)",[["Anna Akhmatova","آنا أخماتوفا"],["Alexander Pushkin","ألكسندر بوشكين"],["Mikhail Lermontov","ميخائيل ليرمونتوف"],["Fyodor Tyutchev","فيودور تيوتشيف"]],[1,2,3],"أخماتوفا من العصر الفضي."],
+[5,1,"What were the main themes of Vladimir Mayakovsky? (3 correct)","شو المواضيع الأساسية عند ماياكوفسكي؟ (3 صحيحة)",[["love","الحب"],["revolution","الثورة"],["the poet and his role in society","الشاعر ودوره بالمجتمع"],["peaceful rural life","حياة القرية الهادئة"]],[0,1,2],"حياة القرية موضوع يسينين. (بالنموذج الرسمي اعتبروا الأربعة صح، بس الأساسي هدول التلاتة)."],
+[5,1,"Which poets belong to the SILVER Age? (3 correct)","مين شعراء العصر الفضي؟ (3 صحيحة)",[["Akhmatova","أخماتوفا"],["Tsvetaeva","تسفيتايفا"],["Blok","بلوك"],["Pushkin","بوشكين"]],[0,1,2],"بوشكين ذهبي."],
+[5,1,"Which works were written by Pushkin? (3 correct)","شو الأعمال اللي كتبها بوشكين؟ (3 صحيحة)",[["Eugene Onegin","يفغيني أونيغين"],["The Captain's Daughter","ابنة الضابط"],["The Tale of the Fisherman and the Fish","حكاية الصياد والسمكة"],["Dead Souls","الأرواح الميتة"]],[0,1,2],"الأرواح الميتة لغوغول."],
+[5,1,"Which works were written by Chekhov? (3 correct)","شو الأعمال اللي كتبها تشيخوف؟ (3 صحيحة)",[["The Seagull","النورس"],["Chameleon","الحرباء"],["Three Sisters","الشقيقات الثلاث"],["The Overcoat","المعطف"]],[0,1,2],"المعطف لغوغول."],
+[5,1,"Which are genres of Russian folklore? (3 correct)","شو أنواع الفولكلور الروسي؟ (3 صحيحة)",[["fairy tale","الحكاية الشعبية"],["bylina","البيلينا"],["proverb","المثل"],["novel","الرواية"]],[0,1,2],"الرواية أدب مكتوب مش فولكلور."],
+[5,1,"Which works were written by Tolstoy? (3 correct)","شو الأعمال اللي كتبها تولستوي؟ (3 صحيحة)",[["War and Peace","الحرب والسلم"],["Anna Karenina","آنا كارينينا"],["Resurrection","البعث"],["The Idiot","الأبله"]],[0,1,2],"الأبله لدوستويفسكي."],
+// ---- Field 6 ----
+[6,0,"Which category of culture incorporates customs and traditions?","أي فئة ثقافية بتشمل العادات والتقاليد؟",[["material","مادية"],["spiritual","روحية"],["social","اجتماعية"],["artistic","فنية"]],[1],"Духовная культура."],
+[6,0,"Which tree is a symbol of Russia?","أي شجرة رمز لروسيا؟",[["birch","البتولا"],["maple","القيقب"],["oak","البلوط"],["willow","الصفصاف"]],[0],"Берёза."],
+[6,0,"Which of the following does NOT belong to Russian FOLK culture?","أي وحدة مش من الثقافة الشعبية الروسية؟",[["Ivan Kupala","إيفان كوبالا"],["Gzhel folk craft","حرفة غجيل"],["opera and ballet","الأوبرا والباليه"],["Khokhloma folk craft","حرفة خوخلوما"]],[2],"الأوبرا والباليه فن كلاسيكي."],
+[6,0,"Which of the following people is a famous Russian composer?","مين ملحن روسي مشهور؟",[["Ivan Aivazovsky","إيفان أيفازوفسكي"],["Maya Plisetskaya","مايا بليسيتسكايا"],["Lyudmila Gurchenko","لودميلا غورتشينكو"],["Sergei Prokofiev","سيرغي بروكوفييف"]],[3],"أيفازوفسكي رسام، بليسيتسكايا راقصة، غورتشينكو ممثلة."],
+[6,0,"Who painted \"Bogatyrs\" (three heroes on horseback) and \"Alyonushka\"?","مين رسم \"الأبطال الثلاثة\" على الخيل و\"أليونوشكا\"؟",[["Viktor Vasnetsov","فيكتور فاسنيتسوف"],["Ilya Repin","إيليا ريبين"],["Ivan Shishkin","إيفان شيشكين"],["Isaac Levitan","إسحاق ليفيتان"]],[0],"فاسنيتسوف – جواب السؤال 40 بالنموذج."],
+[6,0,"Who painted \"Barge Haulers on the Volga\"?","مين رسم \"جرّارو المراكب على الفولغا\"؟",[["Ilya Repin","إيليا ريبين"],["Ivan Aivazovsky","إيفان أيفازوفسكي"],["Karl Bryullov","كارل بريولوف"],["Kazimir Malevich","كازيمير ماليفيتش"]],[0],"ريبين."],
+[6,0,"Ivan Aivazovsky is famous for painting…","إيفان أيفازوفسكي مشهور برسم...",[["the sea (\"The Ninth Wave\")","البحر (\"الموجة التاسعة\")"],["portraits of tsars","صور القياصرة"],["abstract squares","مربعات تجريدية"],["icons","أيقونات"]],[0],"رسام البحر."],
+[6,0,"\"Morning in a Pine Forest\" (with bears) was painted by…","\"صباح في غابة الصنوبر\" (مع الدببة) رسمها...",[["Ivan Shishkin","إيفان شيشكين"],["Viktor Vasnetsov","فيكتور فاسنيتسوف"],["Ilya Repin","إيليا ريبين"],["Vasily Surikov","فاسيلي سوريكوف"]],[0],"شيشكين."],
+[6,0,"\"Black Square\" was painted by…","\"المربع الأسود\" رسمه...",[["Kazimir Malevich","كازيمير ماليفيتش"],["Wassily Kandinsky","فاسيلي كاندينسكي"],["Isaac Levitan","إسحاق ليفيتان"],["Andrei Rublev","أندريه روبليوف"]],[0],"ماليفيتش."],
+[6,0,"Who composed \"Swan Lake\" and \"The Nutcracker\"?","مين لحّن \"بحيرة البجع\" و\"كسارة البندق\"؟",[["Tchaikovsky","تشايكوفسكي"],["Prokofiev","بروكوفييف"],["Glinka","غلينكا"],["Rachmaninoff","رحمانينوف"]],[0],"تشايكوفسكي."],
+[6,0,"Who is considered the founder of Russian classical music?","مين مؤسس الموسيقى الكلاسيكية الروسية؟",[["Mikhail Glinka","ميخائيل غلينكا"],["Igor Stravinsky","إيغور سترافينسكي"],["Dmitri Shostakovich","ديمتري شوستاكوفيتش"],["Sergei Rachmaninoff","سيرغي رحمانينوف"]],[0],"غلينكا."],
+[6,0,"\"Romeo and Juliet\" (ballet) and \"Peter and the Wolf\" were composed by…","باليه \"روميو وجولييت\" و\"بيتيا والذئب\" لحنهم...",[["Prokofiev","بروكوفييف"],["Tchaikovsky","تشايكوفسكي"],["Mussorgsky","موسورغسكي"],["Borodin","بورودين"]],[0],"بروكوفييف."],
+[6,0,"\"The Firebird\" and \"The Rite of Spring\" were composed by…","\"طائر النار\" و\"طقوس الربيع\" لحنهم...",[["Stravinsky","سترافينسكي"],["Glinka","غلينكا"],["Rimsky-Korsakov","ريمسكي-كورساكوف"],["Rachmaninoff","رحمانينوف"]],[0],"سترافينسكي."],
+[6,0,"\"Scheherazade\" and \"Flight of the Bumblebee\" were composed by…","\"شهرزاد\" و\"طيران النحلة\" لحنهم...",[["Rimsky-Korsakov","ريمسكي-كورساكوف"],["Tchaikovsky","تشايكوفسكي"],["Prokofiev","بروكوفييف"],["Shostakovich","شوستاكوفيتش"]],[0],"ريمسكي-كورساكوف."],
+[6,0,"What is the main symbol (food) of Maslenitsa?","شو رمز (أكلة) ماسلينيتسا الأساسي؟",[["blini (pancakes)","البليني (فطائر رقيقة)"],["kulich","الكوليتش"],["fir tree","شجرة الصنوبر"],["painted eggs","البيض الملون"]],[0],"Блины – رمز الشمس ووداع الشتاء."],
+[6,0,"When do Orthodox Russians celebrate Christmas?","إمتى الروس الأرثوذكس بيحتفلوا بعيد الميلاد؟",[["January 7","7 يناير"],["December 25","25 ديسمبر"],["January 1","1 يناير"],["March 8","8 مارس"]],[0],"7 января."],
+[6,0,"Which holiday is connected with the summer solstice, wreaths and jumping over fire?","أي عيد مرتبط بأطول يوم بالسنة والأكاليل والقفز فوق النار؟",[["Ivan Kupala","إيفان كوبالا"],["Maslenitsa","ماسلينيتسا"],["Victory Day","يوم النصر"],["New Year","رأس السنة"]],[0],"Иван Купала."],
+[6,0,"Victory Day in Russia is celebrated on…","يوم النصر بروسيا بينحتفل فيه بـ...",[["May 9","9 مايو"],["June 12","12 يونيو"],["November 4","4 نوفمبر"],["February 23","23 فبراير"]],[0],"9 мая."],
+[6,0,"Blue-and-white painted ceramics are called…","الخزف المرسوم بالأزرق والأبيض اسمه...",[["Gzhel","غجيل"],["Khokhloma","خوخلوما"],["Palekh","باليخ"],["Dymkovo","ديمكوفو"]],[0],"Гжель."],
+[6,0,"Red, black and gold painting on wooden dishes is called…","الرسم بالأحمر والأسود والذهبي على أواني الخشب اسمه...",[["Khokhloma","خوخلوما"],["Gzhel","غجيل"],["Matryoshka","ماتريوشكا"],["Samovar","سماور"]],[0],"Хохлома."],
+[6,0,"The Bolshoi Theatre is located in…","مسرح البولشوي موجود بـ...",[["Moscow","موسكو"],["St. Petersburg","سانت بطرسبرغ"],["Kazan","قازان"],["Novosibirsk","نوفوسيبيرسك"]],[0],"المارينسكي بسانت بطرسبرغ."],
+[6,0,"Maya Plisetskaya was a famous…","مايا بليسيتسكايا كانت...",[["ballerina","راقصة باليه"],["composer","ملحنة"],["poet","شاعرة"],["painter","رسامة"]],[0],"Балерина."],
+[6,0,"A wooden doll with smaller dolls inside it is a…","دمية خشبية جواها دمى أصغر اسمها...",[["matryoshka","ماتريوشكا"],["balalaika","بالالايكا"],["samovar","سماور"],["troika","ترويكا"]],[0],"Матрёшка."],
+[6,0,"The Tretyakov Gallery, a famous museum of Russian art, is in…","غاليري تريتياكوف، متحف الفن الروسي المشهور، موجود بـ...",[["Moscow","موسكو"],["St. Petersburg","سانت بطرسبرغ"],["Sochi","سوتشي"],["Kazan","قازان"]],[0],"الإرميتاج بسانت بطرسبرغ."],
+[6,0,"Who painted the icon \"Trinity\"?","مين رسم أيقونة \"الثالوث\"؟",[["Andrei Rublev","أندريه روبليوف"],["Ilya Repin","إيليا ريبين"],["Karl Bryullov","كارل بريولوف"],["Marc Chagall","مارك شاغال"]],[0],"روبليوف."],
+[6,0,"Who painted \"The Last Day of Pompeii\"?","مين رسم \"اليوم الأخير لبومبي\"؟",[["Karl Bryullov","كارل بريولوف"],["Ivan Shishkin","إيفان شيشكين"],["Isaac Levitan","إسحاق ليفيتان"],["Viktor Vasnetsov","فيكتور فاسنيتسوف"]],[0],"بريولوف."],
+[6,1,"Which are symbols of Russia? (3 correct)","شو منها رموز روسيا؟ (3 صحيحة)",[["matryoshka","الماتريوشكا"],["samovar","السماور"],["birch","البتولا"],["kangaroo","الكنغر"]],[0,1,2],"الكنغر رمز أستراليا."],
+[6,1,"Which are traditional Russian folk crafts? (3 correct)","شو الحرف الشعبية الروسية التقليدية؟ (3 صحيحة)",[["Gzhel","غجيل"],["Khokhloma","خوخلوما"],["Palekh","باليخ"],["origami","الأوريغامي"]],[0,1,2],"الأوريغامي ياباني."],
+[6,1,"Which are ballets by Tchaikovsky? (3 correct)","شو باليهات تشايكوفسكي؟ (3 صحيحة)",[["Swan Lake","بحيرة البجع"],["The Nutcracker","كسارة البندق"],["Sleeping Beauty","الجميلة النائمة"],["The Firebird","طائر النار"]],[0,1,2],"طائر النار لسترافينسكي."],
+[6,1,"Which belong to SPIRITUAL culture? (3 correct)","شو منها من الثقافة الروحية؟ (3 صحيحة)",[["traditions","التقاليد"],["religion","الدين"],["art","الفن"],["tools","الأدوات"]],[0,1,2],"الأدوات ثقافة مادية."],
+[6,1,"Which are Russian painters? (3 correct)","مين الرسامين الروس؟ (3 صحيحة)",[["Repin","ريبين"],["Levitan","ليفيتان"],["Aivazovsky","أيفازوفسكي"],["Glinka","غلينكا"]],[0,1,2],"غلينكا ملحن."],
+[6,1,"Which are symbols of Easter in Russia? (3 correct)","شو رموز عيد الفصح بروسيا؟ (3 صحيحة)",[["kulich","الكوليتش"],["painted eggs","البيض الملون"],["paskha (cottage cheese dessert)","الباسخا (حلو جبنة)"],["fir tree","شجرة الصنوبر"]],[0,1,2],"الصنوبرة لرأس السنة."]
+];
+
+/* Matching sets: [titleEn, titleAr, [[left,right],...]] */
+const MATCH=[
+["Holiday → symbol","العيد ← رمزه",[["Maslenitsa","blini"],["Easter","kulich"],["New Year","fir tree"],["Ivan Kupala","bonfire & wreaths"],["Victory Day","St. George ribbon"]]],
+["Writer → work","الكاتب ← عمله",[["Pushkin","Eugene Onegin"],["Lermontov","A Hero of Our Time"],["Gogol","Dead Souls"],["Dostoevsky","Crime and Punishment"],["Tolstoy","War and Peace"],["Chekhov","The Cherry Orchard"]]],
+["Writer → work (20th c.)","الكاتب ← عمله (القرن 20)",[["Bunin","Dark Avenues"],["Kuprin","The Garnet Bracelet"],["Gorky","The Lower Depths"],["Sholokhov","And Quiet Flows the Don"],["Pasternak","Doctor Zhivago"],["Akhmatova","Requiem"]]],
+["Poet → movement","الشاعر ← التيار",[["Yesenin","Imaginism"],["Mayakovsky","Futurism"],["Akhmatova","Acmeism"],["Blok","Symbolism"],["Pushkin","Golden Age"]]],
+["Composer → work","الملحن ← عمله",[["Tchaikovsky","Swan Lake"],["Prokofiev","Romeo and Juliet"],["Glinka","Ivan Susanin"],["Stravinsky","The Firebird"],["Rimsky-Korsakov","Scheherazade"],["Mussorgsky","Boris Godunov"]]],
+["Painter → painting","الرسام ← لوحته",[["Vasnetsov","Bogatyrs"],["Repin","Barge Haulers on the Volga"],["Aivazovsky","The Ninth Wave"],["Shishkin","Morning in a Pine Forest"],["Malevich","Black Square"],["Bryullov","The Last Day of Pompeii"]]],
+["Trope → example","المجاز ← مثال",[["simile","like a flock of butterflies"],["metaphor","glass of empty sky"],["epithet","golden grove"],["personification","the stars are sleeping"],["hyperbole","I told you a hundred times"],["oxymoron","living corpse"]]],
+["Case → question","الحالة ← سؤالها",[["Nominative","кто? что?"],["Genitive","кого? чего?"],["Dative","кому? чему?"],["Accusative","кого? что? (object)"],["Instrumental","кем? чем?"],["Prepositional","о ком? о чём?"]]],
+["Style → where used","الأسلوب ← وين بنستعمل",[["scientific","research article"],["official-business","contract, law"],["journalistic","newspaper"],["colloquial","chat with friends"],["artistic","novel, poem"]]],
+["Language function → example","وظيفة اللغة ← مثال",[["phatic","Hi! How are you?"],["appellative","Rise, my beauty!"],["metalinguistic","\"Birch\" is a feminine noun"],["poetic","The gold stars are sleeping"],["communicative","The train leaves at 5."]]]
+];
+
+/* Ordering tasks */
+const ORDER=[
+{t:"Russian ballet",ar:"الباليه الروسي",frags:[
+"Russian ballet dancers begin their training at a young age. They train for many years to reach a high level of skill.",
+"Russian ballet is a special kind of dance that combines music, dance, and theatrical art. It attracts people from all over the world.",
+"Alexander Sergeevich Pushkin loved Russian nature very much.",
+"In Russia, there are many famous theaters where ballets are performed. The Bolshoi Theatre and the Mariinsky Theatre are the most renowned.",
+"Russian ballet has had a significant influence on dance in other countries. It continues to inspire people around the world.",
+"Russian ballet emerged in the 18th century. In the 19th century it became very popular thanks to Tchaikovsky.",
+"He dedicated many poems to her beauty."],ans:[2,6,1,4,5]},
+{t:"Maslenitsa",ar:"ماسلينيتسا",frags:[
+"On the last day, people burn a straw effigy of Winter and ask each other for forgiveness.",
+"Maslenitsa is one of the oldest Russian folk holidays. It celebrates the end of winter and the coming of spring.",
+"Chekhov wrote many short stories and plays.",
+"The holiday lasts a whole week before Lent. Every day of the week has its own name and traditions.",
+"The main food of Maslenitsa is blini. Their round shape and golden color symbolize the sun.",
+"The Cherry Orchard was his last play.",
+"During the week people go sledding, sing songs and organize fist fights and fairs."],ans:[2,4,5,7,1]},
+{t:"Alexander Pushkin",ar:"ألكسندر بوشكين",frags:[
+"Pushkin died in 1837 after a duel, but his works are still loved by millions of readers.",
+"Alexander Pushkin was born in Moscow in 1799. He is called the founder of the modern Russian literary language.",
+"Gzhel is a famous blue-and-white ceramic craft.",
+"He studied at the Tsarskoye Selo Lyceum, where he began to write poems.",
+"In 1820 his poem \"Ruslan and Lyudmila\" made him famous. Later he wrote the novel in verse \"Eugene Onegin\".",
+"It is produced near Moscow.",
+"Pushkin also wrote fairy tales based on Russian folklore, such as \"The Tale of the Fisherman and the Fish\"."],ans:[2,4,5,7,1]}
+];
+
+/* Writing & oral tasks */
+const WRITE=[
+{type:"w",t:"Task 41 – Definitions (10 pts)",ar:"المهمة 41 – تعريفات (10 علامات)",q:"Read the text. Define term 1 (from the text, without repeating it), and terms 2 and 3 from your knowledge. 3 paragraphs.\n\nText: \"What is virtual communication? It is communication occurring in a virtual environment using a specific discourse that has developed within computer networks, featuring distinct etiquette (netiquette), norms, restrictions, and a unique emotional atmosphere. It is primarily textual. The circle of addressees is known.\"\n\nVirtual communication is… / Etiquette is… / Circle of addressees is…",qa:"اقرأ النص. عرّف المصطلح 1 من النص (بدون نسخه حرفياً)، والمصطلحين 2 و3 من معرفتك. 3 فقرات: التواصل الافتراضي هو... / الإتيكيت هو... / دائرة المستقبلين هي...",min:40,model:"Virtual communication is a form of interaction in a virtual environment through text-based messages, with its own style, norms and emotional atmosphere on the Internet.\n\nEtiquette is a set of norms and rules governing the behavior of participants in communication, including social conventions, restrictions and recommendations for polite conduct.\n\nCircle of addressees refers to the group of people who receive messages in virtual communication, where both senders and receivers are known to each other.",chk:["3 paragraphs – one per term","Term 1 defined in MY words (not copied)","Terms 2 and 3 defined from my knowledge","Correct grammar, clear sentences"]},
+{type:"w",t:"Task 41 (practice) – Mass media",ar:"تدريب على 41 – الإعلام",q:"Read the text and define: Mass media is… / Interview is… / Audience is…\n\nText: \"Mass media are means of transmitting information to a large, dispersed audience: the press, radio, television and the Internet. Journalists use different genres, for example a news item, a report or an interview, to inform the audience.\"",qa:"اقرأ النص وعرّف: وسائل الإعلام هي... / المقابلة هي... / الجمهور هو...",min:40,model:"Mass media are channels such as newspapers, radio, television and the Internet that deliver information to a large and scattered audience.\n\nAn interview is a journalistic genre in the form of a conversation in which a journalist asks questions and a person answers them, so the audience learns facts and opinions.\n\nAn audience is the group of people who read, watch or listen to media content and to whom the message is addressed.",chk:["3 paragraphs","Term 1 paraphrased from the text","Terms 2–3 from my knowledge","Clear, correct language"]},
+{type:"w",t:"Task 42 – Pushkin (10 pts, ≥80 words, 2 paragraphs)",ar:"المهمة 42 – بوشكين (10 علامات، 80 كلمة على الأقل، فقرتين)",q:"Name two biographical facts about Alexander Pushkin relevant to his literary work. Then give a quotation from one of his works you like and explain its meaning. At least 80 words, 2 paragraphs.",qa:"اذكر معلومتين من سيرة بوشكين مرتبطين بأدبه. بعدين اكتب اقتباس من عمل بتحبه واشرح معناه. 80 كلمة على الأقل، فقرتين.",min:80,model:"Alexander Sergeyevich Pushkin is one of the greatest Russian poets and the founder of the modern Russian literary language. He studied at the Tsarskoye Selo Lyceum, where he began writing poetry. In 1820 he wrote the poem \"Ruslan and Lyudmila\", which brought him fame. He also used folk motifs in his fairy tales, which made his work close to ordinary people.\n\nMy favorite work by Pushkin is the poem \"I loved you\". I especially like the lines: \"I loved you once, and this love still, it may be, is not extinguished fully in my soul.\" These words show deep, unselfish love: the poet still has feelings, but he wishes happiness to the woman and does not want to disturb her. It is a beautiful example of Pushkin's poetic genius.",chk:["2 biographical facts (Lyceum, 1820, exile, duel, folklore…)","A quotation from a real work","Explanation of the quotation's meaning","At least 80 words","Exactly 2 paragraphs"]},
+{type:"w",t:"Task 42 (practice) – Yesenin",ar:"تدريب على 42 – يسينين",q:"Name two facts about Sergei Yesenin relevant to his work. Then name a poem you like and explain its main idea. At least 80 words, 2 paragraphs.",qa:"اذكر معلومتين عن يسينين مرتبطين بأدبه، بعدين اذكر قصيدة بتحبها واشرح فكرتها. 80 كلمة، فقرتين.",min:80,model:"Sergei Yesenin is a famous Russian poet of the Silver Age. He was born in 1895 in the village of Konstantinovo, and the Russian village and nature became the main themes of his poetry. He also belonged to the literary movement Imaginism, which paid special attention to bright poetic images.\n\nMy favorite poem by Yesenin is \"The Birch Tree\". In this poem the poet describes a white birch covered with snow as if it were dressed in silver. The birch is a symbol of Russia, so the poem shows the poet's love for his homeland and its simple beauty. The images are very bright and gentle.",chk:["2 facts (village, nature, Imaginism, birth year…)","Named a real poem","Explained the main idea","≥80 words","2 paragraphs"]},
+{type:"w",t:"Task 42 (practice) – Chekhov",ar:"تدريب على 42 – تشيخوف",q:"Name two facts about Anton Chekhov relevant to his work. Then name one of his works and explain its meaning. At least 80 words, 2 paragraphs.",qa:"اذكر معلومتين عن تشيخوف مرتبطين بأدبه، بعدين اذكر عمل واشرح معناه. 80 كلمة، فقرتين.",min:80,model:"Anton Pavlovich Chekhov is a great Russian writer and playwright of the 19th century. He was a doctor by profession, and his medical experience helped him observe people and their characters very carefully. He is famous as a master of the short story; his motto was \"Brevity is the sister of talent\".\n\nOne of my favorite works by Chekhov is the story \"Chameleon\". In it, a police officer changes his opinion about a dog many times, depending on who its owner is. The story laughs at people who have no principles and adapt to those in power. Chekhov shows this problem with humor in just a few pages.",chk:["2 facts (doctor, short stories, plays…)","Named a real work","Explained its meaning","≥80 words","2 paragraphs"]},
+{type:"w",t:"Task 43 type – explain your order",ar:"نوع المهمة 43",q:"Go to Games → Order paragraphs to practice Task 43 (choose 5 of 7 fragments and put them in a logical order).",qa:"روح على الألعاب ← ترتيب الفقرات لتتدرب على المهمة 43 (اختار 5 من 7 فقرات ورتبهم).",min:0,model:"Tip: 1) find the 2 fragments on a DIFFERENT topic and remove them. 2) Start with the general definition / introduction. 3) Then history → details → importance today. 4) The conclusion talks about influence or meaning today.",chk:["Removed 2 off-topic fragments","Introduction first","Logical order","Conclusion last"]},
+{type:"o",t:"Oral 44 – Continue a discussion (5 pts)",ar:"شفهي 44 – كمّل النقاش (5 علامات)",q:"Give a brief continuation (3–6 sentences) of a discussion about virtual communication.",qa:"احكي تكملة قصيرة (3–6 جمل) لنقاش عن التواصل الافتراضي.",min:0,model:"Virtual communication involves interacting online, where respect and inclusivity are essential. Observing netiquette helps create a friendly environment. Because communication is mainly text-based, it gives time for thoughtful answers, but it can cause misunderstandings without body language and tone. Emojis partly replace facial expressions. Overall, virtual communication shows how technology has changed the way people connect.",chk:["3–6 sentences","Used terms: netiquette, verbal / non-verbal","Gave an example","Spoke clearly, without long pauses"]},
+{type:"o",t:"Oral 45 – Pushkin (5 pts)",ar:"شفهي 45 – بوشكين (5 علامات)",q:"Name one of your favourite works by Alexander Pushkin. Name other works by this writer.",qa:"احكي عن عمل بتحبه لبوشكين، واذكر أعمال تانية إله.",min:0,model:"Alexander Pushkin is known for his novel in verse \"Eugene Onegin\", which is called an \"encyclopedia of Russian life\", and it is my favourite work by this author. In addition, Pushkin wrote the poem \"Ruslan and Lyudmila\", the historical novel \"The Captain's Daughter\", the tragedy \"Boris Godunov\", and famous fairy tales such as \"The Tale of the Fisherman and the Fish\".",chk:["Named a favourite work + why","Named 2–3 other works","Used terms: novel in verse, poem, fairy tale"]},
+{type:"o",t:"Oral 46 – Ballet (5 pts)",ar:"شفهي 46 – الباليه (5 علامات)",q:"What is ballet? Name 2 or 3 famous Russian ballets.",qa:"شو هو الباليه؟ اذكر 2 أو 3 باليهات روسية مشهورة.",min:0,model:"Ballet is a form of performing art, a musical and theatrical performance in which artistic images are expressed through dance, pantomime and music. The most famous Russian ballets are \"The Nutcracker\", \"Swan Lake\" and \"Sleeping Beauty\" by Pyotr Tchaikovsky. They are performed at the Bolshoi Theatre in Moscow and the Mariinsky Theatre in St. Petersburg.",chk:["Definition of ballet","2–3 ballet titles","Bonus: composer & theaters"]},
+{type:"o",t:"Oral (practice) – Maslenitsa",ar:"شفهي تدريب – ماسلينيتسا",q:"What is Maslenitsa? How do Russians celebrate it?",qa:"شو هي ماسلينيتسا؟ وكيف الروس بيحتفلوا فيها؟",min:0,model:"Maslenitsa is an old Russian folk holiday that marks the farewell to winter and the welcome of spring. It lasts a week before Lent. People bake blini, which symbolize the sun, go sledding, sing folk songs and visit fairs. On the last day, called Forgiveness Sunday, they burn a straw effigy of winter and ask each other for forgiveness.",chk:["Definition","Symbol: blini = sun","2+ traditions","Clear speech"]},
+{type:"o",t:"Oral (practice) – Your favourite Russian writer",ar:"شفهي تدريب – كاتبك الروسي المفضل",q:"Who is your favourite Russian writer? Name some of his works.",qa:"مين كاتبك الروسي المفضل؟ اذكر بعض أعماله.",min:0,model:"My favourite Russian writer is Leo Tolstoy. He wrote the epic novel \"War and Peace\" about the war of 1812, the novel \"Anna Karenina\" and the novel \"Resurrection\". I like him because he describes the inner world of his characters very deeply and asks important questions about life, love and family.",chk:["Named a writer","3 works with correct genres","Reason why I like him"]}
+];
+
+/* Russian vocabulary for pronunciation: [ru, en, ar] */
+const VOCAB=[
+["язык","language","لغة"],["речь","speech","كلام"],["слово","word","كلمة"],["буква","letter","حرف"],["звук","sound","صوت"],["ударение","stress","النبرة"],["алфавит","alphabet","أبجدية"],["кириллица","Cyrillic","الكيريلية"],
+["существительное","noun","اسم"],["прилагательное","adjective","صفة"],["глагол","verb","فعل"],["наречие","adverb","ظرف"],["местоимение","pronoun","ضمير"],["числительное","numeral","عدد"],["предлог","preposition","حرف جر"],["союз","conjunction","حرف عطف"],["частица","particle","أداة"],["междометие","interjection","أداة تعجب"],
+["род","gender","جنس"],["число","number","عدد"],["падеж","case","حالة إعرابية"],["вид","aspect","صيغة الفعل"],["время","tense / time","زمن"],["наклонение","mood","صيغة"],["залог","voice","المبني للمعلوم/المجهول"],
+["словарь","dictionary","قاموس"],["толковый словарь","explanatory dictionary","قاموس تفسيري"],["фонетика","phonetics","صوتيات"],["морфология","morphology","مورفولوجيا"],["синтаксис","syntax","نحو"],["лексика","vocabulary","مفردات"],["стиль","style","أسلوب"],["диалект","dialect","لهجة"],["жаргон","jargon","جارغون"],["сленг","slang","سلانغ"],
+["общение","communication","تواصل"],["СМИ","mass media","وسائل الإعلام"],["газета","newspaper","جريدة"],["телевидение","television","تلفزيون"],["журналист","journalist","صحفي"],["интервью","interview","مقابلة"],["этикет","etiquette","آداب"],["здравствуйте","hello (polite)","مرحباً (رسمي)"],["спасибо","thank you","شكراً"],["уважаемый","respected / dear","المحترم"],["коллеги","colleagues","زملاء"],
+["литература","literature","أدب"],["поэт","poet","شاعر"],["писатель","writer","كاتب"],["стихотворение","poem","قصيدة"],["роман","novel","رواية"],["рассказ","short story","قصة قصيرة"],["повесть","novella","قصة طويلة"],["сказка","fairy tale","حكاية شعبية"],["былина","bylina (epic song)","بيلينا"],["пословица","proverb","مثل"],["метафора","metaphor","استعارة"],["сравнение","simile","تشبيه"],["эпитет","epithet","نعت"],["герой","hero","بطل"],
+["Пушкин","Pushkin","بوشكين"],["Лермонтов","Lermontov","ليرمونتوف"],["Гоголь","Gogol","غوغول"],["Толстой","Tolstoy","تولستوي"],["Достоевский","Dostoevsky","دوستويفسكي"],["Чехов","Chekhov","تشيخوف"],["Тургенев","Turgenev","تورغينيف"],["Есенин","Yesenin","يسينين"],["Маяковский","Mayakovsky","ماياكوفسكي"],["Ахматова","Akhmatova","أخماتوفا"],["Цветаева","Tsvetaeva","تسفيتايفا"],["Бунин","Bunin","بونين"],["Горький","Gorky","غوركي"],
+["Евгений Онегин","Eugene Onegin","يفغيني أونيغين"],["Война и мир","War and Peace","الحرب والسلم"],["Преступление и наказание","Crime and Punishment","الجريمة والعقاب"],["Мёртвые души","Dead Souls","الأرواح الميتة"],["Вишнёвый сад","The Cherry Orchard","بستان الكرز"],
+["культура","culture","ثقافة"],["традиция","tradition","تقليد"],["праздник","holiday","عيد"],["берёза","birch","بتولا"],["матрёшка","matryoshka","ماتريوشكا"],["самовар","samovar","سماور"],["балалайка","balalaika","بالالايكا"],["Масленица","Maslenitsa","ماسلينيتسا"],["блины","blini (pancakes)","بليني"],["Пасха","Easter","عيد الفصح"],["кулич","kulich (Easter bread)","كوليتش"],["Новый год","New Year","رأس السنة"],["ёлка","fir tree","شجرة الميلاد"],["Дед Мороз","Ded Moroz","ديد موروز"],["Гжель","Gzhel","غجيل"],["Хохлома","Khokhloma","خوخلوما"],
+["балет","ballet","باليه"],["театр","theatre","مسرح"],["Большой театр","Bolshoi Theatre","مسرح البولشوي"],["композитор","composer","ملحن"],["художник","painter","رسام"],["картина","painting","لوحة"],["музей","museum","متحف"],["Чайковский","Tchaikovsky","تشايكوفسكي"],["Лебединое озеро","Swan Lake","بحيرة البجع"],["Щелкунчик","The Nutcracker","كسارة البندق"],["Васнецов","Vasnetsov","فاسنيتسوف"],["Богатыри","Bogatyrs","الأبطال"],["Третьяковская галерея","Tretyakov Gallery","غاليري تريتياكوف"]
+];
+
+
+/* Alphabet: [Upper, lower, letter name (ru), latin, arabic sound, example ru, example ar, note ar] */
+const ABC=[
+["А","а","а","a","آ (a)","арбуз","بطيخ",""],
+["Б","б","бэ","b","ب","банан","موز",""],
+["В","в","вэ","v","ڤ (v)","вода","ماء","شكله متل B الإنجليزي بس صوته V"],
+["Г","г","гэ","g","گ (g متل جمل المصرية)","город","مدينة",""],
+["Д","д","дэ","d","د","дом","بيت",""],
+["Е","е","е","ye","يِه","ель","شجرة التنوب",""],
+["Ё","ё","ё","yo","يو (yo)","ёлка","شجرة رأس السنة","دايماً عليه النبرة"],
+["Ж","ж","жэ","zh","ج (شامية متل جاكيت)","жук","خنفساء",""],
+["З","з","зэ","z","ز","зима","شتاء","شكله متل رقم 3"],
+["И","и","и","i","إي","игра","لعبة","شكله متل N مقلوبة"],
+["Й","й","и краткое","y","ي قصيرة","йогурт","زبادي",""],
+["К","к","ка","k","ك","кот","قط",""],
+["Л","л","эль","l","ل","луна","قمر",""],
+["М","м","эм","m","م","мама","ماما",""],
+["Н","н","эн","n","ن","нос","أنف","شكله متل H بس صوته N"],
+["О","о","о","o","أو","окно","شباك","بدون نبرة بنلفظ متل A"],
+["П","п","пэ","p","پ (p)","папа","بابا",""],
+["Р","р","эр","r","ر","рыба","سمكة","شكله متل P بس صوته R"],
+["С","с","эс","s","س","сок","عصير","شكله متل C بس صوته S"],
+["Т","т","тэ","t","ت","торт","كعكة",""],
+["У","у","у","u","أُو (oo)","утро","صباح","شكله متل y بس صوته U"],
+["Ф","ф","эф","f","ف","флаг","علم",""],
+["Х","х","ха","kh","خ","хлеб","خبز","شكله متل X بس صوته خ"],
+["Ц","ц","цэ","ts","تس","цветок","زهرة",""],
+["Ч","ч","чэ","ch","تش","чай","شاي",""],
+["Ш","ш","ша","sh","ش","школа","مدرسة",""],
+["Щ","щ","ща","shch","شّ طويلة وناعمة","щи","شوربة ملفوف",""],
+["Ъ","ъ","твёрдый знак","—","ما إله صوت (علامة فصل)","подъезд","مدخل العمارة","علامة القسوة: بتفصل بين الحرف واللي بعده"],
+["Ы","ы","ы","y","إ عميقة من الحلق","сыр","جبنة","صوت ما إله مقابل بالعربي، بين إي وأُ"],
+["Ь","ь","мягкий знак","ʼ","ما إله صوت (بيليّن اللي قبله)","соль","ملح","علامة اللين"],
+["Э","э","э","e","إيه","это","هذا",""],
+["Ю","ю","ю","yu","يُو (you)","юбка","تنورة",""],
+["Я","я","я","ya","يا","яблоко","تفاحة","شكله متل R مقلوبة"]
+];
+
+/* ===== EXTRA QUESTIONS ===== */
+Q.push(
+// F1
+[1,0,"The soft sign \"ь\" shows that…","علامة اللين \"ь\" بتدل إنه...",[["the previous consonant is soft","الحرف الساكن اللي قبلها ليّن"],["the word is plural","الكلمة جمع"],["the word is a verb","الكلمة فعل"],["the stress falls here","النبرة هون"]],[0],"Мягкий знак بيليّن الحرف اللي قبله: мат / мать."],
+[1,0,"How many VOWEL letters are there in the Russian alphabet?","كم حرف علّة بالأبجدية الروسية؟",[["6","6"],["10","10"],["21","21"],["33","33"]],[1],"А Е Ё И О У Ы Э Ю Я."],
+[1,0,"The Cyrillic alphabet is named after…","الأبجدية الكيريلية سميت على اسم...",[["Saint Cyril","القديس كيرلس"],["Peter the Great","بطرس الأكبر"],["Pushkin","بوشكين"],["Lomonosov","لومونوسوف"]],[0],"كيرلس وميثوديوس."],
+[1,0,"Who wrote the first scientific \"Russian Grammar\" (1755) and founded Moscow University?","مين كتب أول \"قواعد روسية\" علمية (1755) وأسس جامعة موسكو؟",[["Mikhail Lomonosov","ميخائيل لومونوسوف"],["Vladimir Dahl","فلاديمير دال"],["Leo Tolstoy","ليف تولستوي"],["Dmitri Mendeleev","ديمتري مندلييف"]],[0],"لومونوسوف."],
+[1,0,"Nouns ending in -а / -я (мама, земля) are usually…","الأسماء اللي بتنتهي بـ -а / -я (мама، земля) غالباً...",[["feminine","مؤنثة"],["masculine","مذكرة"],["neuter","محايدة"],["plural","جمع"]],[0],"Женский род."],
+[1,0,"Nouns ending in -о / -е (окно, море) are usually…","الأسماء اللي بتنتهي بـ -о / -е (окно، море) غالباً...",[["neuter","محايدة"],["feminine","مؤنثة"],["masculine","مذكرة"],["plural","جمع"]],[0],"Средний род."],
+[1,0,"Nouns ending in a consonant (дом, стол) are usually…","الأسماء اللي بتنتهي بحرف ساكن (дом، стол) غالباً...",[["masculine","مذكرة"],["feminine","مؤنثة"],["neuter","محايدة"],["plural","جمع"]],[0],"Мужской род."],
+[1,0,"\"Я читаю книгу\" – in which case is \"книгу\"?","\"Я читаю книгу\" (أنا بقرأ كتاب) – \"книгу\" بأي حالة؟",[["Accusative","المفعول به"],["Genitive","الإضافة"],["Dative","المفعول غير المباشر"],["Nominative","الرفع"]],[0],"Винительный: читаю что? книгу."],
+[1,0,"\"Я думаю о маме\" – \"о маме\" is in the … case.","\"Я думаю о маме\" (بفكر بماما) – \"о маме\" بحالة...",[["Prepositional","حرف الجر"],["Instrumental","الأداة"],["Genitive","الإضافة"],["Accusative","المفعول به"]],[0],"Предложный: о ком?"],
+[1,0,"\"У меня нет брата\" – \"брата\" is in the … case.","\"У меня нет брата\" (ما عندي أخ) – \"брата\" بحالة...",[["Genitive","الإضافة"],["Dative","المفعول غير المباشر"],["Nominative","الرفع"],["Prepositional","حرف الجر"]],[0],"بعد нет = Родительный."],
+[1,0,"\"Я пишу ручкой\" – \"ручкой\" is in the … case.","\"Я пишу ручкой\" (بكتب بالقلم) – \"ручкой\" بحالة...",[["Instrumental","الأداة"],["Dative","المفعول غير المباشر"],["Genitive","الإضافة"],["Accusative","المفعول به"]],[0],"Творительный: чем?"],
+[1,0,"\"Я звоню маме\" – \"маме\" is in the … case.","\"Я звоню маме\" (بتصل بماما) – \"маме\" بحالة...",[["Dative","المفعول غير المباشر"],["Genitive","الإضافة"],["Instrumental","الأداة"],["Nominative","الرفع"]],[0],"Дательный: кому?"],
+[1,0,"Which verb is PERFECTIVE?","أي فعل تام (perfective)؟",[["прочитать","прочитать (قرأ وخلّص)"],["читать","читать (يقرأ)"],["писать","писать (يكتب)"],["делать","делать (يعمل)"]],[0],"البادئة про- بتعمل الفعل تام."],
+[1,0,"The particle \"бы\" is used to form the … mood.","الأداة \"бы\" بتستعمل لتكوين صيغة...",[["conditional (subjunctive)","الشرطية"],["imperative","الأمر"],["indicative","الإخبارية"],["passive","المجهول"]],[0],"Я бы пошёл = كنت رحت."],
+[1,0,"\"Читай!\" (Read!) is a verb in the … mood.","\"Читай!\" (اقرأ!) فعل بصيغة...",[["imperative","الأمر"],["indicative","الإخبار"],["conditional","الشرط"],["infinitive","المصدر"]],[0],"Повелительное наклонение."],
+[1,0,"Vladimir Dahl's dictionary is called the Explanatory Dictionary of the … Russian Language.","قاموس دال اسمه القاموس التفسيري للغة الروسية...",[["Living Great","الحية العظيمة"],["Old Church","الكنسية القديمة"],["Modern Literary","الأدبية الحديثة"],["Soviet","السوفيتية"]],[0],"Толковый словарь живого великорусского языка."],
+[1,0,"Which language is spoken in Tatarstan together with Russian?","أي لغة بتنحكى بتتارستان مع الروسية؟",[["Tatar","التترية"],["Polish","البولندية"],["Greek","اليونانية"],["Finnish","الفنلندية"]],[0],"روسيا متعددة اللغات."],
+[1,0,"In Russia, Russian serves as the language of … communication between peoples.","بروسيا، الروسية هي لغة التواصل... بين الشعوب.",[["interethnic","بين القوميات"],["secret","السري"],["religious only","الديني فقط"],["scientific only","العلمي فقط"]],[0],"Язык межнационального общения."],
+[1,1,"Which are cases of the Russian noun? (3 correct)","شو منها حالات للاسم الروسي؟ (3 صحيحة)",[["Genitive","الإضافة"],["Dative","المفعول غير المباشر"],["Instrumental","الأداة"],["Ablative","حالة الأبلاتيف (لاتينية)"]],[0,1,2],"Ablative بالاتيني مش بالروسي."],
+[1,1,"Which are moods of the Russian verb? (3 correct)","شو منها صيغ (moods) للفعل الروسي؟ (3 صحيحة)",[["indicative","الإخبارية"],["imperative","الأمر"],["conditional","الشرطية"],["perfective","التام"]],[0,1,2],"Perfective = aspect مش mood."],
+[1,1,"Which languages are SLAVIC like Russian? (3 correct)","شو اللغات السلافية متل الروسي؟ (3 صحيحة)",[["Ukrainian","الأوكرانية"],["Polish","البولندية"],["Bulgarian","البلغارية"],["Hungarian","الهنغارية"]],[0,1,2],"الهنغارية مش سلافية."],
+[1,1,"Which are VOWEL letters? (3 correct)","شو منها حروف علّة؟ (3 صحيحة)",[["а","а"],["ы","ы"],["ю","ю"],["ж","ж"]],[0,1,2],"ж ساكن."],
+// F2
+[2,0,"The smallest meaningful part of a word (prefix, root, suffix, ending) is a…","أصغر جزء إله معنى بالكلمة (بادئة، جذر، لاحقة، نهاية) اسمه...",[["morpheme","مورفيم"],["phoneme","فونيم"],["sentence","جملة"],["syllable","مقطع"]],[0],"Морфема."],
+[2,0,"The smallest sound unit that distinguishes meaning is a…","أصغر وحدة صوتية بتفرق المعنى اسمها...",[["phoneme","فونيم"],["morpheme","مورفيم"],["lexeme","ليكسيم"],["word","كلمة"]],[0],"Фонема."],
+[2,0,"Words with the same spelling but different meanings (ключ = key / spring) are…","كلمات إلها نفس الكتابة ومعاني مختلفة (ключ = مفتاح / نبع) اسمها...",[["homonyms","مشترك لفظي"],["synonyms","مترادفات"],["antonyms","أضداد"],["neologisms","كلمات جديدة"]],[0],"Омонимы."],
+[2,0,"Words with similar meanings (большой – огромный) are…","كلمات معناها متشابه (большой – огромный) اسمها...",[["synonyms","مترادفات"],["antonyms","أضداد"],["homonyms","مشترك لفظي"],["archaisms","كلمات قديمة"]],[0],"Синонимы."],
+[2,0,"Words with opposite meanings (день – ночь) are…","كلمات معناها متضاد (день – ночь) اسمها...",[["antonyms","أضداد"],["synonyms","مترادفات"],["paronyms","متشابهات اللفظ"],["dialectisms","كلمات لهجية"]],[0],"Антонимы."],
+[2,0,"New words that recently appeared in a language are…","الكلمات الجديدة اللي ظهرت مؤخراً باللغة اسمها...",[["neologisms","كلمات مستحدثة"],["archaisms","كلمات قديمة"],["dialectisms","كلمات لهجية"],["homonyms","مشترك لفظي"]],[0],"Неологизмы."],
+[2,0,"Outdated words no longer in active use are…","الكلمات القديمة اللي ما عاد تستعمل اسمها...",[["archaisms","كلمات مهجورة"],["neologisms","مستحدثة"],["borrowings","دخيلة"],["terms","مصطلحات"]],[0],"Архаизмы."],
+[2,0,"Words taken from other languages (компьютер, футбол) are…","الكلمات المأخوذة من لغات تانية (компьютер، футбол) اسمها...",[["borrowings (loanwords)","كلمات دخيلة"],["archaisms","مهجورة"],["dialectisms","لهجية"],["antonyms","أضداد"]],[0],"Заимствования."],
+[2,0,"A stable combination of words with a figurative meaning (\"бить баклуши\" = to be idle) is a…","تركيب ثابت من كلمات بمعنى مجازي (\"бить баклуши\" = يتكاسل) اسمه...",[["phraseological unit (idiom)","تعبير اصطلاحي"],["neologism","كلمة جديدة"],["term","مصطلح"],["morpheme","مورفيم"]],[0],"Фразеологизм."],
+[2,0,"The grammatical base of a sentence consists of…","الأساس النحوي للجملة بيتكوّن من...",[["subject and predicate","المسند إليه والمسند (الفاعل والفعل)"],["two adjectives","صفتين"],["prefix and root","بادئة وجذر"],["two prepositions","حرفين جر"]],[0],"Подлежащее + сказуемое."],
+[2,0,"In the word \"переписать\" the part \"пере-\" is a…","بكلمة \"переписать\" الجزء \"пере-\" هو...",[["prefix","بادئة"],["root","جذر"],["suffix","لاحقة"],["ending","نهاية"]],[0],"Приставка."],
+[2,0,"An application (заявление) to a university is written in the … style.","طلب (заявление) للجامعة بينكتب بالأسلوب...",[["official-business","الرسمي"],["artistic","الفني"],["colloquial","العامي"],["journalistic","الصحفي"]],[0],"Официально-деловой."],
+[2,0,"Which style uses images, tropes and emotional expressiveness to create an artistic world?","أي أسلوب بيستعمل الصور والمجازات والعاطفة ليخلق عالم فني؟",[["literary-artistic","الأدبي الفني"],["scientific","العلمي"],["official-business","الرسمي"],["technical","التقني"]],[0],"Художественный стиль."],
+[2,0,"Norms of correct pronunciation and stress are studied by…","معايير اللفظ والنبرة الصحيحة بيدرسها...",[["orthoepy","علم اللفظ الصحيح"],["orthography","الإملاء"],["syntax","النحو"],["semantics","الدلالة"]],[0],"Орфоэпия."],
+[2,0,"The branch of linguistics that studies meaning is…","فرع علم اللغة اللي بيدرس المعنى هو...",[["semantics","علم الدلالة"],["phonetics","الصوتيات"],["morphology","المورفولوجيا"],["graphics","الكتابة"]],[0],"Семантика."],
+[2,1,"Which are features of the OFFICIAL-BUSINESS style? (3 correct)","شو ميزات الأسلوب الرسمي؟ (3 صحيحة)",[["standard formulas (clichés)","عبارات ثابتة"],["precision","الدقة"],["absence of emotion","غياب العاطفة"],["slang","السلانغ"]],[0,1,2],"السلانغ للعامي."],
+[2,1,"Which are borrowings in Russian? (3 correct)","شو منها كلمات دخيلة بالروسي؟ (3 صحيحة)",[["компьютер","компьютер (كمبيوتر)"],["футбол","футбол (كرة قدم)"],["интернет","интернет (إنترنت)"],["берёза","берёза (بتولا)"]],[0,1,2],"берёза كلمة سلافية أصلية."],
+[2,1,"Which are types of lexical relations between words? (3 correct)","شو أنواع العلاقات المعجمية بين الكلمات؟ (3 صحيحة)",[["synonymy","الترادف"],["antonymy","التضاد"],["homonymy","المشترك اللفظي"],["conjugation","التصريف"]],[0,1,2],"التصريف قواعد مش علاقة معجمية."],
+[2,1,"Which are morphemes (parts of a word)? (3 correct)","شو منها أجزاء الكلمة (مورفيمات)؟ (3 صحيحة)",[["root","الجذر"],["prefix","البادئة"],["suffix","اللاحقة"],["phrase","العبارة"]],[0,1,2],"العبارة أكبر من الكلمة."],
+// F3
+[3,0,"The Russian segment of the Internet is called…","الجزء الروسي من الإنترنت اسمه...",[["Runet","رونت"],["Intranet","إنترانت"],["Telenet","تيلينت"],["Sovnet","سوفنت"]],[0],"Рунет."],
+[3,0,"Which is a Russian search engine?","أي محرك بحث روسي؟",[["Yandex","ياندكس"],["Bing","بينغ"],["Yahoo","ياهو"],["Baidu","بايدو"]],[0],"Яндекс."],
+[3,0,"A genre in which a journalist describes an event as an eyewitness from the scene is a…","نوع صحفي فيه الصحفي بيوصف حدث كشاهد عيان من مكانه اسمه...",[["report (reportage)","ريبورتاج"],["review","مراجعة"],["feuilleton","مقالة ساخرة"],["editorial","افتتاحية"]],[0],"Репортаж."],
+[3,0,"A satirical journalistic genre that mocks social vices is a…","نوع صحفي ساخر بينتقد عيوب المجتمع اسمه...",[["feuilleton","فيلتون (مقالة ساخرة)"],["interview","مقابلة"],["news item","خبر"],["chronicle","سجل"]],[0],"Фельетон."],
+[3,0,"Which newspaper is the official publication of the Russian Government?","أي جريدة هي المنشور الرسمي للحكومة الروسية؟",[["Rossiyskaya Gazeta","روسيسكايا غازيتا"],["The Times","التايمز"],["Le Monde","لوموند"],["Komsomolskaya Pravda","كومسومولسكايا برافدا"]],[0],"Российская газета."],
+[3,0,"The patronymic of a daughter of a man named Sergei is…","اسم الأب لبنت رجل اسمه سيرغي هو...",[["Sergeevna","سيرغييفنا"],["Sergeevich","سيرغييفيتش"],["Sergova","سيرغوفا"],["Sergeyeva","سيرغييفا (كنية)"]],[0],"للولد -ович/-евич، للبنت -овна/-евна."],
+[3,0,"A typical polite closing of a formal letter in Russian is…","الختام المهذب المعتاد لرسالة رسمية بالروسي هو...",[["С уважением (Respectfully)","С уважением (مع الاحترام)"],["Пока! (Bye!)","Пока! (باي!)"],["Целую (Kisses)","Целую (بوسات)"],["Привет (Hi)","Привет (هاي)"]],[0],"С уважением, ..."],
+[3,0,"Which word is the polite, formal \"you\" in Russian?","أي كلمة هي \"إنت\" الرسمية المهذبة بالروسي؟",[["Вы","Вы"],["ты","ты"],["он","он"],["мы","мы"]],[0],"Вы للاحترام والغرباء والكبار."],
+[3,0,"Attacking the person instead of their argument is the logical fallacy called…","مهاجمة الشخص بدل حجته اسمها مغالطة...",[["ad hominem","الشخصنة"],["bandwagon","اتباع القطيع"],["straw man","رجل القش"],["false dilemma","الخيار الزائف"]],[0],"Ad hominem."],
+[3,0,"\"Everyone believes it, so it must be true\" is the fallacy called…","\"الكل مصدقها، يعني أكيد صح\" اسمها مغالطة...",[["bandwagon","اتباع القطيع"],["ad hominem","الشخصنة"],["slippery slope","المنحدر الزلق"],["red herring","التشتيت"]],[0],"Bandwagon."],
+[3,0,"Checking information in several reliable sources before sharing it is called…","التأكد من المعلومة بكذا مصدر موثوق قبل نشرها اسمه...",[["fact-checking","التحقق من الحقائق"],["spam","سبام"],["trolling","تصيّد"],["flooding","إغراق"]],[0],"Фактчекинг."],
+[3,0,"Telegram is mainly a…","تيليغرام بشكل أساسي هو...",[["messenger","تطبيق مراسلة"],["newspaper","جريدة"],["TV channel","قناة تلفزيون"],["search engine","محرك بحث"]],[0],"Мессенджер."],
+[3,0,"Which is the most important rule of public speaking?","شو أهم قاعدة بالخطابة أمام الجمهور؟",[["keep eye contact and speak clearly","تتواصل بالعيون وتحكي بوضوح"],["read everything from paper without looking up","تقرأ كل إشي من الورقة بدون ما ترفع عينك"],["speak as fast as possible","تحكي بأسرع ما يمكن"],["ignore the audience's questions","تتجاهل أسئلة الجمهور"]],[0],"التواصل البصري والوضوح."],
+[3,1,"Which are Runet platforms? (3 correct)","شو منها منصات بالإنترنت الروسي؟ (3 صحيحة)",[["VKontakte","فكونتاكتي"],["Odnoklassniki","أودنوكلاسنيكي"],["Yandex","ياندكس"],["Weibo","ويبو"]],[0,1,2],"ويبو صيني."],
+[3,1,"Which are INFORMATIONAL media genres? (3 correct)","شو الأنواع الإعلامية الإخبارية؟ (3 صحيحة)",[["news item","خبر قصير"],["report","ريبورتاج"],["interview","مقابلة"],["essay (ocherk)","مقالة فنية (очерк)"]],[0,1,2],"Очерк فني صحفي."],
+[3,1,"Which are rules of netiquette? (3 correct)","شو منها قواعد آداب الإنترنت؟ (3 صحيحة)",[["don't write everything in CAPITAL letters","ما تكتب كل إشي بحروف كبيرة"],["respect other users","احترم المستخدمين"],["don't send spam","ما تبعت سبام"],["insult people who disagree","اشتم اللي بيخالفك"]],[0,1,2],"الكتابة بالكابيتال = صراخ."],
+[3,1,"Which are Russian TV channels? (3 correct)","شو منها قنوات تلفزيون روسية؟ (3 صحيحة)",[["Channel One","القناة الأولى"],["Russia-1","روسيا-1"],["NTV","NTV"],["BBC One","بي بي سي وان"]],[0,1,2],"BBC بريطانية."],
+// F4
+[4,0,"The lesson at the end of a fable is called the…","الدرس اللي بآخر الحكاية الرمزية (басня) اسمه...",[["moral","العبرة"],["prologue","المقدمة"],["climax","الذروة"],["refrain","اللازمة"]],[0],"Мораль."],
+[4,0,"A stanza of four lines is a…","مقطع شعري من 4 أسطر اسمه...",[["quatrain","رباعية"],["couplet","بيتين"],["sonnet","سونيت"],["tercet","ثلاثية"]],[0],"Катрен / четверостишие."],
+[4,0,"Rhyme scheme ABAB is called…","نظام القافية ABAB اسمه...",[["cross rhyme","قافية متقاطعة"],["paired rhyme","قافية متجاورة (AABB)"],["ring rhyme","قافية حلقية (ABBA)"],["no rhyme","بدون قافية"]],[0],"Перекрёстная рифма."],
+[4,0,"A meter with stress on the SECOND syllable (da-DUM) is…","وزن النبرة فيه عالمقطع التاني (دا-دَم) اسمه...",[["iamb","إيامب"],["trochee","تروكي"],["dactyl","داكتيل"],["anapest","أنابيست"]],[0],"Ямб – وزن \"يفغيني أونيغين\"."],
+[4,0,"A meter with stress on the FIRST syllable (DUM-da) is…","وزن النبرة فيه عالمقطع الأول (دَم-دا) اسمه...",[["trochee","تروكي"],["iamb","إيامب"],["amphibrach","أمفيبراخ"],["anapest","أنابيست"]],[0],"Хорей – متل \"Буря мглою небо кроет\"."],
+[4,0,"A sad, reflective lyric poem about loss or death is an…","قصيدة غنائية حزينة تأملية عن الفقدان أو الموت اسمها...",[["elegy","رثائية"],["ode","أنشودة مدح"],["fable","حكاية رمزية"],["ballad","بالاد"]],[0],"Элегия."],
+[4,0,"A solemn poem praising a person or event is an…","قصيدة احتفالية بتمدح شخص أو حدث اسمها...",[["ode","أود (قصيدة مدح)"],["elegy","رثائية"],["epigram","إبيغرام"],["satire","هجاء"]],[0],"Ода – لومونوسوف ودرجافين."],
+[4,0,"Gogol himself called his prose work \"Dead Souls\" a…","غوغول نفسه سمّى عمله النثري \"الأرواح الميتة\"...",[["poem (poema)","قصيدة ملحمية (поэма)"],["comedy","كوميديا"],["fairy tale","حكاية"],["ode","أود"]],[0],"Поэма – مع إنها نثر."],
+[4,0,"The type of hero like Onegin and Pechorin – educated but useless to society – is called the…","نوع البطل متل أونيغين وبيتشورين – متعلم بس ما إله فايدة بالمجتمع – اسمه...",[["superfluous man","الإنسان الزائد"],["little man","الإنسان الصغير"],["new man","الإنسان الجديد"],["positive hero","البطل الإيجابي"]],[0],"Лишний человек."],
+[4,0,"The theme of the \"little man\" (poor clerk Bashmachkin) appears in Gogol's…","موضوع \"الإنسان الصغير\" (الموظف الفقير باشماتشكين) موجود بعمل غوغول...",[["The Overcoat","المعطف"],["Taras Bulba","تاراس بولبا"],["Dead Souls","الأرواح الميتة"],["The Nose","الأنف"]],[0],"Шинель."],
+[4,0,"Allegory (animals representing human traits) is typical of…","الرمز (حيوانات بتمثل صفات بشرية) نموذجي بـ...",[["fables","الحكايات الرمزية"],["odes","الأود"],["elegies","الرثائيات"],["sonnets","السونيتات"]],[0],"Krylov's fables."],
+[4,0,"A question that doesn't need an answer, used for effect, is a…","سؤال ما بيحتاج جواب، بينسأل للتأثير، اسمه...",[["rhetorical question","سؤال بلاغي"],["anaphora","تكرار بالبداية"],["litotes","تقليل"],["epithet","نعت"]],[0],"Риторический вопрос."],
+[4,0,"Saying the opposite of what you mean, with mockery, is…","إنك تحكي عكس اللي بتقصده بسخرية اسمه...",[["irony","السخرية/التهكم"],["hyperbole","المبالغة"],["metaphor","الاستعارة"],["gradation","التدرج"]],[0],"Ирония."],
+[4,1,"Which are FIGURES of speech (not tropes)? (3 correct)","شو منها صور بلاغية تركيبية (مش مجازات)؟ (3 صحيحة)",[["anaphora","التكرار بالبداية"],["antithesis","المقابلة"],["gradation","التدرج"],["metaphor","الاستعارة"]],[0,1,2],"الاستعارة مجاز (trope)."],
+[4,1,"Which are DRAMATIC genres? (3 correct)","شو الأنواع الدرامية؟ (3 صحيحة)",[["tragedy","مأساة"],["comedy","كوميديا"],["drama","دراما"],["novel","رواية"]],[0,1,2],"الرواية سردية."],
+[4,1,"Which are elements of plot? (3 correct)","شو عناصر الحبكة؟ (3 صحيحة)",[["exposition","التمهيد"],["climax","الذروة"],["denouement","الحل"],["rhyme","القافية"]],[0,1,2],"القافية للشعر."],
+// F5
+[5,0,"Pushkin's beloved nanny, who told him folk tales, was…","مربية بوشكين المحبوبة اللي كانت تحكيله حكايات شعبية اسمها...",[["Arina Rodionovna","أرينا روديونوفنا"],["Natalia Goncharova","ناتاليا غونتشاروفا"],["Anna Kern","آنا كيرن"],["Tatiana Larina","تاتيانا لارينا"]],[0],"ناتاليا غونتشاروفا كانت زوجته."],
+[5,0,"Pushkin's wife was…","زوجة بوشكين كانت...",[["Natalia Goncharova","ناتاليا غونتشاروفا"],["Anna Karenina","آنا كارينينا"],["Arina Rodionovna","أرينا روديونوفنا"],["Anna Akhmatova","آنا أخماتوفا"]],[0],"Наталья Гончарова."],
+[5,0,"\"The Bronze Horseman\" is a monument to…","\"الفارس النحاسي\" تمثال لـ...",[["Peter the Great","بطرس الأكبر"],["Ivan the Terrible","إيفان الرهيب"],["Pushkin","بوشكين"],["Napoleon","نابليون"]],[0],"Медный всадник – سانت بطرسبرغ."],
+[5,0,"Tatiana Larina is the heroine of…","تاتيانا لارينا بطلة...",[["Eugene Onegin","يفغيني أونيغين"],["War and Peace","الحرب والسلم"],["Fathers and Sons","آباء وأبناء"],["The Idiot","الأبله"]],[0],"Татьяна Ларина."],
+[5,0,"Lermontov's poem \"Borodino\" is about…","قصيدة ليرمونتوف \"بورودينو\" عن...",[["the war of 1812 against Napoleon","حرب 1812 ضد نابليون"],["the Russian Revolution","الثورة الروسية"],["World War II","الحرب العالمية التانية"],["Pushkin's death","موت بوشكين"]],[0],"معركة بورودينو 1812."],
+[5,0,"In \"Dead Souls\", Chichikov buys…","بـ\"الأرواح الميتة\"، تشيتشيكوف بيشتري...",[["dead serfs (on paper)","فلاحين أقنان ميتين (على الورق)"],["old houses","بيوت قديمة"],["horses","خيول"],["paintings","لوحات"]],[0],"Мёртвые души."],
+[5,0,"In \"Crime and Punishment\", Raskolnikov kills…","بـ\"الجريمة والعقاب\"، راسكولنيكوف بيقتل...",[["an old pawnbroker","مُرابية عجوز"],["his brother","أخوه"],["a general","جنرال"],["a priest","كاهن"]],[0],"Старуха-процентщица."],
+[5,0,"Natasha Rostova and Pierre Bezukhov are characters of…","ناتاشا روستوفا وبيير بيزوخوف شخصيات بـ...",[["War and Peace","الحرب والسلم"],["Anna Karenina","آنا كارينينا"],["Dead Souls","الأرواح الميتة"],["The Seagull","النورس"]],[0],"Война и мир."],
+[5,0,"\"All happy families are alike; each unhappy family is unhappy in its own way\" opens…","\"كل العائلات السعيدة متشابهة، وكل عائلة تعيسة تعيسة بطريقتها\" بداية...",[["Anna Karenina","آنا كارينينا"],["War and Peace","الحرب والسلم"],["Crime and Punishment","الجريمة والعقاب"],["Fathers and Sons","آباء وأبناء"]],[0],"أشهر جملة افتتاحية."],
+[5,0,"Tolstoy's family estate, where he lived and wrote, is…","مزرعة عيلة تولستوي اللي عاش وكتب فيها هي...",[["Yasnaya Polyana","ياسنايا بوليانا"],["Mikhailovskoye","ميخايلوفسكويه"],["Tarkhany","تارخاني"],["Melikhovo","ميليخوفو"]],[0],"Ясная Поляна."],
+[5,0,"What was Chekhov's profession besides writing?","شو كانت مهنة تشيخوف غير الكتابة؟",[["doctor","طبيب"],["lawyer","محامي"],["officer","ضابط"],["teacher","أستاذ"]],[0],"Врач."],
+[5,0,"\"Brevity is the sister of talent\" – who said it?","\"الإيجاز أخو الموهبة\" – مين قالها؟",[["Chekhov","تشيخوف"],["Tolstoy","تولستوي"],["Gogol","غوغول"],["Gorky","غوركي"]],[0],"Краткость – сестра таланта."],
+[5,0,"Turgenev's \"Mumu\" tells the story of the deaf-mute Gerasim and his…","\"مومو\" لتورغينيف بتحكي قصة الأصم الأبكم غيراسيم و...",[["dog","كلبه"],["horse","حصانه"],["cat","قطته"],["bird","عصفوره"]],[0],"Муму – كلب."],
+[5,0,"The hero of Griboyedov's comedy \"Woe from Wit\" is…","بطل كوميديا غريبويدوف \"ذو العقل يشقى\" هو...",[["Chatsky","تشاتسكي"],["Pechorin","بيتشورين"],["Bazarov","بازاروف"],["Oblomov","أوبلوموف"]],[0],"Чацкий."],
+[5,0,"Karamzin's \"Poor Liza\" is an example of…","\"ليزا المسكينة\" لكرامزين مثال على...",[["sentimentalism","العاطفية"],["futurism","المستقبلية"],["socialist realism","الواقعية الاشتراكية"],["acmeism","الأكميزم"]],[0],"Сентиментализм."],
+[5,0,"Maxim Gorky's real name was…","اسم مكسيم غوركي الحقيقي...",[["Alexei Peshkov","أليكسي بيشكوف"],["Ivan Bunin","إيفان بونين"],["Boris Pasternak","بوريس باسترناك"],["Anton Chekhov","أنطون تشيخوف"]],[0],"Алексей Пешков."],
+[5,0,"Mayakovsky's famous way of writing lines in steps is called…","طريقة ماياكوفسكي بكتابة الأسطر على شكل درجات اسمها...",[["ladder (lesenka)","السلم (лесенка)"],["sonnet","سونيت"],["haiku","هايكو"],["quatrain","رباعية"]],[0],"Лесенка."],
+[5,0,"Akhmatova's \"Requiem\" is dedicated to…","\"القداس الجنائزي\" لأخماتوفا مهدى لـ...",[["victims of the Stalin-era repressions","ضحايا قمع حقبة ستالين"],["the war of 1812","حرب 1812"],["Pushkin","بوشكين"],["the October Revolution celebration","الاحتفال بثورة أكتوبر"]],[0],"ابنها انحبس بفترة القمع."],
+[5,0,"Mikhail Bulgakov wrote…","ميخائيل بولغاكوف كتب...",[["The Master and Margarita","المعلم ومارغريتا"],["Doctor Zhivago","دكتور جيفاغو"],["Quiet Flows the Don","الدون الهادئ"],["The Lower Depths","الحضيض"]],[0],"Мастер и Маргарита."],
+[5,0,"The oldest monument of Russian literature about Prince Igor (12th century) is…","أقدم أثر بالأدب الروسي عن الأمير إيغور (القرن 12) هو...",[["The Tale of Igor's Campaign","حكاية حملة إيغور"],["Eugene Onegin","يفغيني أونيغين"],["Ruslan and Lyudmila","روسلان ولودميلا"],["Mtsyri","متسيري"]],[0],"Слово о полку Игореве."],
+[5,0,"Kolobok is a fairy-tale character who is a…","كولوبوك شخصية بالحكايات وهو...",[["round bun that runs away","كعكة مدورة بتهرب"],["brave knight","فارس شجاع"],["old witch","ساحرة عجوز"],["golden fish","سمكة ذهبية"]],[0],"بالآخر الثعلب بياكله."],
+[5,0,"Baba Yaga lives in a hut…","بابا ياغا ساكنة بكوخ...",[["on chicken legs","على أرجل دجاجة"],["under the sea","تحت البحر"],["on the moon","عالقمر"],["inside a tree","جوا شجرة"]],[0],"Избушка на курьих ножках."],
+[5,0,"Koschei the Deathless's death is hidden in a…","موت كوششي الخالد مخبى بـ...",[["needle (inside an egg)","إبرة (جوا بيضة)"],["sword","سيف"],["book","كتاب"],["crown","تاج"]],[0],"Смерть на конце иглы."],
+[5,0,"Sadko, a hero of byliny, was a…","سادكو، بطل البيلينات، كان...",[["merchant and gusli player from Novgorod","تاجر وعازف غوسلي من نوفغورود"],["tsar of Moscow","قيصر موسكو"],["cosmonaut","رائد فضاء"],["painter","رسام"]],[0],"Садко."],
+[5,0,"Where was Sergei Yesenin born?","وين انولد سيرغي يسينين؟",[["in the village of Konstantinovo (Ryazan region)","بقرية كونستانتينوفو (منطقة ريازان)"],["in St. Petersburg","بسانت بطرسبرغ"],["in Odessa","بأوديسا"],["in Paris","بباريس"]],[0],"Константиново."],
+[5,1,"Which works were written by Lermontov? (3 correct)","شو الأعمال اللي كتبها ليرمونتوف؟ (3 صحيحة)",[["A Hero of Our Time","بطل من هذا الزمان"],["Mtsyri","متسيري"],["Borodino","بورودينو"],["Woe from Wit","ذو العقل يشقى"]],[0,1,2],"ذو العقل يشقى لغريبويدوف."],
+[5,1,"Which works were written by Dostoevsky? (3 correct)","شو الأعمال اللي كتبها دوستويفسكي؟ (3 صحيحة)",[["The Idiot","الأبله"],["The Brothers Karamazov","الإخوة كارامازوف"],["White Nights","الليالي البيضاء"],["Fathers and Sons","آباء وأبناء"]],[0,1,2],"آباء وأبناء لتورغينيف."],
+[5,1,"Which works were written by Gogol? (3 correct)","شو الأعمال اللي كتبها غوغول؟ (3 صحيحة)",[["The Overcoat","المعطف"],["Taras Bulba","تاراس بولبا"],["The Nose","الأنف"],["Mumu","مومو"]],[0,1,2],"مومو لتورغينيف."],
+[5,1,"Which Russian writers received the Nobel Prize in Literature? (3 correct)","مين الكتّاب الروس اللي أخدوا نوبل بالأدب؟ (3 صحيحة)",[["Bunin","بونين"],["Pasternak","باسترناك"],["Sholokhov","شولوخوف"],["Tolstoy","تولستوي"]],[0,1,2],"تولستوي ما أخدها. (كمان: سولجينيتسين 1970، برودسكي 1987)."],
+[5,1,"Which works were written by Yesenin? (3 correct)","شو الأعمال اللي كتبها يسينين؟ (3 صحيحة)",[["Letter to Mother","رسالة إلى أمي"],["The Birch Tree","شجرة البتولا"],["Anna Snegina","آنا سنيغينا"],["Requiem","قداس جنائزي"]],[0,1,2],"القداس لأخماتوفا."],
+[5,1,"Which are bogatyrs of Russian byliny? (3 correct)","مين أبطال (بوغاتير) البيلينات الروسية؟ (3 صحيحة)",[["Ilya Muromets","إيليا موروميتس"],["Dobrynya Nikitich","دوبرينيا نيكيتيتش"],["Alyosha Popovich","أليوشا بوبوفيتش"],["Koschei the Deathless","كوششي الخالد"]],[0,1,2],"كوششي شرير بالحكايات."],
+[5,1,"Which works were written by Turgenev? (3 correct)","شو الأعمال اللي كتبها تورغينيف؟ (3 صحيحة)",[["Fathers and Sons","آباء وأبناء"],["Mumu","مومو"],["A Hunter's Sketches","مذكرات صياد"],["The Seagull","النورس"]],[0,1,2],"النورس لتشيخوف."],
+// F6
+[6,0,"Ded Moroz's granddaughter and helper is…","حفيدة ديد موروز ومساعدته هي...",[["Snegurochka","سنيغوروتشكا"],["Baba Yaga","بابا ياغا"],["Alyonushka","أليونوشكا"],["Masha","ماشا"]],[0],"Снегурочка = بنت الثلج."],
+[6,0,"The coat of arms of Russia shows a…","شعار روسيا فيه...",[["double-headed eagle","نسر برأسين"],["bear","دب"],["lion","أسد"],["star","نجمة"]],[0],"Двуглавый орёл."],
+[6,0,"The colors of the Russian flag from top to bottom are…","ألوان العلم الروسي من فوق لتحت...",[["white, blue, red","أبيض، أزرق، أحمر"],["red, white, blue","أحمر، أبيض، أزرق"],["blue, white, red","أزرق، أبيض، أحمر"],["white, red, blue","أبيض، أحمر، أزرق"]],[0],"Бело-сине-красный."],
+[6,0,"St. Basil's Cathedral with colorful onion domes stands on…","كاتدرائية القديس باسيل بقببها الملونة موجودة بـ...",[["Red Square, Moscow","الساحة الحمراء، موسكو"],["Nevsky Prospect, St. Petersburg","شارع نيفسكي، سانت بطرسبرغ"],["Kazan Kremlin","كرملين قازان"],["Sochi","سوتشي"]],[0],"Собор Василия Блаженного."],
+[6,0,"The Hermitage museum is located in the … in St. Petersburg.","متحف الإرميتاج موجود بـ... بسانت بطرسبرغ.",[["Winter Palace","قصر الشتاء"],["Kremlin","الكرملين"],["Bolshoi Theatre","مسرح البولشوي"],["Peterhof fountains","نوافير بيترهوف"]],[0],"Зимний дворец."],
+[6,0,"A balalaika has a … body and usually 3 strings.","البالالايكا إلها جسم... وغالباً 3 أوتار.",[["triangular","مثلث"],["round","مدوّر"],["square","مربع"],["star-shaped","نجمة"]],[0],"Треугольная."],
+[6,0,"A samovar is used for…","السماور بيستعمل لـ...",[["boiling water for tea","غلي المي للشاي"],["cooking soup","طبخ الشوربة"],["baking bread","خبز العيش"],["storing grain","تخزين القمح"]],[0],"Самовар – رمز الضيافة."],
+[6,0,"A troika is…","الترويكا هي...",[["three horses harnessed together","تلات خيول مربوطين سوا"],["a folk dance","رقصة شعبية"],["a soup","شوربة"],["a wooden toy","لعبة خشبية"]],[0],"Тройка."],
+[6,0,"A kokoshnik is a traditional Russian…","الكوكوشنيك هو... روسي تقليدي",[["women's headdress","غطاء راس نسائي"],["musical instrument","آلة موسيقية"],["dish","طبق أكل"],["boat","قارب"]],[0],"Кокошник؛ والفستان сарафан."],
+[6,0,"Borscht is a traditional soup made mainly with…","البورشت شوربة تقليدية معمولة بشكل أساسي من...",[["beetroot","الشمندر"],["fish","السمك"],["milk","الحليب"],["rice","الرز"]],[0],"Борщ. وشوربة الملفوف = щи."],
+[6,0,"The Russian steam bath is called…","حمام البخار الروسي اسمه...",[["banya","بانيا"],["dacha","داتشا"],["izba","إيزبا"],["yurta","يورتا"]],[0],"Баня. (дача = بيت ريفي، изба = بيت خشب)."],
+[6,0,"Who was the first human in space (April 12, 1961)?","مين أول إنسان بالفضاء (12 أبريل 1961)؟",[["Yuri Gagarin","يوري غاغارين"],["Valentina Tereshkova","فالنتينا تيريشكوفا"],["Sergei Korolev","سيرغي كوروليوف"],["Alexei Leonov","أليكسي ليونوف"]],[0],"تيريشكوفا أول امرأة."],
+[6,0,"\"Pictures at an Exhibition\" and the opera \"Boris Godunov\" were composed by…","\"صور من معرض\" وأوبرا \"بوريس غودونوف\" لحنهم...",[["Mussorgsky","موسورغسكي"],["Tchaikovsky","تشايكوفسكي"],["Glinka","غلينكا"],["Prokofiev","بروكوفييف"]],[0],"Мусоргский."],
+[6,0,"Symphony No. 7 \"Leningrad\" was composed by…","السيمفونية السابعة \"لينينغراد\" لحنها...",[["Shostakovich","شوستاكوفيتش"],["Rachmaninoff","رحمانينوف"],["Stravinsky","سترافينسكي"],["Borodin","بورودين"]],[0],"Шостакович – أثناء حصار لينينغراد."],
+[6,0,"The opera \"Prince Igor\" was composed by…","أوبرا \"الأمير إيغور\" لحنها...",[["Borodin","بورودين"],["Glinka","غلينكا"],["Tchaikovsky","تشايكوفسكي"],["Shostakovich","شوستاكوفيتش"]],[0],"Бородин – كان كمان كيميائي."],
+[6,0,"The famous Russian opera singer (bass) of the early 20th century was…","مغني الأوبرا الروسي المشهور (باص) بأوائل القرن 20 كان...",[["Fyodor Chaliapin","فيودور شاليابين"],["Ilya Repin","إيليا ريبين"],["Sergei Yesenin","سيرغي يسينين"],["Mikhail Glinka","ميخائيل غلينكا"]],[0],"Шаляпин."],
+[6,0,"Anna Pavlova is famous for the dance…","آنا بافلوفا مشهورة برقصة...",[["The Dying Swan","البجعة المحتضرة"],["Kalinka","كالينكا"],["The Firebird","طائر النار"],["Spartacus","سبارتاكوس"]],[0],"Умирающий лебедь."],
+[6,0,"Sergei Diaghilev organized the \"Russian Seasons\" of ballet in…","سيرغي دياغيليف نظّم \"المواسم الروسية\" للباليه بـ...",[["Paris","باريس"],["Tokyo","طوكيو"],["New York","نيويورك"],["Cairo","القاهرة"]],[0],"Русские сезоны."],
+[6,0,"The 19th-century association of realist painters (Repin, Kramskoi, Savrasov) was called…","جمعية الرسامين الواقعيين بالقرن 19 (ريبين، كرامسكوي، سافراسوف) اسمها...",[["the Peredvizhniki (Wanderers)","المتجولين (بيريدفيجنيكي)"],["the Futurists","المستقبليين"],["the Mighty Handful","الخمسة العظماء"],["the Acmeists","الأكميين"]],[0],"Передвижники. (الخمسة العظماء = ملحنين)."],
+[6,0,"Trinity Day (Troitsa) is traditionally decorated with … branches.","عيد الثالوث (Троица) بيتزين تقليدياً بأغصان...",[["birch","البتولا"],["palm","النخيل"],["olive","الزيتون"],["pine","الصنوبر"]],[0],"Берёзовые ветки."],
+[6,0,"Old New Year is celebrated on…","رأس السنة القديم بينحتفل فيه بـ...",[["January 13–14","13–14 يناير"],["December 31","31 ديسمبر"],["March 1","1 مارس"],["September 1","1 سبتمبر"]],[0],"Старый Новый год – حسب التقويم اليولياني."],
+[6,0,"Palekh is famous for…","باليخ مشهورة بـ...",[["lacquer miniatures","منمنمات مطلية باللك"],["blue-and-white porcelain","خزف أزرق وأبيض"],["clay toys","ألعاب طين"],["shawls","شالات"]],[0],"Палехская миниатюра."],
+[6,1,"Which are traditions of Maslenitsa? (3 correct)","شو تقاليد ماسلينيتسا؟ (3 صحيحة)",[["eating blini","أكل البليني"],["burning a straw effigy","حرق دمية القش"],["sledding","التزلج بالزلاجات"],["decorating a fir tree","تزيين شجرة الصنوبر"]],[0,1,2],"الصنوبرة لرأس السنة."],
+[6,1,"Which are symbols of New Year in Russia? (3 correct)","شو رموز رأس السنة بروسيا؟ (3 صحيحة)",[["fir tree","شجرة الصنوبر"],["Ded Moroz","ديد موروز"],["Snegurochka","سنيغوروتشكا"],["kulich","الكوليتش"]],[0,1,2],"الكوليتش للفصح."],
+[6,1,"Which composers belonged to \"The Mighty Handful\"? (3 correct)","مين الملحنين من \"الخمسة العظماء\"؟ (3 صحيحة)",[["Mussorgsky","موسورغسكي"],["Rimsky-Korsakov","ريمسكي-كورساكوف"],["Borodin","بورودين"],["Tchaikovsky","تشايكوفسكي"]],[0,1,2],"تشايكوفسكي ما كان منهم (وكمان بالاكيرف وكوي منهم)."],
+[6,1,"Which museums are in St. Petersburg? (3 correct)","شو المتاحف الموجودة بسانت بطرسبرغ؟ (3 صحيحة)",[["the Hermitage","الإرميتاج"],["the Russian Museum","المتحف الروسي"],["the Kunstkamera","الكونستكاميرا"],["the Tretyakov Gallery","غاليري تريتياكوف"]],[0,1,2],"تريتياكوف بموسكو."],
+[6,1,"Which were famous Russian ballet dancers? (3 correct)","مين راقصين باليه روس مشهورين؟ (3 صحيحة)",[["Anna Pavlova","آنا بافلوفا"],["Galina Ulanova","غالينا أولانوفا"],["Maya Plisetskaya","مايا بليسيتسكايا"],["Anna Akhmatova","آنا أخماتوفا"]],[0,1,2],"أخماتوفا شاعرة."],
+[6,1,"Which painters belonged to the Peredvizhniki (Wanderers)? (3 correct)","مين الرسامين من جماعة المتجولين؟ (3 صحيحة)",[["Repin","ريبين"],["Kramskoi","كرامسكوي"],["Savrasov","سافراسوف"],["Malevich","ماليفيتش"]],[0,1,2],"ماليفيتش طليعي (القرن 20)."],
+[6,1,"Which belong to MATERIAL culture? (3 correct)","شو منها من الثقافة المادية؟ (3 صحيحة)",[["buildings","المباني"],["clothing","الملابس"],["tools","الأدوات"],["religious beliefs","المعتقدات الدينية"]],[0,1,2],"المعتقدات روحية."]
+);
+
+/* ===== SYMBOLS (drawn SVG) ===== */
+const SV=(b)=>`<svg viewBox="0 0 100 100" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">${b}</svg>`;
+const SYM=[
+["Russian flag","Флаг России","علم روسيا","White, blue and red horizontal stripes (top to bottom).","أبيض، أزرق، أحمر من فوق لتحت.",SV(`<rect x="10" y="22" width="80" height="18" fill="#fff"/><rect x="10" y="40" width="80" height="18" fill="#0039A6"/><rect x="10" y="58" width="80" height="18" fill="#D52B1E"/><rect x="10" y="22" width="80" height="54" fill="none" stroke="#999"/>`)],
+["Birch","Берёза","شجرة البتولا","White trunk with black marks – the symbol of Russia, loved by Yesenin.","جذع أبيض بعلامات سودا – رمز روسيا، ويسينين بحبها كتير.",SV(`<ellipse cx="50" cy="35" rx="28" ry="26" fill="#5fae4e"/><ellipse cx="35" cy="45" rx="16" ry="14" fill="#7cc35f"/><ellipse cx="66" cy="44" rx="16" ry="14" fill="#7cc35f"/><rect x="45" y="40" width="10" height="52" fill="#f4f4f4" stroke="#bbb"/><g stroke="#222" stroke-width="2.5"><line x1="46" y1="52" x2="52" y2="52"/><line x1="49" y1="62" x2="55" y2="62"/><line x1="45" y1="72" x2="50" y2="72"/><line x1="50" y1="82" x2="55" y2="82"/></g>`)],
+["Matryoshka","Матрёшка","ماتريوشكا","A wooden nesting doll: smaller dolls hide inside each other.","دمية خشب جواها دمى أصغر وحدة جوا التانية.",SV(`<ellipse cx="50" cy="66" rx="26" ry="28" fill="#d62f2f"/><circle cx="50" cy="34" r="20" fill="#d62f2f"/><circle cx="50" cy="36" r="13" fill="#ffe0c2"/><circle cx="45" cy="35" r="1.8" fill="#222"/><circle cx="55" cy="35" r="1.8" fill="#222"/><circle cx="43" cy="40" r="2.5" fill="#ff8c8c"/><circle cx="57" cy="40" r="2.5" fill="#ff8c8c"/><path d="M46 43 Q50 46 54 43" stroke="#a00" fill="none"/><ellipse cx="50" cy="70" rx="15" ry="17" fill="#ffd34d"/><circle cx="50" cy="68" r="7" fill="#e84040"/><circle cx="44" cy="76" r="4" fill="#3a9a3a"/><circle cx="56" cy="76" r="4" fill="#3a9a3a"/>`)],
+["Samovar","Самовар","السماور","A metal urn for boiling water for tea – symbol of hospitality.","وعاء معدني لغلي المي للشاي – رمز الضيافة.",SV(`<rect x="44" y="12" width="12" height="8" rx="2" fill="#b8860b"/><path d="M30 24 h40 l6 40 h-52z" fill="#d4a017" stroke="#8a6508"/><rect x="38" y="64" width="24" height="8" fill="#b8860b"/><path d="M30 72 h40 l-6 14 h-28z" fill="#d4a017"/><path d="M24 34 q-10 8 0 16" stroke="#8a6508" stroke-width="4" fill="none"/><path d="M76 34 q10 8 0 16" stroke="#8a6508" stroke-width="4" fill="none"/><rect x="47" y="50" width="6" height="12" fill="#8a6508"/><rect x="40" y="56" width="14" height="4" fill="#8a6508"/>`)],
+["Balalaika","Балалайка","البالالايكا","A folk string instrument with a triangular body and 3 strings.","آلة وترية شعبية بجسم مثلث و3 أوتار.",SV(`<polygon points="50,40 22,90 78,90" fill="#c8843c" stroke="#7a4a1a" stroke-width="2"/><circle cx="50" cy="72" r="6" fill="#3a2410"/><rect x="47" y="8" width="6" height="40" fill="#7a4a1a"/><g stroke="#eee" stroke-width=".8"><line x1="48.5" y1="10" x2="46" y2="88"/><line x1="50" y1="10" x2="50" y2="88"/><line x1="51.5" y1="10" x2="54" y2="88"/></g>`)],
+["Blini (Maslenitsa)","Блины","البليني (ماسلينيتسا)","Round golden pancakes – symbol of the sun at Maslenitsa.","فطائر مدورة ذهبية – رمز الشمس بماسلينيتسا.",SV(`<ellipse cx="50" cy="78" rx="38" ry="9" fill="#ddd"/>${[0,1,2,3,4].map(i=>`<ellipse cx="50" cy="${72-i*7}" rx="30" ry="8" fill="${i%2?'#f2b84b':'#e8a234'}" stroke="#c07f1d"/>`).join("")}<circle cx="50" cy="38" r="5" fill="#fff4b0"/>`)],
+["Kulich & eggs (Easter)","Кулич","الكوليتش والبيض (الفصح)","Tall Easter bread with white icing, and painted eggs.","خبز الفصح الطويل مع كريمة بيضا، وبيض ملوّن.",SV(`<rect x="34" y="34" width="32" height="46" rx="3" fill="#c98b3c"/><path d="M32 36 q18 -22 36 0 q-4 6 -8 2 q-4 6 -8 0 q-4 6 -8 0 q-4 6 -8 0z" fill="#fff"/><circle cx="46" cy="22" r="2" fill="#e33"/><circle cx="54" cy="24" r="2" fill="#3a3"/><ellipse cx="22" cy="80" rx="9" ry="11" fill="#d62f2f"/><ellipse cx="78" cy="80" rx="9" ry="11" fill="#2f6fd6"/><ellipse cx="78" cy="80" rx="9" ry="3" fill="#ffd34d"/>`)],
+["New Year fir tree","Новогодняя ёлка","شجرة رأس السنة","Decorated fir tree with a red star; Ded Moroz brings gifts.","صنوبرة مزينة بنجمة حمرا؛ ديد موروز بيجيب الهدايا.",SV(`<polygon points="50,14 30,42 70,42" fill="#2e8b3e"/><polygon points="50,28 24,62 76,62" fill="#2e8b3e"/><polygon points="50,44 18,84 82,84" fill="#2e8b3e"/><rect x="45" y="84" width="10" height="10" fill="#7a4a1a"/><polygon points="50,6 53,13 60,13 54,17 56,24 50,20 44,24 46,17 40,13 47,13" fill="#e33"/><circle cx="40" cy="52" r="3" fill="#ffd34d"/><circle cx="60" cy="58" r="3" fill="#e33"/><circle cx="34" cy="74" r="3" fill="#4fa3ff"/><circle cx="66" cy="76" r="3" fill="#ffd34d"/><circle cx="50" cy="68" r="3" fill="#e33"/>`)],
+["Gzhel","Гжель","غجيل","White ceramics painted with blue flowers and patterns.","خزف أبيض مرسوم عليه ورد وزخارف زرقا.",SV(`<circle cx="50" cy="50" r="40" fill="#fff" stroke="#1d4fb8" stroke-width="4"/><circle cx="50" cy="50" r="32" fill="none" stroke="#1d4fb8" stroke-width="1.5"/>${[0,60,120,180,240,300].map(a=>`<ellipse cx="50" cy="36" rx="6" ry="13" fill="#1d4fb8" opacity=".85" transform="rotate(${a} 50 50)"/>`).join("")}<circle cx="50" cy="50" r="6" fill="#0d2f80"/>`)],
+["Khokhloma","Хохлома","خوخلوما","Wooden dishes painted red, black and gold with berries and leaves.","أواني خشب مرسومة بالأحمر والأسود والذهبي بتوت وورق.",SV(`<path d="M12 40 h76 q-4 40 -38 46 q-34 -6 -38 -46z" fill="#111" stroke="#d4a017" stroke-width="3"/><path d="M20 52 q15 -10 30 0 q15 10 30 0" stroke="#d4a017" stroke-width="3" fill="none"/><circle cx="35" cy="62" r="5" fill="#d62f2f"/><circle cx="50" cy="66" r="5" fill="#d62f2f"/><circle cx="65" cy="62" r="5" fill="#d62f2f"/><ellipse cx="42" cy="72" rx="5" ry="2.5" fill="#d4a017"/><ellipse cx="58" cy="72" rx="5" ry="2.5" fill="#d4a017"/>`)],
+["Onion domes (St. Basil's)","Собор Василия Блаженного","القبب البصلية (كاتدرائية القديس باسيل)","Colorful onion-shaped domes on Red Square, Moscow.","قبب ملونة على شكل بصلة بالساحة الحمراء بموسكو.",SV(`<rect x="18" y="58" width="64" height="34" fill="#b5462c"/><rect x="44" y="34" width="12" height="26" fill="#c9553a"/><path d="M50 10 q14 12 0 26 q-14 -14 0 -26z" fill="#2e9e5b"/><rect x="24" y="44" width="10" height="16" fill="#c9553a"/><path d="M29 26 q11 10 0 20 q-11 -10 0 -20z" fill="#2f6fd6"/><rect x="66" y="44" width="10" height="16" fill="#c9553a"/><path d="M71 26 q11 10 0 20 q-11 -10 0 -20z" fill="#e6b422"/><g fill="#fff"><rect x="28" y="70" width="6" height="10"/><rect x="47" y="70" width="6" height="14"/><rect x="66" y="70" width="6" height="10"/></g>`)],
+["Bear","Медведь","الدب","Brown bear – a popular symbol of Russia's strength.","الدب البني – رمز شعبي لقوة روسيا.",SV(`<circle cx="30" cy="28" r="10" fill="#7a4a1a"/><circle cx="70" cy="28" r="10" fill="#7a4a1a"/><circle cx="50" cy="52" r="30" fill="#8b5a2b"/><ellipse cx="50" cy="62" rx="14" ry="10" fill="#c79a6b"/><circle cx="40" cy="46" r="3" fill="#111"/><circle cx="60" cy="46" r="3" fill="#111"/><ellipse cx="50" cy="58" rx="5" ry="3.5" fill="#111"/>`)],
+["Ushanka","Ушанка","قبعة الأوشانكا","Warm fur hat with ear flaps for the Russian winter.","قبعة فرو دافية إلها جوانب للأذنين للشتا الروسي.",SV(`<path d="M22 55 q0 -36 28 -36 q28 0 28 36z" fill="#6b4a2e"/><rect x="20" y="48" width="60" height="12" rx="6" fill="#4a3220"/><rect x="16" y="54" width="14" height="30" rx="7" fill="#4a3220"/><rect x="70" y="54" width="14" height="30" rx="7" fill="#4a3220"/>`)],
+["St. George ribbon (Victory Day)","Георгиевская лента","شريط القديس جورج (يوم النصر)","Black-and-orange ribbon worn on May 9, Victory Day.","شريط أسود وبرتقالي بيلبسوه بـ9 مايو يوم النصر.",SV(`<g transform="rotate(-30 50 50)"><rect x="40" y="10" width="20" height="80" fill="#f08a00"/>${[14,30,46,62,78].map(y=>`<rect x="40" y="${y}" width="20" height="6" fill="#111"/>`).join("")}</g>`)],
+["Ivan Kupala","Иван Купала","إيفان كوبالا","Summer solstice: flower wreaths on water and jumping over a bonfire.","أطول يوم بالسنة: أكاليل ورد عالمي وقفز فوق النار.",SV(`<path d="M30 88 q20 -60 20 -70 q10 30 20 70z" fill="#ff7a1a"/><path d="M40 88 q10 -30 10 -45 q8 20 12 45z" fill="#ffd34d"/><g stroke="#7a4a1a" stroke-width="5"><line x1="26" y1="92" x2="74" y2="84"/><line x1="26" y1="84" x2="74" y2="92"/></g><circle cx="20" cy="30" r="10" fill="none" stroke="#3a9a3a" stroke-width="4"/><circle cx="14" cy="24" r="3" fill="#e33"/><circle cx="26" cy="22" r="3" fill="#ffd34d"/><circle cx="20" cy="40" r="3" fill="#4fa3ff"/>`)],
+["Ballet","Балет","الباليه","Russian classical ballet – Bolshoi and Mariinsky theatres, Swan Lake.","الباليه الكلاسيكي الروسي – مسرح البولشوي والمارينسكي، بحيرة البجع.",SV(`<circle cx="50" cy="18" r="7" fill="#ffe0c2"/><path d="M50 25 l0 26" stroke="#ffe0c2" stroke-width="5"/><path d="M50 30 l-22 -10 M50 30 l22 -10" stroke="#ffe0c2" stroke-width="4"/><ellipse cx="50" cy="52" rx="26" ry="7" fill="#fff" stroke="#ccc"/><path d="M48 56 l-6 34 M52 56 l10 32" stroke="#ffe0c2" stroke-width="4"/><path d="M60 88 l8 0" stroke="#f9a8c8" stroke-width="4"/>`)]
+];
+
+/* ===== PAINTINGS (descriptions – Task 40 type) ===== */
+const ART=[
+["Bogatyrs","Богатыри","الأبطال الثلاثة (البوغاتير)","Viktor Vasnetsov",1898,"Three heroic warriors in armor on horses in the steppe; the one in the middle shades his eyes with his hand.","تلات محاربين أبطال بالدروع على خيول بالسهوب؛ اللي بالنص حاطط إيده على عيونه وبيطّلع لبعيد."],
+["Alyonushka","Алёнушка","أليونوشكا","Viktor Vasnetsov",1881,"A sad barefoot girl sits on a stone by a dark pond in the forest.","بنت حزينة حافية قاعدة على حجر جنب بركة غامقة بالغابة."],
+["The Knight at the Crossroads","Витязь на распутье","الفارس عند مفترق الطرق","Viktor Vasnetsov",1882,"A knight on a white horse stops in front of a stone with an inscription; skulls lie on the ground.","فارس على حصان أبيض واقف قدام حجر عليه كتابة، وفي جماجم عالأرض."],
+["Ivan Tsarevich Riding the Grey Wolf","Иван-царевич на Сером волке","إيفان تساريفيتش على الذئب الرمادي","Viktor Vasnetsov",1889,"A prince and a princess ride a huge grey wolf through a dark forest.","أمير وأميرة راكبين ذئب رمادي ضخم بغابة معتمة."],
+["Barge Haulers on the Volga","Бурлаки на Волге","جرّارو المراكب على الفولغا","Ilya Repin",1873,"A group of exhausted men in rags pulls a ship with ropes along a sandy river bank.","مجموعة رجال تعبانين بأواعي مقطعة بيجروا سفينة بالحبال على شط نهر رملي."],
+["Reply of the Zaporozhian Cossacks","Запорожцы пишут письмо турецкому султану","رد القوزاق الزابوروجيين","Ilya Repin",1891,"A crowd of laughing Cossacks gathers around a table while one writes a mocking letter to the Sultan.","جمهرة قوزاق بيضحكوا حوالين طاولة وواحد بيكتب رسالة ساخرة للسلطان."],
+["The Ninth Wave","Девятый вал","الموجة التاسعة","Ivan Aivazovsky",1850,"Shipwrecked people cling to a broken mast in a stormy sea while a huge wave rises under a golden sunrise.","ناجين من غرق سفينة متمسكين بصاري مكسور ببحر هايج، وموجة ضخمة طالعة تحت شروق ذهبي."],
+["Morning in a Pine Forest","Утро в сосновом лесу","صباح في غابة الصنوبر","Ivan Shishkin",1889,"Bear cubs play on a fallen pine tree in a misty forest. (Bears painted together with Savitsky.)","دببة صغار بيلعبوا على شجرة صنوبر واقعة بغابة فيها ضباب."],
+["Rye","Рожь","الجاودار","Ivan Shishkin",1878,"A wide golden rye field with a road and tall pine trees under a big sky.","حقل جاودار ذهبي واسع فيه طريق وشجر صنوبر طويل تحت سما كبيرة."],
+["Golden Autumn","Золотая осень","الخريف الذهبي","Isaac Levitan",1895,"Birch trees with golden-yellow leaves stand by a calm blue river.","شجر بتولا بورق أصفر ذهبي جنب نهر أزرق هادي."],
+["Above Eternal Peace","Над вечным покоем","فوق السلام الأبدي","Isaac Levitan",1894,"A small wooden church and a cemetery on a hill above a wide lake under heavy grey clouds.","كنيسة خشب صغيرة ومقبرة على تلة فوق بحيرة واسعة تحت غيوم رمادية تقيلة."],
+["The Rooks Have Come Back","Грачи прилетели","عادت الغربان","Alexei Savrasov",1871,"Early spring: black birds build nests in birches, snow is melting, a church in the background.","أول الربيع: طيور سودا بتبني أعشاش بالبتولا، الثلج عم يذوب، وكنيسة ورا."],
+["The Last Day of Pompeii","Последний день Помпеи","اليوم الأخير لبومبي","Karl Bryullov",1833,"People flee in terror as the volcano destroys the city; statues fall under a red sky.","ناس بيهربوا مرعوبين والبركان بيدمر المدينة، والتماثيل بتوقع تحت سما حمرا."],
+["Boyarynya Morozova","Боярыня Морозова","النبيلة موروزوفا","Vasily Surikov",1887,"A noblewoman in black, chained in a sledge, raises two fingers above a crowd in a snowy street.","امرأة نبيلة لابسة أسود ومقيدة بزلاجة، رافعة إصبعين فوق جمهور بشارع مثلج."],
+["Unknown Woman","Неизвестная","امرأة مجهولة","Ivan Kramskoi",1883,"An elegant woman in dark velvet sits in an open carriage and looks down at the viewer.","امرأة أنيقة بلبس مخمل غامق قاعدة بعربية مفتوحة وبتطّلع لتحت عالمشاهد."],
+["Black Square","Чёрный квадрат","المربع الأسود","Kazimir Malevich",1915,"A black square on a white background – a symbol of Suprematism and abstract art.","مربع أسود على خلفية بيضا – رمز السوبريماتية والفن التجريدي."],
+["Trinity","Троица","الثالوث","Andrei Rublev","1420s","An icon of three angels with wings sitting around a table with a cup, in soft blue and gold colors.","أيقونة تلات ملائكة بأجنحة قاعدين حوالين طاولة عليها كاس، بألوان زرقا وذهبية ناعمة."],
+["The Merchant's Wife at Tea","Купчиха за чаем","زوجة التاجر على الشاي","Boris Kustodiev",1918,"A plump woman drinks tea on a balcony with a samovar, fruit and a cat.","امرأة مليانة بتشرب شاي على بلكونة مع سماور وفواكه وقطة."],
+["Girl with Peaches","Девочка с персиками","البنت والخوخ","Valentin Serov",1887,"A dark-haired girl in a pink blouse sits at a table with peaches in a bright room.","بنت شعرها غامق ولابسة بلوزة زهرية قاعدة على طاولة عليها خوخ بغرفة مضوية."],
+["The Demon Seated","Демон сидящий","الشيطان الجالس","Mikhail Vrubel",1890,"A sad, powerful young figure sits among strange crystal-like flowers at sunset (inspired by Lermontov's poem).","شخص شاب قوي وحزين قاعد بين ورود غريبة متل الكريستال وقت الغروب (مستوحاة من قصيدة ليرمونتوف)."]
+];
+
+/* ===== VIEWS ===== */
+function gimg(q){return "https://www.google.com/search?tbm=isch&q="+encodeURIComponent(q)}
+function pics(tab){
+  tab=tab||"sym";
+  const tabs=`<div class="chips"><button class="chip ${tab==='sym'?'on':''}" onclick="pics('sym')">🪆 الرموز</button><button class="chip ${tab==='art'?'on':''}" onclick="pics('art')">🖼️ اللوحات</button><button class="chip" onclick="picQuiz('sym')">🎯 تحدي الرموز</button><button class="chip" onclick="picQuiz('art')">🎯 تحدي اللوحات</button></div>`;
+  if(tab==="sym"){
+    app.innerHTML=tabs+`<div class="card"><h2>🪆 رموز روسيا</h2><div class="mut">اضغط على الاسم الروسي لتسمعه.</div></div>
+    <div class="grid">${SYM.map(s=>`<div class="card" style="margin:0;padding:10px"><div style="height:110px">${s[5]}</div><b class="en" style="display:block">${W(s[0])}</b><div class="ruw w" style="display:inline-block">${esc(s[1])}</div><div style="font-size:13px">${esc(s[2])}</div><div class="mut en" style="font-size:12px">${W(s[3])}</div><div class="ar" style="font-size:12px">${W(s[4])}</div></div>`).join("")}</div>`;
+  }else{
+    app.innerHTML=tabs+`<div class="card"><h2>🖼️ لوحات لازم تعرفها</h2><div class="mut">بالامتحان (السؤال 40) بيورجوك صورة لوحة وبتكتب اسم الرسام بالشكل: <b class="en">Viktor Vasnetsov</b>. اقرأ الوصف، وبعدين اضغط "شوف اللوحة" وطالع فيها منيح.</div></div>
+    ${ART.map(a=>`<div class="card"><div class="row" style="justify-content:space-between"><b class="en">${W(a[0])}</b><span class="tag">${a[4]}</span></div>
+    <div class="ruw w" style="display:inline-block">${esc(a[1])}</div> · <span>${esc(a[2])}</span>
+    <div style="margin:6px 0;font-size:17px">🎨 <b class="en" style="display:inline">${W(a[3])}</b></div>
+    ${EN(a[5],a[6])}
+    <a class="btn sec" style="margin-top:8px;text-decoration:none" href="${gimg(a[0]+' '+a[3])}" target="_blank" rel="noopener">🔍 شوف اللوحة</a></div>`).join("")}`;
+  }
+}
+let PQ=null;
+function picQuiz(kind){
+  const src=kind==="sym"?SYM:ART;
+  PQ={kind,order:shuffle(src.map((_,i)=>i)),pos:0,score:0};pqRender();
+}
+function pqRender(){
+  const src=PQ.kind==="sym"?SYM:ART;
+  if(PQ.pos>=PQ.order.length){app.innerHTML=`<div class="card"><div class="score">${PQ.score} / ${src.length}</div><div class="row" style="justify-content:center"><button class="btn" onclick="picQuiz('${PQ.kind}')">مرة كمان</button><button class="btn sec" onclick="pics('${PQ.kind}')">رجوع</button></div></div>`;return}
+  const i=PQ.order[PQ.pos],it=src[i];PQ.done=false;
+  let opts,prompt;
+  if(PQ.kind==="sym"){
+    opts=shuffle([i].concat(shuffle(src.map((_,k)=>k).filter(k=>k!==i)).slice(0,3))).map(k=>({k,t:src[k][0],a:src[k][2]}));
+    prompt=`<div style="height:170px">${it[5]}</div><div class="mut">شو هاد الرمز؟</div>`;
+  }else{
+    const artists=[...new Set(ART.map(a=>a[3]))];
+    const others=shuffle(artists.filter(x=>x!==it[3])).slice(0,3);
+    opts=shuffle([it[3]].concat(others)).map(t=>({k:t,t,a:""}));
+    prompt=`<div class="en" style="font-size:16px">${W(it[5])}</div><div class="ar">${W(it[6])}</div><div class="mut" style="margin-top:6px">مين رسم هاللوحة؟</div>`;
+  }
+  PQ.ans=PQ.kind==="sym"?i:it[3];
+  app.innerHTML=`<div class="mut">${PQ.pos+1} / ${src.length} · صح: ${PQ.score}</div><div class="card" style="text-align:center">${prompt}</div>
+  ${opts.map(o=>`<div class="opt" data-k="${esc(o.k)}" onclick="pqPick(this)">${W(o.t)}${o.a?`<div class="ar">${esc(o.a)}</div>`:""}</div>`).join("")}<div id="pqfb"></div>
+  <button class="btn sec" onclick="pics('${PQ.kind}')">← رجوع</button>`;
+}
+function pqPick(el){
+  if(PQ.done)return;PQ.done=true;const k=el.dataset.k,ok=String(k)===String(PQ.ans);if(ok){PQ.score++;addXp(4)}
+  document.querySelectorAll(".opt").forEach(o=>{if(o.dataset.k===String(PQ.ans))o.classList.add("good");else if(o===el)o.classList.add("badx")});
+  const src=PQ.kind==="sym"?SYM:ART,it=src[PQ.order[PQ.pos]];
+  document.getElementById("pqfb").innerHTML=`<div class="fb ${ok?'good':'bad'}">${ok?"✅":"❌"} <span class="en" style="display:inline">${esc(PQ.kind==="sym"?it[0]:it[0]+" — "+it[3])}</span> · <span class="ruw w">${esc(it[1])}</span></div><button class="btn" style="margin:10px 0" onclick="PQ.pos++;pqRender()">التالي ←</button>`;
+  speak(it[1],"ru-RU");
+}
+
+/* ===== TOP-100 CHECKLIST ===== */
+const MUST=[
+["Russian verb: aspect = how an action unfolds/completes in time","صيغة الفعل aspect = كيف الحدث بيصير/بيخلص"],
+["3 genders, 6 cases, 3 tenses; NO articles, NO Past Perfect","3 أجناس، 6 حالات، 3 أزمنة؛ ما في أدوات تعريف ولا Past Perfect"],
+["Functions: appellative = calling/urging; phatic = contact; poetic = beauty; metalinguistic = about language","الوظائف: ندائية = مناداة؛ phatic = فتح تواصل؛ شعرية = جمال؛ ماوراء لغوية = عن اللغة"],
+["Dictionary of Difficulties is NOT explanatory; Dahl, BAS, MAS, Ozhegov ARE","قاموس الصعوبات مش تفسيري؛ دال وBAS وMAS وأوجيغوف تفسيرية"],
+["Levels: phonetics, morphology, lexis, syntax – NOT textology","المستويات: صوتي، صرفي، معجمي، نحوي – مش textology"],
+["Regional pronunciation = dialect; jargon/argot/slang = sociolects","اللفظ حسب المنطقة = لهجة؛ جارغون/أرغو/سلانغ = لهجات اجتماعية"],
+["Scientific style: terms, logic, no emotion. Simple words + abbreviations = colloquial","العلمي: مصطلحات ومنطق بدون عاطفة. الكلمات البسيطة والاختصارات = عامي"],
+["New media: accessibility (anytime, anywhere); Channel One = main news","الإعلام الجديد: سهولة الوصول؛ القناة الأولى = الأخبار"],
+["Internet uses verbal + non-verbal + paraverbal means","الإنترنت بيستعمل اللفظي وغير اللفظي وشبه اللفظي"],
+["Formal: name + patronymic; NOT \"Dear friend\"; being late breaks etiquette","الرسمي: الاسم + اسم الأب؛ مش \"صديقي العزيز\"؛ التأخير مخالف"],
+["3 literary kinds: epic, lyric, drama (NOT melodrama)","3 أجناس: ملحمي، غنائي، درامي (مش ميلودراما)"],
+["Gradation = ascending/descending strengthening; simile = \"like\"","التدرج = تقوية صاعدة/نازلة؛ التشبيه = \"مثل\""],
+["Anna Karenina = novel; War and Peace = epic novel; Eugene Onegin = novel in verse","آنا كارينينا = رواية؛ الحرب والسلم = رواية ملحمية؛ أونيغين = رواية شعرية"],
+["Golden Age: Pushkin, Lermontov, Tyutchev. Silver Age: Akhmatova, Tsvetaeva, Blok, Yesenin, Mayakovsky","الذهبي: بوشكين، ليرمونتوف، تيوتشيف. الفضي: أخماتوفا، تسفيتايفا، بلوك، يسينين، ماياكوفسكي"],
+["Yesenin = Imaginism; Mayakovsky = Futurism; Akhmatova = Acmeism; Blok = Symbolism","يسينين = إيماجينيزم؛ ماياكوفسكي = مستقبلية؛ أخماتوفا = أكميزم؛ بلوك = رمزية"],
+["Chekhov = The Lady with the Dog, The Cherry Orchard","تشيخوف = السيدة صاحبة الكلب، بستان الكرز"],
+["The Turnip = fairy tale; Ilya Muromets = bylina","اللفتة = حكاية؛ إيليا موروميتس = بيلينا"],
+["Customs & traditions = spiritual culture; birch = symbol of Russia","العادات = ثقافة روحية؛ البتولا = رمز روسيا"],
+["Opera & ballet are NOT folk culture; Gzhel, Khokhloma, Ivan Kupala ARE","الأوبرا والباليه مش فولكلور؛ غجيل وخوخلوما وإيفان كوبالا فولكلور"],
+["Maslenitsa = blini; Easter = kulich; New Year = fir tree","ماسلينيتسا = بليني؛ الفصح = كوليتش؛ رأس السنة = صنوبرة"],
+["Composers: Tchaikovsky, Prokofiev, Glinka… NOT Aivazovsky (painter), Plisetskaya (ballerina), Gurchenko (actress)","ملحنين: تشايكوفسكي، بروكوفييف، غلينكا... مش أيفازوفسكي (رسام)، بليسيتسكايا (راقصة)، غورتشينكو (ممثلة)"],
+["Vasnetsov = Bogatyrs; Repin = Barge Haulers; Aivazovsky = sea; Shishkin = bears in forest","فاسنيتسوف = الأبطال؛ ريبين = جرّارو المراكب؛ أيفازوفسكي = البحر؛ شيشكين = الدببة بالغابة"],
+["Task 42: 2 bio facts + quote + meaning, ≥80 words, EXACTLY 2 paragraphs","المهمة 42: معلومتين + اقتباس + معناه، 80+ كلمة، فقرتين بالضبط"],
+["Task 43: remove 2 off-topic fragments, then order 5 logically","المهمة 43: احذف المقطعين الغريبين، ورتب الـ5 الباقيين"],
+["Multi-answer tasks usually have EXACTLY 3 correct – choose 3","أسئلة الإجابات المتعددة غالباً إلها 3 إجابات صح بالضبط – اختار 3"]
+];
+function must(){
+  let done={};try{done=JSON.parse(localStorage.getItem("odmust")||"{}")}catch(e){}
+  app.innerHTML=`<div class="card"><h2>✅ أهم 25 معلومة قبل الامتحان</h2><div class="mut">اقرأهم ليلة الامتحان وصبحيته. علّم على كل وحدة لما تحفظها.</div></div>
+  <div class="card chk">${MUST.map((m,i)=>`<label><input type="checkbox" ${done[i]?"checked":""} onchange="mustT(${i},this.checked)"><span><span class="en" style="display:block">${W(m[0])}</span><span style="color:#cfe0ff;font-size:14px">${esc(m[1])}</span></span></label>`).join("")}</div>`;
+}
+function mustT(i,v){let d={};try{d=JSON.parse(localStorage.getItem("odmust")||"{}")}catch(e){}d[i]=v;try{localStorage.setItem("odmust",JSON.stringify(d))}catch(e){}}
+
+/* ================= STATE ================= */
+let S={xp:0,seen:{},wrong:[]};
+try{const s=JSON.parse(localStorage.getItem("odru")||"null");if(s)S=Object.assign(S,s)}catch(e){}
+function save(){try{localStorage.setItem("odru",JSON.stringify(S))}catch(e){}document.getElementById("xp").textContent="⭐ "+S.xp}
+function addXp(n){S.xp+=n;save()}
+let TR=false;try{TR=localStorage.getItem("odtr")==="1"}catch(e){}
+function toggleTr(){TR=!TR;document.body.classList.toggle("tr",TR);document.getElementById("trBtn").classList.toggle("on",TR);try{localStorage.setItem("odtr",TR?"1":"0")}catch(e){}}
+document.body.classList.toggle("tr",TR);document.getElementById("trBtn").classList.toggle("on",TR);
+
+/* ================= SPEECH ================= */
+let voices=[];
+function loadV(){try{voices=speechSynthesis.getVoices()}catch(e){}}
+try{loadV();speechSynthesis.onvoiceschanged=loadV}catch(e){}
+function langOf(t){if(/[А-Яа-яЁё]/.test(t))return"ru-RU";if(/[؀-ۿ]/.test(t))return"ar-SA";return"en-US"}
+function speak(text,lang,rate){
+  try{
+    lang=lang||langOf(text);
+    speechSynthesis.cancel();
+    const u=new SpeechSynthesisUtterance(text);u.lang=lang;u.rate=rate||(lang==="ru-RU"?0.8:0.9);
+    const pre=lang.slice(0,2);const v=voices.find(v=>v.lang&&v.lang.replace("_","-").startsWith(pre));if(v)u.voice=v;
+    speechSynthesis.speak(u);
+  }catch(e){toast("المتصفح ما بيدعم النطق")}
+}
+function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")}
+/* wrap each word into a tappable span */
+function W(text){
+  return String(text).split(/([A-Za-zÀ-ÿА-Яа-яЁё\u0600-\u06FF0-9'’\-]+)/).map((m,j)=>{
+    if(j%2===0)return esc(m).replace(/\n/g,"<br>");
+    const ru=/[А-Яа-яЁё]/.test(m);return `<span class="w${ru?' ruw':''}">${esc(m)}</span>`}).join("");
+}
+function EN(en,ar){return `<div class="en">${W(en)} <button class="tbtn" style="padding:2px 7px" data-say="${esc(en).replace(/"/g,'&quot;')}">🔊</button></div>${ar?`<div class="ar">${W(ar)}</div>`:""}`}
+document.addEventListener("click",e=>{
+  const b=e.target.closest("[data-say]");if(b){e.stopPropagation();speak(b.getAttribute("data-say"));return}
+  const t=e.target.closest(".arbtn");if(t){const box=t.closest(".card").querySelectorAll(".ar");box.forEach(x=>x.classList.toggle("show"));return}
+  const w=e.target.closest(".w");if(w){w.classList.add("say");setTimeout(()=>w.classList.remove("say"),600);speak(w.textContent)}
+},true);
+function toast(m){const t=document.getElementById("toast");t.textContent=m;t.classList.add("show");setTimeout(()=>t.classList.remove("show"),1500)}
+
+/* ================= ROUTER ================= */
+const app=document.getElementById("app");
+function go(v,arg){
+  document.querySelectorAll("nav.bot button").forEach(b=>b.classList.toggle("on",b.dataset.v===v));
+  window.scrollTo(0,0);
+  ({home,learn,quiz,games,exam}[v]||home)(arg);
+}
+function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+
+/* ---------- HOME ---------- */
+function home(){
+  const total=Q.length,seen=Object.keys(S.seen).length,right=Object.values(S.seen).filter(x=>x).length;
+  app.innerHTML=`
+  <div class="card">
+   <h2>أهلاً 👋 جاهز للمرحلة الثانية؟</h2>
+   <div class="mut">الامتحان: 25 سؤال إجابة وحدة (1 علامة) + 15 سؤال كذا إجابة (3 علامات) + 3 أسئلة كتابية (10 علامات) + سؤال شفهي (5). الأسئلة بالإنجليزي وعن الثقافة الروسية.</div>
+   <div class="bar"><i style="width:${Math.round(right/total*100)}%"></i></div>
+   <div class="mut">جاوبت صح على ${right} من ${total} سؤال · ⭐ ${S.xp} نقطة</div>
+  </div>
+  <div class="hint">💡 <b>اضغط على أي كلمة</b> لتسمع لفظها (الكلمات الروسية بالبرتقالي بتنلفظ روسي). زر <b>🌐 ترجمة</b> فوق بيظهر الترجمة العربية لكل شي.</div>
+  <div class="grid">
+   <button class="tile" onclick="go('games','pics')"><div class="ic">🖼️</div><b>الصور والرموز</b><small>رموز روسيا + 20 لوحة</small></button>
+   <button class="tile" onclick="go('games','must')"><div class="ic">✅</div><b>أهم 25 معلومة</b><small>اقرأهم قبل الامتحان</small></button>
+   <button class="tile" onclick="go('games','abc')"><div class="ic">🔤</div><b>الأحرف الروسية</b><small>33 حرف مع لفظها وألعاب</small></button>
+   <button class="tile" onclick="go('learn')"><div class="ic">📚</div><b>ادرس الملخصات</b><small>6 محاور المنهج كاملة</small></button>
+   <button class="tile" onclick="go('quiz')"><div class="ic">🎯</div><b>تدرّب على الأسئلة</b><small>${total} سؤال مع شرح</small></button>
+   <button class="tile" onclick="go('games','match')"><div class="ic">🔗</div><b>لعبة التوصيل</b><small>كتّاب، ملحنين، رسامين...</small></button>
+   <button class="tile" onclick="go('games','order')"><div class="ic">🧩</div><b>رتّب الفقرات</b><small>متل المهمة 43</small></button>
+   <button class="tile" onclick="go('games','vocab')"><div class="ic">🗣️</div><b>كلمات روسية</b><small>اسمع واحفظ ${VOCAB.length} كلمة</small></button>
+   <button class="tile" onclick="go('games','write')"><div class="ic">✍️</div><b>كتابي وشفهي</b><small>المهام 41–46 مع نماذج</small></button>
+   <button class="tile" onclick="go('exam')"><div class="ic">📝</div><b>امتحان تجريبي</b><small>40 سؤال متل الحقيقي</small></button>
+   <button class="tile" onclick="quizStart('wrong')"><div class="ic">🔁</div><b>راجع أخطائي</b><small>${S.wrong.length} سؤال</small></button>
+  </div>
+  <div class="card" style="margin-top:12px"><h3>📅 مواعيد مهمة</h3>
+  <div class="mut">آخر موعد لحجز الـ time slot: <b>16 نوفمبر 10:59 مساءً بتوقيت غزة</b>. جرّب الـ Test session قبل الامتحان. النتائج النهائية 21 ديسمبر.</div></div>
+  <div style="text-align:center;margin:14px 0"><button class="btn sec" onclick="if(confirmReset())home()">تصفير التقدم</button></div>`;
+}
+let rc=0;function confirmReset(){rc++;if(rc<2){toast("اضغط مرة تانية للتأكيد");setTimeout(()=>rc=0,2000);return false}S={xp:0,seen:{},wrong:[]};save();rc=0;return true}
+
+/* ---------- LEARN ---------- */
+function learn(f){
+  f=f||1;
+  app.innerHTML=`<div class="chips">${Object.keys(FIELDS).map(k=>`<button class="chip ${k==f?'on':''}" onclick="learn(${k})">${FIELDS[k].i} ${FIELDS[k].a.split(" (")[0]}</button>`).join("")}</div>
+  <div class="card"><h2>${FIELDS[f].i} ${FIELDS[f].a}</h2><div class="mut en">${FIELDS[f].n}</div>
+  <div class="row" style="margin-top:6px"><button class="tbtn arbtn">🌐 ترجمة هالصفحة</button></div>
+  ${NOTES[f].map(n=>`<div class="fact">${EN(n[0],n[1])}</div>`).join("")}
+  </div>
+  <div class="row"><button class="btn" onclick="quizStart(${f})">🎯 اختبر حالك بهالمحور</button>${f<6?`<button class="btn sec" onclick="learn(${+f+1})">المحور اللي بعده ←</button>`:""}</div>`;
+}
+
+/* ---------- QUIZ ---------- */
+let QZ=null;
+function quiz(){
+  app.innerHTML=`<div class="card"><h2>🎯 اختار محور</h2>
+  <div class="grid">${Object.keys(FIELDS).map(k=>{const qs=Q.filter(q=>q[0]==k);const r=qs.filter(q=>S.seen[Q.indexOf(q)]).length;return `<button class="tile" onclick="quizStart(${k})"><div class="ic">${FIELDS[k].i}</div><b>${FIELDS[k].a.split(" (")[0]}</b><small>${r}/${qs.length} صح</small></button>`}).join("")}
+  <button class="tile" onclick="quizStart('all')"><div class="ic">🎲</div><b>خلطة عشوائية</b><small>20 سؤال من كل المحاور</small></button>
+  <button class="tile" onclick="quizStart('wrong')"><div class="ic">🔁</div><b>أخطائي</b><small>${S.wrong.length} سؤال</small></button>
+  </div></div>`;
+}
+function quizStart(f,examMode){
+  let ids;
+  if(f==="wrong"){ids=S.wrong.slice();if(!ids.length){toast("ما عندك أخطاء! 👏");return}}
+  else if(f==="all")ids=shuffle(Q.map((_,i)=>i)).slice(0,20);
+  else ids=shuffle(Q.map((q,i)=>q[0]==f?i:-1).filter(i=>i>=0));
+  QZ={ids,pos:0,score:0,max:0,exam:!!examMode,sel:new Set(),done:false,res:[]};
+  document.querySelectorAll("nav.bot button").forEach(b=>b.classList.toggle("on",b.dataset.v===(examMode?"exam":"quiz")));
+  renderQ();
+}
+function renderQ(){
+  const i=QZ.ids[QZ.pos],q=Q[i];QZ.sel=new Set();QZ.done=false;
+  QZ.order=shuffle(q[4].map((_,k)=>k));
+  const pct=Math.round(QZ.pos/QZ.ids.length*100);
+  app.innerHTML=`<div class="row" style="justify-content:space-between"><span class="mut">سؤال ${QZ.pos+1} / ${QZ.ids.length}</span><span class="mut">${QZ.exam?"":"صح: "+QZ.score}</span></div>
+  <div class="bar"><i style="width:${pct}%"></i></div>
+  <div class="card">
+   <div style="margin-bottom:6px"><span class="tag">${FIELDS[q[0]].i} ${FIELDS[q[0]].a.split(" (")[0]}</span>${q[1]?'<span class="tag m">كذا إجابة · 3 علامات</span>':'<span class="tag">إجابة وحدة · 1 علامة</span>'} <button class="tbtn arbtn" style="padding:2px 8px">🌐</button></div>
+   ${EN(q[2],q[3])}
+   <div id="opts">${QZ.order.map(k=>`<div class="opt" data-k="${k}" onclick="pick(${k})">${W(q[4][k][0])}<div class="ar">${W(q[4][k][1])}</div></div>`).join("")}</div>
+   <div id="fb"></div>
+   <div class="row" style="margin-top:10px"><button class="btn" id="chk" onclick="check()" disabled>تحقق ✔</button></div>
+  </div>
+  ${QZ.exam?'':'<button class="btn sec" onclick="quiz()">إنهاء</button>'}`;
+}
+function pick(k){
+  if(QZ.done)return;const q=Q[QZ.ids[QZ.pos]];
+  if(q[1]){QZ.sel.has(k)?QZ.sel.delete(k):QZ.sel.add(k)}else{QZ.sel=new Set([k])}
+  document.querySelectorAll(".opt").forEach(o=>o.classList.toggle("sel",QZ.sel.has(+o.dataset.k)));
+  document.getElementById("chk").disabled=!QZ.sel.size;
+}
+function check(){
+  if(QZ.done){next();return}
+  const i=QZ.ids[QZ.pos],q=Q[i],ans=new Set(q[5]);QZ.done=true;
+  const ok=QZ.sel.size===ans.size&&[...QZ.sel].every(x=>ans.has(x));
+  let pts=0;
+  if(q[1]){const hit=[...QZ.sel].filter(x=>ans.has(x)).length,wrong=[...QZ.sel].filter(x=>!ans.has(x)).length;pts=Math.max(0,hit-wrong);QZ.max+=3}else{pts=ok?1:0;QZ.max+=1}
+  QZ.score+=pts;QZ.res.push({i,ok,pts});
+  S.seen[i]=ok;S.wrong=S.wrong.filter(x=>x!==i);if(!ok)S.wrong.push(i);if(ok)addXp(q[1]?15:10);else save();
+  if(QZ.exam){next();return}
+  document.querySelectorAll(".opt").forEach(o=>{const k=+o.dataset.k;if(ans.has(k))o.classList.add("good");else if(QZ.sel.has(k))o.classList.add("badx")});
+  document.getElementById("fb").innerHTML=`<div class="fb ${ok?'good':'bad'}">${ok?"✅ ممتاز!":"❌ مش تمام."} ${q[1]&&!ok?`(أخدت ${pts}/3)`:""}<br>${W(q[6])}</div>`;
+  const b=document.getElementById("chk");b.disabled=false;b.textContent=QZ.pos+1<QZ.ids.length?"التالي ←":"النتيجة 🏁";
+  if(ok)speak(["Great!","Excellent!","Correct!","Отлично!","Молодец!"][Math.floor(Math.random()*5)]);
+}
+function next(){QZ.pos++;if(QZ.pos<QZ.ids.length)renderQ();else results()}
+function results(){
+  const p=Math.round(QZ.score/QZ.max*100);
+  app.innerHTML=`<div class="card"><h2>${QZ.exam?"📝 نتيجة الامتحان التجريبي":"🏁 النتيجة"}</h2>
+  <div class="score">${QZ.score} / ${QZ.max}</div><div class="bar"><i style="width:${p}%"></i></div>
+  <div class="mut" style="text-align:center">${p>=90?"🔥 مستوى ممتاز، كمّل هيك!":p>=70?"👍 منيح، راجع الأخطاء":"📚 ارجع للملخصات وراجع أخطائك"}</div></div>
+  <div class="card"><h3>المراجعة</h3>${QZ.res.map(r=>{const q=Q[r.i];return `<div class="fact"><div>${r.ok?"✅":"❌"} <span class="en">${W(q[2])}</span></div><div class="mut en">✔ ${q[5].map(k=>esc(q[4][k][0])).join(" · ")}</div><div class="ar">${W(q[3])}</div><div class="mut">${esc(q[6])}</div></div>`}).join("")}</div>
+  <div class="row"><button class="btn" onclick="quizStart('wrong')">🔁 راجع أخطائي</button><button class="btn sec" onclick="go('home')">الرئيسية</button></div>`;
+}
+
+/* ---------- EXAM ---------- */
+let TMR=null;
+function exam(){
+  app.innerHTML=`<div class="card"><h2>📝 امتحان تجريبي</h2>
+  <div class="mut">نفس شكل الجزء المؤتمت بالامتحان الحقيقي: <b>25 سؤال</b> إجابة وحدة (1 علامة) + <b>15 سؤال</b> كذا إجابة (3 علامات) = 70 علامة. ما بتشوف الإجابات إلا بالآخر.</div>
+  <div class="mut" style="margin-top:6px">بعدها تدرّب على المهام الكتابية والشفهية من قسم ✍️.</div>
+  <div class="row" style="margin-top:12px"><button class="btn" onclick="startExam()">ابدأ ▶</button></div></div>`;
+}
+function startExam(){
+  const s=shuffle(Q.map((q,i)=>q[1]?-1:i).filter(i=>i>=0)).slice(0,25);
+  const m=shuffle(Q.map((q,i)=>q[1]?i:-1).filter(i=>i>=0)).slice(0,15);
+  QZ=null;quizStart("all",true);QZ.ids=s.concat(m);QZ.pos=0;renderQ();
+}
+
+/* ---------- GAMES ---------- */
+function games(t){
+  if(t==="abc")return alphabet();if(t==="pics")return pics();if(t==="must")return must();if(t==="match")return matchMenu();if(t==="order")return orderStart(0);if(t==="vocab")return vocab();if(t==="write")return writeMenu();
+  app.innerHTML=`<div class="grid">
+   <button class="tile" onclick="pics()"><div class="ic">🖼️</div><b>الصور والرموز</b><small>رموز ولوحات</small></button>
+   <button class="tile" onclick="must()"><div class="ic">✅</div><b>أهم 25 معلومة</b><small>مراجعة سريعة</small></button>
+   <button class="tile" onclick="alphabet()"><div class="ic">🔤</div><b>الأحرف الروسية</b><small>33 حرف</small></button>
+   <button class="tile" onclick="matchMenu()"><div class="ic">🔗</div><b>لعبة التوصيل</b><small>${MATCH.length} مجموعات</small></button>
+   <button class="tile" onclick="orderStart(0)"><div class="ic">🧩</div><b>رتّب الفقرات</b><small>المهمة 43</small></button>
+   <button class="tile" onclick="vocab()"><div class="ic">🗣️</div><b>بطاقات كلمات روسية</b><small>اسمع ولفظ</small></button>
+   <button class="tile" onclick="writeMenu()"><div class="ic">✍️</div><b>كتابي وشفهي</b><small>41–46</small></button>
+  </div>`;
+}
+/* Matching */
+let MT=null;
+function matchMenu(){
+  app.innerHTML=`<div class="card"><h2>🔗 لعبة التوصيل</h2><div class="mut">اضغط على عنصر من اليسار وبعدين على اللي بيناسبه من اليمين.</div></div>
+  ${MATCH.map((m,i)=>`<button class="opt" style="text-align:right" onclick="matchStart(${i})">${m[1]} <span class="mut en">· ${esc(m[0])}</span></button>`).join("")}`;
+}
+function matchStart(i){
+  const m=MATCH[i];MT={i,L:shuffle(m[2].map((_,k)=>k)),R:shuffle(m[2].map((_,k)=>k)),sel:null,done:new Set(),err:0};
+  renderMatch();
+}
+function renderMatch(){
+  const m=MATCH[MT.i];
+  app.innerHTML=`<div class="card"><h2>${m[1]}</h2><div class="mut">غلطات: ${MT.err} · وصلت ${MT.done.size}/${m[2].length}</div></div>
+  <div class="mcol"><div>${MT.L.map(k=>`<div class="mi ${MT.done.has(k)?'done':''} ${MT.sel===k?'sel':''}" onclick="mL(${k})">${W(m[2][k][0])}</div>`).join("")}</div>
+  <div>${MT.R.map(k=>`<div class="mi ${MT.done.has(k)?'done':''}" id="r${k}" onclick="mR(${k})">${W(m[2][k][1])}</div>`).join("")}</div></div>
+  <div class="row" style="margin-top:12px"><button class="btn sec" onclick="matchMenu()">← المجموعات</button></div>`;
+}
+function mL(k){if(MT.done.has(k))return;MT.sel=k;renderMatch()}
+function mR(k){
+  if(MT.sel===null||MT.done.has(k))return;
+  if(k===MT.sel){MT.done.add(k);MT.sel=null;addXp(5);renderMatch();
+    if(MT.done.size===MATCH[MT.i][2].length){app.insertAdjacentHTML("afterbegin",`<div class="fb good">🎉 خلصت! غلطات: ${MT.err}</div>`);speak("Молодец!")}}
+  else{MT.err++;const el=document.getElementById("r"+k);el.classList.add("wrong");setTimeout(renderMatch,500)}
+}
+/* Ordering */
+let OD=null;
+function orderStart(i){
+  const o=ORDER[i];OD={i,seq:[],perm:shuffle(o.frags.map((_,k)=>k))};renderOrder();
+}
+function renderOrder(){
+  const o=ORDER[OD.i];
+  app.innerHTML=`<div class="chips">${ORDER.map((x,k)=>`<button class="chip ${k==OD.i?'on':''}" onclick="orderStart(${k})">${x.ar}</button>`).join("")}</div>
+  <div class="card"><h2>🧩 ${o.ar}</h2><div class="mut">من 7 مقاطع، اختار <b>5</b> بيعملوا نص مترابط ورتّبهم. في مقطعين موضوعهم مختلف لازم تتركهم. اضغط على المقاطع بالترتيب.</div>
+  <div class="mut en" style="margin-top:6px">Your answer: <b>${OD.seq.map(k=>k+1).join("") || "…"}</b></div></div>
+  ${OD.perm.map(k=>`<div class="frag ${OD.seq.includes(k)?'used':''}" onclick="oPick(${k})"><b class="n">${k+1}</b>${W(o.frags[k])}</div>`).join("")}
+  <div id="ofb"></div>
+  <div class="row" style="margin-top:10px"><button class="btn" onclick="oCheck()" ${OD.seq.length===5?"":"disabled"}>تحقق ✔</button><button class="btn sec" onclick="orderStart(${OD.i})">إعادة</button></div>`;
+}
+function oPick(k){if(OD.seq.includes(k)){OD.seq=OD.seq.filter(x=>x!==k)}else if(OD.seq.length<5)OD.seq.push(k);renderOrder()}
+function oCheck(){
+  const o=ORDER[OD.i],ans=o.ans.map(x=>x-1),ok=OD.seq.every((x,j)=>x===ans[j]);
+  const right=OD.seq.filter(x=>ans.includes(x)).length;
+  if(ok)addXp(30);
+  document.getElementById("ofb").innerHTML=`<div class="fb ${ok?'good':'bad'}">${ok?"✅ مية بالمية!":`❌ المقاطع الصح اللي اخترتها: ${right}/5`}<br><span class="en">Correct: <b>${o.ans.join("")}</b></span><br>الطريقة: احذف المقطعين اللي موضوعهم مختلف ← ابدأ بالتعريف/المقدمة ← التاريخ ← التفاصيل ← الأهمية اليوم بالآخر.</div>`;
+}
+/* Vocab flashcards */
+let VC=null;
+function vocab(){VC={order:shuffle(VOCAB.map((_,i)=>i)),pos:0,flip:false};renderVocab()}
+function renderVocab(){
+  const v=VOCAB[VC.order[VC.pos]];
+  app.innerHTML=`<div class="mut" style="text-align:center">${VC.pos+1} / ${VOCAB.length}</div>
+  <div class="card flip" onclick="VC.flip=!VC.flip;renderVocab()">
+   <div class="big">${esc(v[0])}</div>
+   ${VC.flip?`<div class="en" style="font-size:20px;margin-top:8px">${esc(v[1])}</div><div style="font-size:20px;color:#cfe0ff">${esc(v[2])}</div>`:`<div class="mut">اضغط لتشوف المعنى</div>`}
+  </div>
+  <div class="row" style="justify-content:center">
+   <button class="btn" data-say="${esc(v[0])}">🔊 روسي</button>
+   <button class="btn sec" onclick="speak(VOCAB[VC.order[VC.pos]][0],'ru-RU',0.45)">🐢 بطيء</button>
+  </div>
+  <div class="row" style="justify-content:space-between;margin-top:12px">
+   <button class="btn sec" onclick="VC.pos=(VC.pos-1+VOCAB.length)%VOCAB.length;VC.flip=false;renderVocab()">→ السابق</button>
+   <button class="btn" onclick="VC.pos=(VC.pos+1)%VOCAB.length;VC.flip=false;addXp(1);renderVocab()">التالي ←</button>
+  </div>
+  <div class="card" style="margin-top:12px"><h3>📋 كل الكلمات</h3>${VOCAB.map(x=>`<div class="fact"><span class="ruw w">${esc(x[0])}</span> <span class="mut en">— ${esc(x[1])}</span> <span class="mut">· ${esc(x[2])}</span></div>`).join("")}</div>`;
+  speak(v[0],"ru-RU");
+}
+
+/* Alphabet */
+let AB=null;
+function alphabet(){
+  app.innerHTML=`<div class="card"><h2>🔤 الأبجدية الروسية (33 حرف)</h2>
+  <div class="mut">اضغط على أي حرف لتسمعه وتشوف مثال. <br>🟡 10 حروف علّة: <span dir="ltr">А Е Ё И О У Ы Э Ю Я</span><br>🟠 21 حرف ساكن<br>⚪ علامتين بدون صوت: <span dir="ltr">Ъ Ь</span></div>
+  <div class="row" style="margin-top:8px"><button class="btn" onclick="abQuiz('see')">🎯 شوف الحرف واختار صوته</button><button class="btn sec" onclick="abQuiz('hear')">👂 اسمع واختار الحرف</button></div></div>
+  <div id="abcard"></div>
+  <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:6px;direction:ltr">${ABC.map((a,i)=>`<button class="mi" style="text-align:center;font-size:22px;font-weight:800;padding:10px 0;color:${'АЕЁИОУЫЭЮЯ'.includes(a[0])?'#ffcf4a':(a[0]=='Ъ'||a[0]=='Ь')?'#9fb0d3':'#ff8a3d'}" onclick="abShow(${i})">${a[0]}${a[1]}</button>`).join("")}</div>
+  <div class="card" style="margin-top:12px"><h3>⚠️ حروف بتلخبط (شكلها إنجليزي وصوتها غير)</h3>
+  <div class="en" style="font-size:18px">В = v · Н = n · Р = r · С = s · У = u · Х = kh</div>
+  <div class="mut" style="margin-top:6px">الحروف اللي شكلها وصوتها متل الإنجليزي: А، К، М، О، Т، Е (تقريباً)</div></div>
+  <div class="card"><h3>📖 تدرّب تقرأ</h3>${["мама","папа","дом","кот","чай","сок","хлеб","вода","школа","Москва","Россия","спасибо","здравствуйте","Пушкин","балет","берёза"].map(w=>`<span class="w ruw" style="display:inline-block;font-size:20px;margin:4px 8px">${w}</span>`).join("")}<div class="mut">حاول تقرأ الكلمة لحالك، وبعدين اضغط عليها لتتأكد.</div></div>`;
+}
+function abShow(i){
+  const a=ABC[i];
+  document.getElementById("abcard").innerHTML=`<div class="card" style="text-align:center">
+   <div class="big" style="font-size:64px">${a[0]} ${a[1]}</div>
+   <div style="font-size:18px">الصوت: <b>${esc(a[4])}</b> · <span class="en" style="display:inline">${esc(a[3])}</span></div>
+   <div class="mut">اسم الحرف: <span class="ruw">${esc(a[2])}</span></div>
+   ${a[7]?`<div class="hint" style="margin-top:8px">${esc(a[7])}</div>`:""}
+   <div style="margin-top:8px;font-size:22px"><span class="w ruw">${esc(a[5])}</span> = ${esc(a[6])}</div>
+   <div class="row" style="justify-content:center;margin-top:8px"><button class="btn" onclick="speak(ABC[${i}][2],'ru-RU',0.6)">🔊 الحرف</button><button class="btn sec" onclick="speak(ABC[${i}][5],'ru-RU',0.6)">🔊 الكلمة</button></div></div>`;
+  speak(a[2],"ru-RU",0.6);window.scrollTo({top:0,behavior:"smooth"});
+}
+function abQuiz(mode){AB={mode,order:shuffle(ABC.map((_,i)=>i)),pos:0,score:0};abQ()}
+function abQ(){
+  if(AB.pos>=AB.order.length){app.innerHTML=`<div class="card"><div class="score">${AB.score} / ${ABC.length}</div><div class="row" style="justify-content:center"><button class="btn" onclick="abQuiz('${AB.mode}')">مرة كمان</button><button class="btn sec" onclick="alphabet()">الأبجدية</button></div></div>`;return}
+  const i=AB.order[AB.pos],a=ABC[i];
+  const opts=shuffle([i].concat(shuffle(ABC.map((_,k)=>k).filter(k=>k!==i)).slice(0,3)));
+  AB.cur=i;AB.done=false;
+  app.innerHTML=`<div class="mut">${AB.pos+1} / ${ABC.length} · صح: ${AB.score}</div>
+  <div class="card" style="text-align:center">${AB.mode==="see"?`<div class="big" style="font-size:72px">${a[0]} ${a[1]}</div><div class="mut">شو صوت هالحرف؟</div>`:`<button class="btn" style="font-size:22px" onclick="speak(ABC[${i}][5],'ru-RU',0.6)">🔊 اسمع الكلمة</button><div class="mut" style="margin-top:6px">بأي حرف بتبلش الكلمة؟</div>`}</div>
+  ${opts.map(k=>`<div class="opt" style="text-align:center;font-size:${AB.mode==="see"?18:28}px" data-k="${k}" onclick="abPick(${k})">${AB.mode==="see"?esc(ABC[k][4])+' <span class="mut en" style="display:inline">('+esc(ABC[k][3])+')</span>':ABC[k][0]+' '+ABC[k][1]}</div>`).join("")}
+  <div id="abfb"></div><button class="btn sec" onclick="alphabet()">← رجوع</button>`;
+  if(AB.mode==="hear")speak(a[5],"ru-RU",0.6);
+}
+function abPick(k){
+  if(AB.done)return;AB.done=true;const ok=k===AB.cur,a=ABC[AB.cur];if(ok){AB.score++;addXp(3)}
+  document.querySelectorAll(".opt").forEach(o=>{if(+o.dataset.k===AB.cur)o.classList.add("good");else if(+o.dataset.k===k)o.classList.add("badx")});
+  document.getElementById("abfb").innerHTML=`<div class="fb ${ok?'good':'bad'}">${ok?"✅":"❌"} ${a[0]} = ${esc(a[4])} · <span class="ruw">${esc(a[5])}</span> = ${esc(a[6])}</div><button class="btn" style="margin:10px 0" onclick="AB.pos++;abQ()">التالي ←</button>`;
+  speak(a[2],"ru-RU",0.6);
+}
+
+/* Writing / oral */
+function writeMenu(){
+  app.innerHTML=`<div class="card"><h2>✍️ المهام الكتابية والشفهية</h2><div class="mut">بالامتحان: 3 مهام كتابية (41–43، كل وحدة 10 علامات) + تختار مهمة شفهية وحدة (44–46، 5 علامات).</div></div>
+  ${WRITE.map((w,i)=>`<button class="opt" style="text-align:right" onclick="writeTask(${i})">${w.type==="w"?"✍️":"🎤"} ${w.ar}</button>`).join("")}`;
+}
+function writeTask(i){
+  const w=WRITE[i];
+  let draft="";try{draft=localStorage.getItem("odw"+i)||""}catch(e){}
+  app.innerHTML=`<div class="card"><h2>${w.type==="w"?"✍️":"🎤"} ${esc(w.ar)}</h2><div class="mut en">${esc(w.t)}</div>
+  <div style="margin-top:8px"><button class="tbtn arbtn">🌐 ترجمة</button></div>
+  ${EN(w.q,w.qa)}</div>
+  ${w.min||w.type==="w"?`<div class="card"><h3>إجابتك</h3><textarea id="ta" placeholder="Write your answer in English (or Russian)…">${esc(draft)}</textarea>
+  <div class="mut" id="wc"></div></div>`:`<div class="card"><h3>🎤 تدرّب بصوتك</h3><div class="mut">احكي الإجابة بصوت عالي (سجّل حالك بمسجل الصوت بالموبايل)، بعدين قارن مع النموذج. حاول تحكي 30–60 ثانية.</div></div>`}
+  <div class="card chk"><h3>✅ قائمة التحقق (معايير التصحيح)</h3>${w.chk.map(c=>`<label><input type="checkbox"> <span class="en">${W(c)}</span></label>`).join("")}</div>
+  <div class="card"><button class="btn" onclick="this.nextElementSibling.style.display='block';this.remove()">👀 أظهر الإجابة النموذجية</button>
+  <div style="display:none"><h3>إجابة نموذجية</h3>${EN(w.model)}<div class="mut" style="margin-top:6px">اضغط 🔊 لتسمعها كاملة، أو اضغط على أي كلمة.</div></div></div>
+  <button class="btn sec" onclick="writeMenu()">← رجوع</button>`;
+  const ta=document.getElementById("ta");
+  if(ta){const up=()=>{const n=(ta.value.trim().match(/\S+/g)||[]).length,p=ta.value.split(/\n\s*\n/).filter(x=>x.trim()).length;
+    document.getElementById("wc").innerHTML=`عدد الكلمات: <b>${n}</b>${w.min?` / المطلوب ${w.min}+ ${n>=w.min?"✅":""}`:""} · فقرات: <b>${p}</b>`;try{localStorage.setItem("odw"+i,ta.value)}catch(e){}};
+    ta.addEventListener("input",up);up();}
+}
+
+save();go("home");
+</script>
+</body>
+</html>
